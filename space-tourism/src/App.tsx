@@ -25,11 +25,38 @@ const App = (): React.JSX.Element => {
     // Hooks
     let location: Location = useLocation();
 
-    useEffect(() => {
-        const bodyElement: HTMLElement = window.document.body;
-        const cleanPathname = location.pathname.replace(/\//im, '');
 
-        bodyElement.classList.add(cleanPathname);
+    /**
+     * @description Based on the current route add a class to the Body element
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return
+     */
+    const appendBodyClassName = (): void => {
+        let pathname: string;
+        const bodyElement: HTMLElement = window.document.body;
+
+        const cleanPathname: string = location.pathname.replace(/\//im, '');
+
+        if (cleanPathname === '') {
+
+            pathname = 'Home';
+
+        } else {
+
+            const captilizedPath : string = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
+
+            pathname = captilizedPath;
+
+        }
+
+        bodyElement.classList.add(pathname);
+    }
+
+    useEffect(() => {
+
+        appendBodyClassName();
 
     }, [location]);
 
