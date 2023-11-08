@@ -9,10 +9,10 @@ import './index.css';
 // Compontents
 import App from './App';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(window.document.getElementById('root')!).render(
     <React.StrictMode>
         <BrowserRouter>
             <App />
         </BrowserRouter>
     </React.StrictMode>
-)
+);

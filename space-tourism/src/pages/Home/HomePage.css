@@ -1,1 +1,10 @@
-.HomePage {}
+.HomePage {
+    font-style: italic;
+}
+
+body {
+    background-image: url('/home/background-home-desktop.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+}

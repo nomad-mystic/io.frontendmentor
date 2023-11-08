@@ -4,7 +4,7 @@ import React from 'react';
 import './Header.css';
 
 // Compontents
-import HeaderNav from '../HeaderNav/HeaderNav.tsx';
+import HeaderNav from '../HeaderNav/HeaderNav';
 
 const Header = (): React.JSX.Element => {
     return (

@@ -3,8 +3,11 @@ import React from 'react';
 // Styles
 import './HomePage.css';
 
+// Components
+import Header from '../../components/Header/Header';
+
 /**
- * @description
+ * @description Create the Home page components
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
@@ -12,9 +15,12 @@ import './HomePage.css';
  */
 const HomePage = (): React.JSX.Element => {
     return (
-        <div>
-            <h1 className="Header-1">Home Page</h1>
-        </div>
+        <>
+            <Header />
+            <main>
+
+            </main>
+        </>
     );
 };
 
