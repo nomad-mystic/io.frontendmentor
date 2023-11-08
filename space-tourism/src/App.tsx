@@ -1,6 +1,6 @@
 // Community
-import { Route, Routes } from 'react-router-dom';
-import React from 'react';
+import { Route, Routes, useLocation, Location } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
 // Styles
 import './styles/base.css';
@@ -22,6 +22,17 @@ import TechnologyPage from './pages/technology/TechnologyPage';
  * @return {React.JSX.Element}
  */
 const App = (): React.JSX.Element => {
+    // Hooks
+    let location: Location = useLocation();
+
+    useEffect(() => {
+        const bodyElement: HTMLElement = window.document.body;
+        const cleanPathname = location.pathname.replace(/\//im, '');
+
+        bodyElement.classList.add(cleanPathname);
+
+    }, [location]);
+
     return (
         <Routes>
             <Route path="/" element={ <HomePage /> }/>
