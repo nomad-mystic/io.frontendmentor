@@ -1,0 +1,63 @@
+:where(.Heading-1, .Heading-2, .Heading-3, .Heading-4, .Heading-5, .Subheading-1, .Subheading-2, .NavText, .Body, p) {
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+:where(.Heading-1, .Heading-2, .Heading-3, .Heading-4, .Subheading-1, .Subheading-2, .NavText, .Body, p) {
+    color: var(--color-white);
+}
+
+.Heading-1 {
+    font-family: var(--font-family-bellefair);
+    font-size: var(--heading-1-size);
+}
+
+.Heading-2 {
+    font-family: var(--font-family-bellefair);
+    font-size: var(--heading-2-size);
+}
+
+.Heading-3 {
+    font-family: var(--font-family-bellefair);
+    font-size: var(--heading-3-size);
+    text-transform: uppercase;
+}
+
+.Heading-4 {
+    font-family: var(--font-family-bellefair);
+    font-size: var(--heading-4-size);
+    text-transform: uppercase;
+}
+
+.Heading-5 {
+    font-family: var(--font-family-barlow);
+    font-size: var(--heading-5-size);
+    letter-spacing: var(--heading-5-letter-spacing);
+    color: var(--color-blue);
+}
+
+.Subheading-1 {
+    font-family: var(--font-family-bellefair);
+    font-size: var(--subheading-1-size);
+    text-transform: uppercase;
+}
+
+.Subheading-2 {
+    font-family: var(--font-family-bellefair);
+    font-size: var(--subheading-2-size);
+    letter-spacing: var(--subheading-2-letter-spacing);
+}
+
+.NavText {
+    font-family: var(--font-family-barlow);
+    font-size: var(--nav-size);
+    letter-spacing: var(--nav-letter-spacing);
+}
+
+.Body,
+p {
+    font-family: var(--font-family-barlow);
+    font-size: var(--body-size);
+    line-height: var(--body-line-height);
+}
