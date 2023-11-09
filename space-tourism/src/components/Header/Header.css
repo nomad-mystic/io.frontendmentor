@@ -1,1 +1,7 @@
-.Header {}
+.Header {
+    margin: 4rem auto 0;
+
+    &-logo {
+        margin-inline-start: 5.5rem;
+    }
+}
