@@ -31,27 +31,28 @@ const App = (): React.JSX.Element => {
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @return
+     * @return {void}
      */
     const appendBodyClassName = (): void => {
-        let pathname: string;
+        let className: string;
         const bodyElement: HTMLElement = window.document.body;
 
         const cleanPathname: string = location.pathname.replace(/\//im, '');
 
         if (cleanPathname === '') {
 
-            pathname = 'Home';
+            className = 'Home';
 
         } else {
 
-            const captilizedPath : string = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
+            const captilizedPath: string = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
 
-            pathname = captilizedPath;
+            className = captilizedPath;
 
         }
 
-        bodyElement.classList.add(pathname);
+        // Set our classes
+        bodyElement.classList.add(className);
     }
 
     useEffect(() => {

@@ -4,8 +4,8 @@
 
 :root {
     /** Fonts */
-    --font-family-bellefair: 'Bellefair', 'Ubuntu' sans-serif;
-    --font-family-barlow: 'Barlow Condensed', 'Ubuntu' serif;
+    --font-family-bellefair: 'Bellefair', Helvetica, sans-serif;
+    --font-family-barlow: 'Barlow Condensed', Helvetica, serif;
     --heading-1-size: 150px;
     --heading-2-size: 100px;
     --heading-3-size: 56px;
@@ -24,4 +24,5 @@
     --color-black: hsla(230, 35%, 7%, 1);
     --color-blue: hsla(231, 77%, 90%, 1);
     --color-white: hsla(0, 0%, 100%, 1);
+    --color-white-light: hsla(0, 0%, 100%, .5021);
 }
