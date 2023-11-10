@@ -41,13 +41,13 @@ const App = (): React.JSX.Element => {
 
         if (cleanPathname === '') {
 
-            className = 'Home';
+            className = 'HomePage';
 
         } else {
 
             const captilizedPath: string = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
 
-            className = captilizedPath;
+            className = `${captilizedPath}Page`;
 
         }
 
