@@ -42,17 +42,19 @@ const DestinationPage = (): React.JSX.Element => {
                     <section>
                         <article>
                             <header>
-                                <h1 className="Heading-1">MOON</h1>
+                                <h1 className="Heading-2">MOON</h1>
                             </header>
 
-                            <p className="Subheading-2">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+                            <p className="DestinationPage-text Subheading-2 max-w-[444px] block">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
 
                             <section className="DestinationPage-data flex">
                                 <div className="DestinationPage-distance">
-
+                                    <h4>AVG. DISTANCE</h4>
+                                    <p className="Subheading-1">384,400 km</p>
                                 </div>
                                 <div className="DestinationPage-travel">
-
+                                    <h4>Est. travel time</h4>
+                                    <p className="Subheading-1">3 days</p>
                                 </div>
                             </section>
                         </article>
