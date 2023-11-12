@@ -1,10 +1,10 @@
-:where(.Heading-1, .Heading-2, .Heading-3, .Heading-4, .Heading-5, .Subheading-1, .Subheading-2, .NavText, .Body, p) {
+.Heading-1, .Heading-2, .Heading-3, .Heading-4, .Heading-5, .Subheading-1, .Subheading-2, .NavText, .Body, p {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-:where(.Heading-1, .Heading-2, .Heading-3, .Heading-4, .Subheading-1, .Subheading-2, .NavText, .Body, p) {
+.Heading-1, .Heading-2, .Heading-3, .Heading-4, .Subheading-1, .NavText, .Body, p {
     color: var(--color-white);
 }
 
@@ -44,15 +44,18 @@
 }
 
 .Subheading-2 {
-    font-family: var(--font-family-bellefair);
+    font-family: var(--font-family-barlow);
     font-size: var(--subheading-2-size);
     letter-spacing: var(--subheading-2-letter-spacing);
+    color: var(--color-blue);
+    line-height: 32px;
 }
 
 .NavText {
     font-family: var(--font-family-barlow);
     font-size: var(--nav-size);
     letter-spacing: var(--nav-letter-spacing);
+    text-transform: uppercase;
 }
 
 .Body,

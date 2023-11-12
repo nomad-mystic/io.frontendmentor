@@ -6,7 +6,26 @@
 
     }
 
-    li {
+    .NavText {
+        &:first-of-type {
+            margin-inline-start: 12.3rem;
+        }
 
+        a {
+            padding-block: 35px;
+            display: block;
+
+            &.active {
+                border-bottom: 3px solid var(--color-white);
+            }
+
+            &:hover:not(.active) {
+                border-bottom: 3px solid var(--color-white-light);
+            }
+        }
+
+        &-number {
+            font-weight: 700;
+        }
     }
 }

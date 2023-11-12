@@ -1,0 +1,96 @@
+.DestinationPage {
+    &-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-block-start: 7.6rem;
+        margin-inline: auto;
+        padding-block-end: 11.8rem;
+        max-width: 1110px;
+    }
+
+    &-left {
+        text-align: left;
+
+        p {
+            max-width: 444px;
+        }
+    }
+
+    &-title {
+        color: var(--color-white);
+    }
+
+    &-number {
+        opacity: .25;
+    }
+
+    &-image {
+        margin-block-start: 9.7rem;
+    }
+
+    &-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        nav {
+            menu {
+
+            }
+        }
+
+        h1 {
+            margin-block: 2.4rem;
+        }
+    }
+
+    &-navItem {
+        padding-block-end: 1.2rem;
+
+        &:hover:not(&.active) {
+            cursor: pointer;
+            border-bottom: 3px solid var(--color-white-light);
+        }
+
+        &:not(&.active) {
+            color: var(--color-blue);
+        }
+
+        &.active {
+            border-bottom: 3px solid var(--color-white);
+        }
+    }
+
+    &-text {
+        border-bottom: 1px solid #383B4B;
+        padding-block-end: 5.4rem;
+    }
+
+    &-data {
+        gap: 7.9rem;
+
+
+        h4 {
+            font-family: var(--font-family-barlow);
+            color: var(--color-blue);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 2.362px;
+            text-transform: uppercase;
+            padding-block-start: 2.8rem;
+        }
+
+        p {
+            margin-block-start: 1.2rem;
+        }
+    }
+}
+
+body.DestinationPage {
+    background-image: url('/destination/background-destination-desktop.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}

@@ -4,8 +4,8 @@
 
 :root {
     /** Fonts */
-    --font-family-bellefair: 'Bellefair', 'Ubuntu' sans-serif;
-    --font-family-barlow: 'Barlow Condensed', 'Ubuntu' serif;
+    --font-family-bellefair: 'Bellefair', Helvetica, sans-serif;
+    --font-family-barlow: 'Barlow Condensed', Helvetica, serif;
     --heading-1-size: 150px;
     --heading-2-size: 100px;
     --heading-3-size: 56px;
@@ -13,10 +13,10 @@
     --heading-5-size: 28px;
     --heading-5-letter-spacing: 4.725;
     --subheading-1-size: 28px;
-    --subheading-2-size: 14px;
+    --subheading-2-size: 18px;
     --subheading-2-letter-spacing: 3.35;
     --nav-size: 16px;
-    --nav-letter-spacing: 2.7;
+    --nav-letter-spacing: 2.7px;
     --body-size: 18px;
     --body-line-height: 32px;
 
@@ -24,4 +24,5 @@
     --color-black: hsla(230, 35%, 7%, 1);
     --color-blue: hsla(231, 77%, 90%, 1);
     --color-white: hsla(0, 0%, 100%, 1);
+    --color-white-light: hsla(0, 0%, 100%, .5021);
 }
