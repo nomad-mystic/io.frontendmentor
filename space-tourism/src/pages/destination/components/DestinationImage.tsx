@@ -12,7 +12,7 @@ import DestinationDataInterface from '../interfaces/DestinationDataInterface';
  */
 const DestinationImage = (props: { data: DestinationDataInterface }): React.JSX.Element => {
     return (
-        <figure className="DestinationPage-image" id={ props.data.id }>
+        <figure className="DestinationPage-image">
             <img src={ props.data.image } alt={ props.data.imageAlt }/>
         </figure>
     );

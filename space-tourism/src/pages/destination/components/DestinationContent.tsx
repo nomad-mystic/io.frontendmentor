@@ -4,7 +4,7 @@ import React from 'react';
 import DestinationDataInterface from '../interfaces/DestinationDataInterface';
 
 /**
- * @description
+ * @description Based on the props passed to this change the planet type
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
@@ -12,7 +12,7 @@ import DestinationDataInterface from '../interfaces/DestinationDataInterface';
  */
 const DestinationContent = (props: { data: DestinationDataInterface }): React.JSX.Element => {
     return (
-        <section id={ props.data.id }>
+        <section>
             <article>
                 <header>
                     <h1 className="Heading-2">{ props.data.title }</h1>
