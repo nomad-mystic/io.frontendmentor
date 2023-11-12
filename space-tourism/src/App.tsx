@@ -25,7 +25,6 @@ const App = (): React.JSX.Element => {
     // Hooks
     let location: Location = useLocation();
 
-
     /**
      * @description Based on the current route add a class to the Body element
      * @public
@@ -45,9 +44,9 @@ const App = (): React.JSX.Element => {
 
         } else {
 
-            const captilizedPath: string = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
+            const capitalizedPath: string = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
 
-            className = `${captilizedPath}Page`;
+            className = `${capitalizedPath}Page`;
 
         }
 
