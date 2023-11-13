@@ -26,12 +26,18 @@
 
     &-image {
         margin-block-start: 9.7rem;
+
+        img {
+            margin-inline-start: auto;
+        }
     }
 
     &-right {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
+        margin-block-start: 6.4rem;
+        justify-self: end;
 
         nav {
             menu {
