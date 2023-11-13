@@ -1,5 +1,43 @@
 .CrewPage {
+    &-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-block-start: 7.6rem;
+        margin-inline: auto;
+        max-width: 1110px;
+    }
 
+    &-left {
+
+    }
+
+    &-heading {
+        color: var(--color-white);
+    }
+
+    &-number {
+        opacity: .25;
+    }
+
+    &-content {
+        margin-block-start: 15.4rem;
+    }
+
+    &-title {
+        opacity: 0.5042;
+    }
+
+    &-name {
+        margin-block: 1.5rem 2.7rem;
+    }
+
+    &-right {
+        justify-self: self-end;
+    }
+
+    &-text {
+
+    }
 }
 
 body.CrewPage {
