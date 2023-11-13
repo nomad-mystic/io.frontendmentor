@@ -2,9 +2,20 @@ import React, { ReactNode, useState } from 'react';
 
 // Styles
 import './CrewPage.css';
-import Header from '../../components/Header/Header.tsx';
+
+// Components
+import Header from '../../components/Header/Header';
+import CrewContent from './components/CrewContent';
+import CrewImage from './components/CrewImage';
+
+// Data
 import data from '../crew/data/data.json';
-import ElementUtils from '../../utils/ElementUtils.ts';
+
+// Utils
+import ElementUtils from '../../utils/ElementUtils';
+
+// Interfaces
+import CrewDataInterface from './interfaces/CrewDataInterface';
 
 /**
  * @description
@@ -14,7 +25,7 @@ import ElementUtils from '../../utils/ElementUtils.ts';
  * @return {React.JSX.Element}
  */
 const CrewPage = (): React.JSX.Element => {
-    const [activeCrewMember, setActiveCrewMember] = useState(1);
+    const [activeCrewMember, setActiveCrewMember] = useState('douglas');
 
     /**
      * @description
@@ -30,12 +41,12 @@ const CrewPage = (): React.JSX.Element => {
         // Sanity check
         if (target && typeof target !== 'undefined' && target.tagName === 'LI') {
 
-            // // Reset our active class
-            // ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.DestinationPage-main .DestinationPage-nav menu li'));
-            // target.classList.add('active');
-            //
-            // // Update the state
-            // setActiveCrewMember(target.id);
+            // Reset our active class
+            ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.CrewPage-main .CrewPage-nav menu li'));
+            target.classList.add('active');
+
+            // Update the state
+            setActiveCrewMember(target.id);
         }
     };
 
@@ -45,29 +56,35 @@ const CrewPage = (): React.JSX.Element => {
 
             <main className="CrewPage-main max-w-container">
                 <section className="CrewPage-left">
-                    <h2 className="CrewPage-heading Heading-5 uppercase text-white">{/*@todo Change this in the DestinationPage */}
+                    <h2 className="CrewPage-heading Heading-5 uppercase text-white">{/*@todo Change this in the DestinationPage ie. -heading */ }
                         <span className="CrewPage-number">02</span> Meet your crew</h2>
 
-                    <article className="CrewPage-content">
-                        <h2 className="CrewPage-title Heading-4">Commander</h2>
-                        <h1 className="CrewPage-name Heading-3">Douglas Hurley</h1>
-                        <p className="CrewPage-text Subheading-2 max-w-[444px] block">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</p>
-                    </article>
+                    {
+                        data.map((item: CrewDataInterface): ReactNode => {
+                            if (activeCrewMember === item.id) {
+                                return (<CrewContent key={ item.id } data={ item }/>)
+                            }
+                        })
+                    }
 
                     <nav className="CrewPage-nav">
                         <menu className="flex gap-[36px]" onClick={ toggleActive }>
-                            <li className="CrewPage-navItem NavText active" id="douglas"></li>
-                            <li className="CrewPage-navItem NavText" id="2"></li>
-                            <li className="CrewPage-navItem NavText" id="3"></li>
-                            <li className="CrewPage-navItem NavText" id="4"></li>
+                            <li className="CrewPage-navItem active" id="douglas"></li>
+                            <li className="CrewPage-navItem" id="mark"></li>
+                            <li className="CrewPage-navItem" id="victor"></li>
+                            <li className="CrewPage-navItem" id="anousheh"></li>
                         </menu>
                     </nav>
                 </section>
 
                 <section className="CrewPage-right">
-                    <figure>
-                        <img src="/crew/image-douglas-hurley.webp" alt=""/>
-                    </figure>
+                    {
+                        data.map((item: CrewDataInterface): ReactNode => {
+                            if (activeCrewMember === item.id) {
+                                return (<CrewImage key={ item.id } data={ item }/>)
+                            }
+                        })
+                    }
                 </section>
             </main>
         </>
