@@ -1,1 +1,10 @@
-.CrewPage {}
+.CrewPage {
+
+}
+
+body.CrewPage {
+    background-image: url('/crew/background-crew-desktop.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}

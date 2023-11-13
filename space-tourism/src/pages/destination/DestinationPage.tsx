@@ -6,14 +6,16 @@ import './DestinationPage.css';
 // Components
 import Header from '../../components/Header/Header';
 import DestinationContent from './components/DestinationContent';
+import DestinationImage from './components/DestinationImage';
+
+// Utils
+import ElementUtils from '../../utils/ElementUtils';
 
 // Data
 import data from './data/data.json';
 
 // Interfaces
 import DestinationDataInterface from './interfaces/DestinationDataInterface';
-import DestinationImage from './components/DestinationImage';
-import ElementUtils from '../../utils/ElementUtils.ts';
 
 /**
  * @description Create the content for the destination page

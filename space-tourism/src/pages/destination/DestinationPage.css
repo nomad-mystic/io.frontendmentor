@@ -26,6 +26,10 @@
 
     &-image {
         margin-block-start: 9.7rem;
+
+        img {
+            margin-inline-start: auto;
+        }
     }
 
     &-right {
@@ -33,6 +37,7 @@
         flex-direction: column;
         justify-content: flex-start;
         margin-block-start: 6.4rem;
+        justify-self: end;
 
         nav {
             menu {
