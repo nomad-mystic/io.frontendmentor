@@ -25,4 +25,7 @@
     --color-blue: hsla(231, 77%, 90%, 1);
     --color-white: hsla(0, 0%, 100%, 1);
     --color-white-light: hsla(0, 0%, 100%, .5021);
+
+    /* Grid */
+    --main-element-width: 1110px;
 }

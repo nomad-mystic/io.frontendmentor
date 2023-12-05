@@ -5,7 +5,7 @@
         margin-block-start: 7.6rem;
         margin-inline: auto;
         padding-block-end: 11.8rem;
-        max-width: 1110px;
+        max-width: var(--main-element-width);
     }
 
     &-left {

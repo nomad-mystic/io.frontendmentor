@@ -4,7 +4,7 @@
         grid-template-columns: 1fr 1fr;
         margin-block-start: 7.6rem;
         margin-inline: auto;
-        max-width: 1110px;
+        max-width: var(--main-element-width);
     }
 
     &-left {
