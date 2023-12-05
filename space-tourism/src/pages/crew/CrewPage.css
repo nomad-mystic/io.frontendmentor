@@ -1,1 +1,68 @@
-.CrewPage {}
+.CrewPage {
+    &-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-block-start: 7.6rem;
+        margin-inline: auto;
+        max-width: 1110px;
+    }
+
+    &-left {
+
+    }
+
+    &-heading {
+        color: var(--color-white);
+    }
+
+    &-number {
+        opacity: .25;
+    }
+
+    &-content {
+        margin-block-start: 15.4rem;
+    }
+
+    &-title {
+        opacity: 0.5042;
+    }
+
+    &-name {
+        margin-block: 1.5rem 2.7rem;
+    }
+
+    &-nav {
+        margin-block-start: 12rem;
+    }
+
+    &-navItem {
+        background-color: var(--color-white);
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 100%;
+        cursor: pointer;
+
+        &:not(.active) {
+            opacity: 0.1744;
+        }
+
+        &:hover:not(.active) {
+            opacity: 0.5001;
+        }
+    }
+
+    &-right {
+        justify-self: self-end;
+    }
+
+    &-text {
+
+    }
+}
+
+body.CrewPage {
+    background-image: url('/crew/background-crew-desktop.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}

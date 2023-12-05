@@ -1,6 +1,6 @@
 // Community
 import { Route, Routes, useLocation, Location } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Styles
 import './styles/base.css';
@@ -25,6 +25,9 @@ const App = (): React.JSX.Element => {
     // Hooks
     let location: Location = useLocation();
 
+    const [locationState, setLocationState] = useState({
+        'current': '',
+    });
 
     /**
      * @description Based on the current route add a class to the Body element
@@ -37,19 +40,31 @@ const App = (): React.JSX.Element => {
         let className: string;
         const bodyElement: HTMLElement = window.document.body;
 
+        // Remove the slash
         const cleanPathname: string = location.pathname.replace(/\//im, '');
 
+        // Clear our previous class name
+        if (bodyElement.classList.contains(locationState.current)) {
+            bodyElement.classList.remove(locationState.current);
+        }
+
+        // Set class name
         if (cleanPathname === '') {
 
             className = 'HomePage';
 
         } else {
 
-            const captilizedPath: string = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
+            const capitalizedPath: string = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
 
-            className = `${captilizedPath}Page`;
+            className = `${capitalizedPath}Page`;
 
         }
+
+        // Save our class name
+        setLocationState({
+            'current': className,
+        });
 
         // Set our classes
         bodyElement.classList.add(className);
