@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 
 // Styles
 import './TechnologyPage.css';
@@ -8,6 +8,13 @@ import Header from '../../components/Header/Header';
 
 // Utils
 import ElementUtils from '../../utils/ElementUtils';
+
+// Interfaces
+import TechnologyDataInterface from './interfaces/TechnologyDataInterface';
+
+// Data
+import data from './data/data.json';
+import TechnologyContent from './components/TechnologyContent.tsx';
 
 /**
  * @description
@@ -42,7 +49,7 @@ const TechnologyPage = (): React.JSX.Element => {
                 parentListItem.classList.add('active');
 
                 // Update the state
-                setActiveTech(target.id);
+                setActiveTech(parentListItem.id);
             }
         }
     };
@@ -53,38 +60,40 @@ const TechnologyPage = (): React.JSX.Element => {
 
             <main className="TechnologyPage-main max-w-container">
                 <section className="TechnologyPage-right">
-                    <nav className="TechnologyPage-nav">
-                        <menu className="flex flex-col gap-[36px]" onClick={ toggleActive }>
-                            <li className="TechnologyPage-navItem active" id="1">
-                                <span className="TechnologyPage-number">1</span>
-                                <span className="TechnologyPage-shape"></span>
-                            </li>
-                            <li className="TechnologyPage-navItem" id="2">
-                                <span className="TechnologyPage-number">2</span>
-                                <span className="TechnologyPage-shape"></span>
-                            </li>
-                            <li className="TechnologyPage-navItem" id="3">
-                                <span className="TechnologyPage-number">3</span>
-                                <span className="TechnologyPage-shape"></span>
-                            </li>
-                        </menu>
-                    </nav>
-                </section>
-
-                <section className="TechnologyPage-center">
-                    {/*{*/ }
-                    {/*    data.map((item: DestinationDataInterface): ReactNode => {*/ }
-                    {/*        if (activePlanet === item.id) {*/ }
-                    {/*            return (<DestinationContent key={ item.id } data={ item }/>)*/ }
-                    {/*        }*/ }
-                    {/*    })*/ }
-                    {/*}*/ }
-                </section>
-
-                <section className="TechnologyPage-left">
                     <h2 className="TechnologyPage-title Heading-5 uppercase text-white"><span
                         className="TechnologyPage-number">03</span> SPACE LAUNCH 101</h2>
 
+                    <section className="TechnologyPage-content flex">
+                        <nav className="TechnologyPage-nav">
+                            <menu className="flex flex-col gap-[36px]" onClick={ toggleActive }>
+                                <li className="TechnologyPage-navItem active" id="1">
+                                    <span className="TechnologyPage-number">1</span>
+                                    <span className="TechnologyPage-shape"></span>
+                                </li>
+                                <li className="TechnologyPage-navItem" id="2">
+                                    <span className="TechnologyPage-number">2</span>
+                                    <span className="TechnologyPage-shape"></span>
+                                </li>
+                                <li className="TechnologyPage-navItem" id="3">
+                                    <span className="TechnologyPage-number">3</span>
+                                    <span className="TechnologyPage-shape"></span>
+                                </li>
+                            </menu>
+                        </nav>
+
+                        <section className="TechnologyPage-center">
+                            {
+                                data.map((item: TechnologyDataInterface): ReactNode => {
+                                    if (activeTech === item.id) {
+                                        return (<TechnologyContent key={ item.id } data={ item } />)
+                                    }
+                                })
+                            }
+                        </section>
+                    </section>
+                </section>
+
+                <section className="TechnologyPage-left">
                     {/*{*/ }
                     {/*    data.map((item: DestinationDataInterface): ReactNode => {*/ }
                     {/*        if (activePlanet === item.id) {*/ }
