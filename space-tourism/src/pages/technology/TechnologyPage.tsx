@@ -2,6 +2,7 @@ import React from 'react';
 
 // Styles
 import './TechnologyPage.css';
+import Header from '../../components/Header/Header';
 
 /**
  * @description
@@ -12,9 +13,10 @@ import './TechnologyPage.css';
  */
 const TechnologyPage = (): React.JSX.Element => {
     return (
-        <div>
-            <h1>Technology Page</h1>
-        </div>
+        <>
+            <Header/>
+
+        </>
     );
 };
 

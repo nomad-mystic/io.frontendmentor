@@ -1,1 +1,10 @@
-.TechnologyPage {}
+.TechnologyPage {
+
+}
+
+body.TechnologyPage {
+    background-image: url('/technology/background-technology-desktop.jpg');
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}
