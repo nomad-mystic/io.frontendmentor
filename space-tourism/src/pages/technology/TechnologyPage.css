@@ -1,11 +1,13 @@
 .TechnologyPage {
     &-main {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 630px 515px;
         margin-block-start: 7.6rem;
         margin-inline: auto;
         padding-block-end: 11.8rem;
         max-width: var(--main-element-width);
+        position: relative;
+        column-gap: 130px;
     }
 
     &-title {
@@ -15,8 +17,6 @@
     &-content {
         column-gap: 8rem;
     }
-
-    &-right {}
 
     &-nav {}
 
@@ -64,8 +64,13 @@
         }
     }
 
-    &-center {}
     &-left {}
+
+    &-right {
+        /*position: absolute;*/
+        /*right: 0;*/
+        margin-block-start: 6rem;
+    }
 }
 
 body.TechnologyPage {

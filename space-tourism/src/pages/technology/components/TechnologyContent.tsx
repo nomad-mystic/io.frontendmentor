@@ -1,10 +1,16 @@
 import React from 'react';
 
+// Interfaces
 import TechnologyDataInterface from '../interfaces/TechnologyDataInterface';
 
+/**
+ * @description
+ * @public
+ * @author Keith Murphy | nomadmystics@gmail.com
+ *
+ * @return {React.JSX.Element}
+ */
 const TechnologyContent = (props: { data: TechnologyDataInterface }): React.JSX.Element => {
-    // console.log(props);
-
     return (
         <section>
             <article>
