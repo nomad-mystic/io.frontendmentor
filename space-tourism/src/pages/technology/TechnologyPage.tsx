@@ -14,7 +14,9 @@ import TechnologyDataInterface from './interfaces/TechnologyDataInterface';
 
 // Data
 import data from './data/data.json';
+
 import TechnologyContent from './components/TechnologyContent.tsx';
+import TechnologyImage from './components/TechnologyImage.tsx';
 
 /**
  * @description
@@ -59,7 +61,7 @@ const TechnologyPage = (): React.JSX.Element => {
             <Header />
 
             <main className="TechnologyPage-main max-w-container">
-                <section className="TechnologyPage-right">
+                <section className="TechnologyPage-left">
                     <h2 className="TechnologyPage-title Heading-5 uppercase text-white"><span
                         className="TechnologyPage-number">03</span> SPACE LAUNCH 101</h2>
 
@@ -93,15 +95,14 @@ const TechnologyPage = (): React.JSX.Element => {
                     </section>
                 </section>
 
-                <section className="TechnologyPage-left">
-                    {/*{*/ }
-                    {/*    data.map((item: DestinationDataInterface): ReactNode => {*/ }
-                    {/*        if (activePlanet === item.id) {*/ }
-                    {/*            return (<DestinationImage key={ item.id } data={ item }/>)*/ }
-                    {/*        }*/ }
-                    {/*    })*/ }
-                    {/*}*/ }
-
+                <section className="TechnologyPage-right">
+                    {
+                        data.map((item: TechnologyDataInterface): ReactNode => {
+                            if (activeTech === item.id) {
+                                return (<TechnologyImage key={ item.id } data={ item }/>)
+                            }
+                        })
+                    }
                 </section>
             </main>
         </>
