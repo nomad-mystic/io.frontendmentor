@@ -15,8 +15,8 @@ import TechnologyDataInterface from './interfaces/TechnologyDataInterface';
 // Data
 import data from './data/data.json';
 
-import TechnologyContent from './components/TechnologyContent.tsx';
-import TechnologyImage from './components/TechnologyImage.tsx';
+import TechnologyContent from './components/TechnologyContent';
+import TechnologyImage from './components/TechnologyImage';
 
 /**
  * @description
