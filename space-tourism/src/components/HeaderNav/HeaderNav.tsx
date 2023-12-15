@@ -4,10 +4,17 @@ import { NavLink } from 'react-router-dom';
 // Styles
 import './HeaderNav.css';
 
+/**
+ * @description
+ * @public
+ * @author Keith Murphy | nomadmystics@gmail.com
+ *
+ * @return {React.JSX.Element}
+ */
 const HeaderNav = (): React.JSX.Element => {
     return (
         <nav className="HeaderNav max-w-[830px] w-full">
-            <ul className="flex gap-[50px]">
+            <ul className="flex flex-col  md:flex-row md:gap-[50px]">
                 <li className="NavText">
                     <NavLink to="/">
                         <span className="NavText-number">00 </span>
