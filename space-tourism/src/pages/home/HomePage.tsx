@@ -7,7 +7,7 @@ import './HomePage.css';
 import Header from '../../components/Header/Header';
 
 /**
- * @description Create the Home page components
+ * @description Create the Home page component
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *

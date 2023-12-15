@@ -5,9 +5,12 @@ import './TechnologyPage.css';
 
 // Components
 import Header from '../../components/Header/Header';
+import TechnologyContent from './components/TechnologyContent';
+import TechnologyImage from './components/TechnologyImage';
 
 // Utils
 import ElementUtils from '../../utils/ElementUtils';
+import UiUtils from '../../utils/UiUtils';
 
 // Interfaces
 import TechnologyDataInterface from './interfaces/TechnologyDataInterface';
@@ -15,11 +18,8 @@ import TechnologyDataInterface from './interfaces/TechnologyDataInterface';
 // Data
 import data from './data/data.json';
 
-import TechnologyContent from './components/TechnologyContent';
-import TechnologyImage from './components/TechnologyImage';
-
 /**
- * @description
+ * @description Create the Technology page component
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
@@ -29,7 +29,7 @@ const TechnologyPage = (): React.JSX.Element => {
     const [activeTech, setActiveTech] = useState('1');
 
     /**
-     * @description
+     * @description Switch between our content elements
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
@@ -37,22 +37,16 @@ const TechnologyPage = (): React.JSX.Element => {
      * @return {void}
      */
     const toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
-        const target: HTMLElement = event.target as HTMLElement;
+        // Reset our active class
+        ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.TechnologyPage-main .TechnologyPage-nav menu li'));
 
-        // Sanity check
-        if (target && typeof target !== 'undefined' && target.tagName === 'SPAN') {
+        const { target, parentListItem } = UiUtils.toggleActive(event, 'SPAN');
 
-            // Reset our active class
-            ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.TechnologyPage-main .TechnologyPage-nav menu li'));
+        if (target && parentListItem) {
+            parentListItem.classList.add('active');
 
-            const parentListItem = target.closest('li');
-
-            if (parentListItem) {
-                parentListItem.classList.add('active');
-
-                // Update the state
-                setActiveTech(parentListItem.id);
-            }
+            // Update the state
+            setActiveTech(parentListItem.id);
         }
     };
 
@@ -99,7 +93,7 @@ const TechnologyPage = (): React.JSX.Element => {
                     {
                         data.map((item: TechnologyDataInterface): ReactNode => {
                             if (activeTech === item.id) {
-                                return (<TechnologyImage key={ item.id } data={ item }/>)
+                                return (<TechnologyImage key={ item.id } data={ item } />)
                             }
                         })
                     }

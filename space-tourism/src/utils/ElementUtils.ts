@@ -1,12 +1,11 @@
 /**
- * @classdesc
+ * @classdesc Build utils for elements
  * @class ElementUtils
  * @author Keith Murphy | nomadmystics@gmail.com
  */
 export default class ElementUtils {
-
     /**
-     * @description
+     * @description Removes CSS classes from a list of nodes
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *

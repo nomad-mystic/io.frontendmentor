@@ -8,7 +8,7 @@ import './styles/typography.css';
 import './App.css';
 
 // Components
-import HomePage from './pages/Home/HomePage';
+import HomePage from './pages/home/HomePage';
 import DestinationPage from './pages/destination/DestinationPage';
 import CrewPage from './pages/crew/CrewPage';
 import TechnologyPage from './pages/technology/TechnologyPage';

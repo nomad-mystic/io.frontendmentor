@@ -16,6 +16,7 @@ import ElementUtils from '../../utils/ElementUtils';
 
 // Interfaces
 import CrewDataInterface from './interfaces/CrewDataInterface';
+import UiUtils from '../../utils/UiUtils.ts';
 
 /**
  * @description
@@ -28,7 +29,7 @@ const CrewPage = (): React.JSX.Element => {
     const [activeCrewMember, setActiveCrewMember] = useState('douglas');
 
     /**
-     * @description
+     * @description Switch between our content elements
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
@@ -43,10 +44,15 @@ const CrewPage = (): React.JSX.Element => {
 
             // Reset our active class
             ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.CrewPage-main .CrewPage-nav menu li'));
-            target.classList.add('active');
 
-            // Update the state
-            setActiveCrewMember(target.id);
+            const { target} = UiUtils.toggleActive(event);
+
+            if (target) {
+                target.classList.add('active');
+
+                // Update the state
+                setActiveCrewMember(target.id);
+            }
         }
     };
 

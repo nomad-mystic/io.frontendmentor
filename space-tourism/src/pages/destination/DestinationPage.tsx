@@ -16,6 +16,7 @@ import data from './data/data.json';
 
 // Interfaces
 import DestinationDataInterface from './interfaces/DestinationDataInterface';
+import UiUtils from '../../utils/UiUtils.ts';
 
 /**
  * @description Create the content for the destination page
@@ -28,7 +29,7 @@ const DestinationPage = (): React.JSX.Element => {
     const [activePlanet, setActivePlanet] = useState('moon');
 
     /**
-     * @description
+     * @description Switch between our content elements
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
@@ -36,13 +37,13 @@ const DestinationPage = (): React.JSX.Element => {
      * @return {void}
      */
     const toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
-        const target: HTMLElement = event.target as HTMLElement;
 
-        // Sanity check
-        if (target && typeof target !== 'undefined' && target.tagName === 'LI') {
+        // Reset our active class
+        ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.DestinationPage-main .DestinationPage-nav menu li'));
 
-            // Reset our active class
-            ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.DestinationPage-main .DestinationPage-nav menu li'));
+        const { target} = UiUtils.toggleActive(event);
+
+        if (target) {
             target.classList.add('active');
 
             // Update the state
@@ -52,7 +53,7 @@ const DestinationPage = (): React.JSX.Element => {
 
     return (
         <>
-            <Header/>
+            <Header />
 
             <main className="DestinationPage-main max-w-container">
                 <section className="DestinationPage-left">
@@ -62,7 +63,7 @@ const DestinationPage = (): React.JSX.Element => {
                     {
                         data.map((item: DestinationDataInterface): ReactNode => {
                             if (activePlanet === item.id) {
-                                return (<DestinationImage key={ item.id } data={ item }/>)
+                                return (<DestinationImage key={ item.id } data={ item } />)
                             }
                         })
                     }
@@ -82,7 +83,7 @@ const DestinationPage = (): React.JSX.Element => {
                     {
                         data.map((item: DestinationDataInterface): ReactNode => {
                             if (activePlanet === item.id) {
-                                return (<DestinationContent key={ item.id } data={ item }/>)
+                                return (<DestinationContent key={ item.id } data={ item } />)
                             }
                         })
                     }
