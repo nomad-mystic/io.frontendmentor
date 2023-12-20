@@ -57,7 +57,7 @@ const DestinationPage = (): React.JSX.Element => {
 
             <main className="DestinationPage-main max-w-container">
                 <section className="DestinationPage-left">
-                    <h2 className="DestinationPage-title Heading-5 uppercase text-white"><span
+                    <h2 className="DestinationPage-subTitle Heading-5 uppercase text-white"><span
                         className="DestinationPage-number">01</span> Pick your destination</h2>
 
                     {

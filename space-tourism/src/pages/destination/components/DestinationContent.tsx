@@ -20,7 +20,7 @@ const DestinationContent = (props: { data: DestinationDataInterface }): React.JS
 
                 <p className="DestinationPage-text Subheading-2 max-w-[444px] block">{ props.data.body }</p>
 
-                <section className="DestinationPage-data flex">
+                <section className="DestinationPage-data flex flex-col md:flex-row">
                     <div className="DestinationPage-distance">
                         <h4>AVG. DISTANCE</h4>
                         <p className="Subheading-1">{ props.data.distance }</p>
