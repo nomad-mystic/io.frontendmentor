@@ -7,11 +7,11 @@
 
     position: absolute;
     right: -100%;
-    top: -2.4rem;
-    width: calc(100vw * .75);
-    transition: right .25s ease-in;
+    top: 0;
+    transition: right .25s linear;
     overflow-x: hidden;
-    height: calc(100vh + 2.4rem);
+    height: 100vh;
+    width: 0;
 
     @screen md {
         position: relative;
@@ -22,14 +22,15 @@
     /* Handle states */
     &-isOpen {
         right: 0;
-        transition: right .25s ease-in;
+        width: calc(100vw * .75);
+        transition: right .25s linear;
     }
 
     &-close {
         display: block;
         position: absolute;
-        right: 3.2rem;
-        top: 2.4rem;
+        right: 2.4rem;
+        top: 3.4rem;
 
         @screen md {
             display: none;

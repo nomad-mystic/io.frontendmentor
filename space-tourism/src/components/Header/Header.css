@@ -1,6 +1,7 @@
 .Header {
-    margin: 2.4rem auto 0;
+    padding: 2.4rem 0;
     position: relative;
+    z-index: 100;
 
     @screen md {
         margin: 4rem auto 0;
