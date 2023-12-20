@@ -88,12 +88,17 @@
 }
 
 body.HomePage {
-    background-image: url('/home/background-home-desktop.jpg');
+    background-image: url('/home/background-home-mobile.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100vh;
 
     @screen md {
-        background-size: cover;
+        background-image: url('/home/background-home-tablet.jpg');
+    }
+
+    @screen lg {
+        background-image: url('/home/background-home-desktop.jpg');
     }
 }
