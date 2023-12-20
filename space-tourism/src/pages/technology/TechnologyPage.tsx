@@ -38,7 +38,7 @@ const TechnologyPage = (): React.JSX.Element => {
      */
     const toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
         // Reset our active class
-        ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.TechnologyPage-main .TechnologyPage-nav menu li'));
+        ElementUtils.removeClassFromAllElements('.TechnologyPage-main .TechnologyPage-nav menu li');
 
         const { target, parentListItem } = UiUtils.toggleActive(event, 'SPAN');
 

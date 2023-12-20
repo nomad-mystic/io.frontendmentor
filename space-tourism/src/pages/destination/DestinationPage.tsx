@@ -39,7 +39,7 @@ const DestinationPage = (): React.JSX.Element => {
     const toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
 
         // Reset our active class
-        ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.DestinationPage-main .DestinationPage-nav menu li'));
+        ElementUtils.removeClassFromAllElements('.DestinationPage-main .DestinationPage-nav menu li');
 
         const { target} = UiUtils.toggleActive(event);
 

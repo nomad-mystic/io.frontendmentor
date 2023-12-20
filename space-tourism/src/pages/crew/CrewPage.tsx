@@ -37,22 +37,16 @@ const CrewPage = (): React.JSX.Element => {
      * @return {void}
      */
     const toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
-        const target: HTMLElement = event.target as HTMLElement;
+        // Reset our active class
+        ElementUtils.removeClassFromAllElements('.CrewPage-main .CrewPage-nav menu li');
 
-        // Sanity check
-        if (target && typeof target !== 'undefined' && target.tagName === 'LI') {
+        const { target} = UiUtils.toggleActive(event);
 
-            // Reset our active class
-            ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.CrewPage-main .CrewPage-nav menu li'));
+        if (target) {
+            target.classList.add('active');
 
-            const { target} = UiUtils.toggleActive(event);
-
-            if (target) {
-                target.classList.add('active');
-
-                // Update the state
-                setActiveCrewMember(target.id);
-            }
+            // Update the state
+            setActiveCrewMember(target.id);
         }
     };
 
