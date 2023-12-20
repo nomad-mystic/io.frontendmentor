@@ -9,11 +9,13 @@ export default class ElementUtils {
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @param {NodeListOf<Element>} elements
+     * @param {string} selector
      * @param {string} className
      * @return {void}
      */
-    public static removeClassFromAllElements = (elements: NodeListOf<Element>, className: string = 'active'): void => {
+    public static removeClassFromAllElements = (selector: string, className: string = 'active'): void => {
+        const elements = window.document.querySelectorAll(selector)
+
         if (elements && typeof elements !== 'undefined' && elements.length > 0) {
 
             for (let el: number = 0; el < elements.length; el++) {

@@ -1,23 +1,35 @@
 .DestinationPage {
     &-main {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-block-start: 7.6rem;
-        margin-inline: auto;
-        padding-block-end: 11.8rem;
-        max-width: var(--main-element-width);
+        grid-template-rows: auto auto;
+        margin-block-start: .8rem;
+
+        @screen md {
+            grid-template-columns: 1fr 1fr;
+            margin-block-start: 7.6rem;
+            margin-inline: auto;
+            padding-block-end: 11.8rem;
+            max-width: var(--main-element-width);
+        }
     }
 
     &-left {
-        text-align: left;
+        text-align: center;
+
+        @screen md {
+            text-align: left;
+        }
 
         p {
             max-width: 444px;
         }
     }
 
-    &-title {
+    &-subTitle {
+        font-size: 16px;
         color: var(--color-white);
+
+
     }
 
     &-number {
@@ -25,7 +37,13 @@
     }
 
     &-image {
-        margin-block-start: 9.7rem;
+        margin: 3.2rem auto 0;
+        max-width: 170px;
+        max-height: 170px;
+
+        @screen md {
+            margin-block-start: 9.7rem;
+        }
 
         img {
             margin-inline-start: auto;
@@ -35,9 +53,13 @@
     &-right {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
         margin-block-start: 6.4rem;
-        justify-self: end;
+        align-items: center;
+
+        @screen md {
+            justify-content: flex-start;
+            justify-self: end;
+        }
 
         nav {
             menu {
@@ -47,6 +69,25 @@
 
         h1 {
             margin-block: 2.4rem;
+            font-size: 5.6rem;
+
+            @screen md {
+                font-size: 8rem;
+            }
+
+            @screen lg {
+                font-size: var(--heading-2-size);
+            }
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @screen md {
+                display: block;
+            }
         }
     }
 
@@ -70,11 +111,28 @@
     &-text {
         border-bottom: 1px solid #383B4B;
         padding-block-end: 5.4rem;
+        text-align: center;
+        font-size: 15px;
+
+        @screen md {
+            text-align: left;
+            font-size: var(--subheading-2-size);
+        }
     }
 
     &-data {
-        gap: 7.9rem;
+        gap: 3.2rem;
+        text-align: center;
+        padding-block-start: 3.2rem;
 
+        @screen md {
+            gap: 7.9rem;
+        }
+
+        @screen lg {
+            text-align: left;
+            padding-block-start: 2.8rem;
+        }
 
         h4 {
             font-family: var(--font-family-barlow);
@@ -83,20 +141,33 @@
             font-style: normal;
             font-weight: 400;
             line-height: normal;
-            letter-spacing: 2.362px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            padding-block-start: 2.8rem;
         }
 
         p {
             margin-block-start: 1.2rem;
         }
     }
+
+    &-distance {}
+
+    &-travel {
+        padding-block-end: 6rem;
+    }
 }
 
 body.DestinationPage {
-    background-image: url('/destination/background-destination-desktop.jpg');
+    background-image: url('/destination/background-destination-mobile.jpg');
     background-repeat: no-repeat;
     width: 100%;
     background-size: cover;
+
+    @screen md {
+        background-image: url('/destination/background-destination-tablet.jpg');
+    }
+
+    @screen lg {
+        background-image: url('/destination/background-destination-desktop.jpg');
+    }
 }

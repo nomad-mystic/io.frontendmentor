@@ -39,7 +39,7 @@ const DestinationPage = (): React.JSX.Element => {
     const toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
 
         // Reset our active class
-        ElementUtils.removeClassFromAllElements(window.document.querySelectorAll('.DestinationPage-main .DestinationPage-nav menu li'));
+        ElementUtils.removeClassFromAllElements('.DestinationPage-main .DestinationPage-nav menu li');
 
         const { target} = UiUtils.toggleActive(event);
 
@@ -57,7 +57,7 @@ const DestinationPage = (): React.JSX.Element => {
 
             <main className="DestinationPage-main max-w-container">
                 <section className="DestinationPage-left">
-                    <h2 className="DestinationPage-title Heading-5 uppercase text-white"><span
+                    <h2 className="DestinationPage-subTitle Heading-5 uppercase text-white"><span
                         className="DestinationPage-number">01</span> Pick your destination</h2>
 
                     {
