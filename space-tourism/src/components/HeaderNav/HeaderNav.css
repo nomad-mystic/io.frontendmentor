@@ -1,26 +1,70 @@
 .HeaderNav {
+    --close-svg-top: 3.2rem;
+    --mobile-nav-top: calc(6.4rem + var(--close-svg-top));
+
     background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(40.774227142333984px);
+    backdrop-filter: blur(40px);
+
+    position: absolute;
+    right: -100%;
+    top: -2.4rem;
+    width: calc(100vw * .75);
+    transition: right .25s ease-in;
+    overflow-x: hidden;
+    height: calc(100vh + 2.4rem);
+
+    @screen md {
+        position: relative;
+        max-width: unset;
+        width: 100%;
+    }
+
+    /* Handle states */
+    &-isOpen {
+        right: 0;
+        transition: right .25s ease-in;
+    }
+
+    &-close {
+        display: block;
+        position: absolute;
+        right: 3.2rem;
+        top: 2.4rem;
+
+        @screen md {
+            display: none;
+        }
+    }
 
     ul {
+        padding-inline-start: 3.2rem;
+        margin-block-start: var(--mobile-nav-top);
 
+        @screen md {
+            padding-inline-start: 0;
+
+        }
     }
 
     .NavText {
-        &:first-of-type {
-            margin-inline-start: 12.3rem;
+        @screen md {
+            &:first-of-type {
+                margin-inline-start: 12.3rem;
+            }
         }
 
         a {
             padding-block: 35px;
             display: block;
 
-            &.active {
-                border-bottom: 3px solid var(--color-white);
-            }
+            @screen md {
+                &.active {
+                    border-bottom: 3px solid var(--color-white);
+                }
 
-            &:hover:not(.active) {
-                border-bottom: 3px solid var(--color-white-light);
+                &:hover:not(.active) {
+                    border-bottom: 3px solid var(--color-white-light);
+                }
             }
         }
 

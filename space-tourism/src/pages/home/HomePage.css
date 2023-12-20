@@ -1,10 +1,15 @@
 .HomePage {
     &-main {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-block-start: 25rem;
-        margin-inline: auto;
-        max-width: var(--main-element-width);
+        grid-template-rows: 1fr 1fr;
+
+         @screen md {
+             grid-template-columns: 1fr 1fr;
+             grid-template-rows: 1fr;
+             margin-block-start: 25rem;
+             margin-inline: auto;
+             max-width: var(--main-element-width);
+         }
     }
 
     &-left {
@@ -19,6 +24,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
+        height: 100%;
 
         h1 {
             margin-block: 2.4rem;
@@ -82,9 +88,17 @@
 }
 
 body.HomePage {
-    background-image: url('/home/background-home-desktop.jpg');
+    background-image: url('/home/background-home-mobile.jpg');
     background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100vh;
-    background-size: cover;
+
+    @screen md {
+        background-image: url('/home/background-home-tablet.jpg');
+    }
+
+    @screen lg {
+        background-image: url('/home/background-home-desktop.jpg');
+    }
 }
