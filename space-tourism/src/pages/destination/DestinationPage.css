@@ -3,13 +3,14 @@
         display: grid;
         grid-template-rows: auto auto;
         margin-block-start: .8rem;
+        max-width: var(--main-element-width);
+        margin-inline: auto;
 
         @screen md {
             grid-template-columns: 1fr 1fr;
             margin-block-start: 7.6rem;
             margin-inline: auto;
             padding-block-end: 11.8rem;
-            max-width: var(--main-element-width);
         }
     }
 
