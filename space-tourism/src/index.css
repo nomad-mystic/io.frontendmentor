@@ -27,5 +27,9 @@
     --color-white-light: hsla(0, 0%, 100%, .5021);
 
     /* Grid */
-    --main-element-width: 1110px;
+    --main-element-width: 90%;
+
+    @screen md {
+        --main-element-width: 1110px;
+    }
 }
