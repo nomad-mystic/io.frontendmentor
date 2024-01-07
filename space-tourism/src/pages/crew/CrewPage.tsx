@@ -13,13 +13,14 @@ import data from '../crew/data/data.json';
 
 // Utils
 import ElementUtils from '../../utils/ElementUtils';
+import UiUtils from '../../utils/UiUtils';
+import CrewNav from './components/CrewNav';
 
 // Interfaces
 import CrewDataInterface from './interfaces/CrewDataInterface';
-import UiUtils from '../../utils/UiUtils.ts';
 
 /**
- * @description
+ * @description Create the content for the crew page
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
@@ -30,7 +31,7 @@ const CrewPage = (): React.JSX.Element => {
 
     /**
      * @description Switch between our content elements
-     * @public
+     * @private
      * @author Keith Murphy | nomadmystics@gmail.com
      *
      * @param {React.MouseEvent<HTMLElement, MouseEvent>} event
@@ -40,7 +41,7 @@ const CrewPage = (): React.JSX.Element => {
         // Reset our active class
         ElementUtils.removeClassFromAllElements('.CrewPage-main .CrewPage-nav menu li');
 
-        const { target} = UiUtils.toggleActive(event);
+        const { target } = UiUtils.toggleActive(event);
 
         if (target) {
             target.classList.add('active');
@@ -52,39 +53,41 @@ const CrewPage = (): React.JSX.Element => {
 
     return (
         <>
-            <Header/>
+            <Header />
 
             <main className="CrewPage-main max-w-container">
                 <section className="CrewPage-left">
                     <h2 className="CrewPage-heading Heading-5 uppercase text-white">{/*@todo Change this in the DestinationPage ie. -heading */ }
-                        <span className="CrewPage-number">02</span> Meet your crew</h2>
+                        <span className="CrewPage-number">02</span>
+                        Meet your crew
+                    </h2>
 
                     {
                         data.map((item: CrewDataInterface): ReactNode => {
                             if (activeCrewMember === item.id) {
-                                return (<CrewContent key={ item.id } data={ item }/>)
+                                return (<CrewContent key={ item.id } data={ item } />)
                             }
                         })
                     }
 
-                    <nav className="CrewPage-nav">
-                        <menu className="flex gap-[36px]" onClick={ toggleActive }>
-                            <li className="CrewPage-navItem active" id="douglas"></li>
-                            <li className="CrewPage-navItem" id="mark"></li>
-                            <li className="CrewPage-navItem" id="victor"></li>
-                            <li className="CrewPage-navItem" id="anousheh"></li>
-                        </menu>
-                    </nav>
+                    <div className="CrewPage-nav--desktop">
+                        <CrewNav toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
+                    </div>
+
                 </section>
 
                 <section className="CrewPage-right">
                     {
                         data.map((item: CrewDataInterface): ReactNode => {
                             if (activeCrewMember === item.id) {
-                                return (<CrewImage key={ item.id } data={ item }/>)
+                                return (<CrewImage key={ item.id } data={ item } />)
                             }
                         })
                     }
+
+                    <div className="CrewPage-nav--mobile">
+                        <CrewNav toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
+                    </div>
                 </section>
             </main>
         </>
