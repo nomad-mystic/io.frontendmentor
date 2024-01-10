@@ -1,4 +1,6 @@
-import React, { ReactNode, useState } from 'react';
+// Community
+import React, { ReactNode, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 // Styles
 import './TechnologyPage.css';
@@ -18,6 +20,9 @@ import TechnologyDataInterface from './interfaces/TechnologyDataInterface';
 // Data
 import data from './data/data.json';
 
+// State Actions
+import { navigationAction } from '../../store/slices/navigation/navigation-slice';
+
 /**
  * @description Create the Technology page component
  * @public
@@ -26,6 +31,7 @@ import data from './data/data.json';
  * @return {React.JSX.Element}
  */
 const TechnologyPage = (): React.JSX.Element => {
+    const dispatch = useDispatch();
     const [activeTech, setActiveTech] = useState('1');
 
     /**
@@ -49,6 +55,11 @@ const TechnologyPage = (): React.JSX.Element => {
             setActiveTech(parentListItem.id);
         }
     };
+
+    // Reset navigation on load
+    useEffect(() => {
+        dispatch(navigationAction.closeNavigation());
+    }, []);
 
     return (
         <>

@@ -1,10 +1,15 @@
-import React from 'react';
+// Community
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 // Styles
 import './HomePage.css';
 
 // Components
 import Header from '../../components/Header/Header';
+
+// State Actions
+import { navigationAction } from '../../store/slices/navigation/navigation-slice';
 
 /**
  * @description Create the Home page component
@@ -14,6 +19,13 @@ import Header from '../../components/Header/Header';
  * @return {React.JSX.Element}
  */
 const HomePage = (): React.JSX.Element => {
+    const dispatch = useDispatch();
+
+    // Reset navigation on load
+    useEffect(() => {
+        dispatch(navigationAction.closeNavigation());
+    }, []);
+
     return (
         <>
             <Header />

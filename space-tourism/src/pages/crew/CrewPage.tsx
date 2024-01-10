@@ -1,4 +1,6 @@
-import React, { ReactNode, useState } from 'react';
+// Community
+import React, { ReactNode, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 // Styles
 import './CrewPage.css';
@@ -19,6 +21,9 @@ import CrewNav from './components/CrewNav';
 // Interfaces
 import CrewDataInterface from './interfaces/CrewDataInterface';
 
+// State Actions
+import { navigationAction } from '../../store/slices/navigation/navigation-slice';
+
 /**
  * @description Create the content for the crew page
  * @public
@@ -27,6 +32,7 @@ import CrewDataInterface from './interfaces/CrewDataInterface';
  * @return {React.JSX.Element}
  */
 const CrewPage = (): React.JSX.Element => {
+    const dispatch = useDispatch();
     const [activeCrewMember, setActiveCrewMember] = useState('douglas');
 
     /**
@@ -50,6 +56,11 @@ const CrewPage = (): React.JSX.Element => {
             setActiveCrewMember(target.id);
         }
     };
+
+    // Reset navigation on load
+    useEffect(() => {
+        dispatch(navigationAction.closeNavigation());
+    }, []);
 
     return (
         <>
@@ -76,6 +87,10 @@ const CrewPage = (): React.JSX.Element => {
 
                 </section>
 
+                <div className="CrewPage-nav--mobile">
+                    <CrewNav toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
+                </div>
+
                 <section className="CrewPage-right">
                     {
                         data.map((item: CrewDataInterface): ReactNode => {
@@ -84,10 +99,6 @@ const CrewPage = (): React.JSX.Element => {
                             }
                         })
                     }
-
-                    <div className="CrewPage-nav--mobile">
-                        <CrewNav toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
-                    </div>
                 </section>
             </main>
         </>

@@ -1,4 +1,7 @@
+// Community
 import React from 'react';
+
+// Types
 import { toggleActiveTypes } from './types/UiTypes.ts';
 
 /**
@@ -20,9 +23,8 @@ export default class UiUtils {
         // Sanity check
         if (target && typeof target !== 'undefined' && target.tagName === tagName) {
 
+            // Get our parent
             const parentListItem = target.closest(parentItemSelector);
-
-            console.log(parentListItem);
 
             return {
                 target,
