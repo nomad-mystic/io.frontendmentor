@@ -1,14 +1,15 @@
 .CrewPage {
     &-main {
-        margin-block-start: 7.6rem;
         margin-inline: auto;
         max-width: var(--main-element-width);
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         @screen md {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            align-items: unset;
         }
     }
 
@@ -18,6 +19,30 @@
 
     &-heading {
         color: var(--color-white);
+        font-size: 1.6rem;
+        margin-block-end: 3.2rem;
+
+        @screen lg {
+            font-size: 2.8rem;
+            margin-block-end: 15.4rem;
+        }
+
+        &--mobile {
+            display: block;
+
+            @screen md {
+                display: none;
+            }
+        }
+
+        &--desktop {
+            display: none;
+
+            @screen md {
+                display: block;
+            }
+        }
+
     }
 
     &-number {
@@ -25,16 +50,16 @@
     }
 
     &-content {
-        margin-block-start: 3.2rem;
         text-align: center;
+        margin-block-start: 3.2rem;
 
         @screen lg {
             text-align: left;
-            margin-block-start: 15.4rem;
         }
     }
 
     &-title {
+        margin-block-end: .8rem;
         opacity: 0.5042;
         font-size: 1.6rem;
 
@@ -44,20 +69,23 @@
     }
 
     &-name {
-        margin-block: 1.5rem 2.7rem;
+        margin-block: 0 1.6rem;
 
         font-size: 2.4rem;
 
         @screen lg {
+            margin-block: 1.5rem 2.7rem;
             font-size: 5.4rem;
         }
     }
 
-    &-text {
+    &-body {
         font-size: 1.5rem;
+        margin-block-end: 3.2rem;
 
         @screen lg {
             font-size: 1.8rem;
+            margin-block-end: 0;
         }
     }
 

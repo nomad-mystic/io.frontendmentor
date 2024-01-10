@@ -8,7 +8,6 @@
 
         @screen md {
             grid-template-columns: 1fr 1fr;
-            margin-block-start: 7.6rem;
             margin-inline: auto;
             padding-block-end: 11.8rem;
         }

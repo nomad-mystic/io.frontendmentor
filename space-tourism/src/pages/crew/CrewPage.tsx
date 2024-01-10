@@ -67,8 +67,13 @@ const CrewPage = (): React.JSX.Element => {
             <Header />
 
             <main className="CrewPage-main max-w-container">
+                <h2 className="CrewPage-heading CrewPage-heading--mobile Heading-5 uppercase text-white">{/*@todo Change this in the DestinationPage ie. -heading */ }
+                    <span className="CrewPage-number">02</span>
+                    Meet your crew
+                </h2>
+
                 <section className="CrewPage-left">
-                    <h2 className="CrewPage-heading Heading-5 uppercase text-white">{/*@todo Change this in the DestinationPage ie. -heading */ }
+                    <h2 className="CrewPage-heading CrewPage-heading--desktop Heading-5 uppercase text-white">{/*@todo Change this in the DestinationPage ie. -heading */ }
                         <span className="CrewPage-number">02</span>
                         Meet your crew
                     </h2>
