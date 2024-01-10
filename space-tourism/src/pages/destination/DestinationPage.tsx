@@ -1,4 +1,6 @@
-import React, { ReactNode, useState } from 'react';
+// Community
+import React, { ReactNode, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 // Styles
 import './DestinationPage.css';
@@ -10,13 +12,16 @@ import DestinationImage from './components/DestinationImage';
 
 // Utils
 import ElementUtils from '../../utils/ElementUtils';
+import UiUtils from '../../utils/UiUtils';
 
 // Data
 import data from './data/data.json';
 
 // Interfaces
 import DestinationDataInterface from './interfaces/DestinationDataInterface';
-import UiUtils from '../../utils/UiUtils.ts';
+
+// State Actions
+import { navigationAction } from '../../store/slices/navigation/navigation-slice';
 
 /**
  * @description Create the content for the destination page
@@ -26,6 +31,7 @@ import UiUtils from '../../utils/UiUtils.ts';
  * @return {React.JSX.Element}
  */
 const DestinationPage = (): React.JSX.Element => {
+    const dispatch = useDispatch();
     const [activePlanet, setActivePlanet] = useState('moon');
 
     /**
@@ -50,6 +56,11 @@ const DestinationPage = (): React.JSX.Element => {
             setActivePlanet(target.id);
         }
     };
+
+    // Reset navigation on load
+    useEffect(() => {
+        dispatch(navigationAction.closeNavigation());
+    }, []);
 
     return (
         <>

@@ -13,7 +13,7 @@
     }
 
     &-left {
-        order: 2;
+        order: 3;
     }
 
     &-heading {
@@ -25,15 +25,40 @@
     }
 
     &-content {
-        margin-block-start: 15.4rem;
+        margin-block-start: 3.2rem;
+        text-align: center;
+
+        @screen lg {
+            text-align: left;
+            margin-block-start: 15.4rem;
+        }
     }
 
     &-title {
         opacity: 0.5042;
+        font-size: 1.6rem;
+
+        @screen lg {
+            font-size: 3.2rem;
+        }
     }
 
     &-name {
         margin-block: 1.5rem 2.7rem;
+
+        font-size: 2.4rem;
+
+        @screen lg {
+            font-size: 5.4rem;
+        }
+    }
+
+    &-text {
+        font-size: 1.5rem;
+
+        @screen lg {
+            font-size: 1.8rem;
+        }
     }
 
     &-nav {
@@ -45,6 +70,7 @@
 
         &--mobile {
             display: block;
+            order: 2;
 
             menu {
                 justify-content: center;
@@ -82,14 +108,15 @@
 
     &-right {
         justify-self: self-end;
-
-        figure {
-            max-width: 177px;
-            margin-inline: auto;
-        }
+        border-bottom: 1px solid var(--border-color);
     }
 
-    &-text {
+    &-figure {
+        max-width: 177px;
+        margin-inline: auto;
+    }
+
+    &-img {
 
     }
 }

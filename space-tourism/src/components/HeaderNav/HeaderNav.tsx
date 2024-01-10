@@ -11,7 +11,7 @@ import { NavigationType } from '../../store/slices/navigation/navigation-types';
 import { navigationAction } from '../../store/slices/navigation/navigation-slice.ts';
 
 /**
- * @description
+ * @description Builds the header navigation elements and state
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
@@ -20,10 +20,6 @@ import { navigationAction } from '../../store/slices/navigation/navigation-slice
 const HeaderNav = (): React.JSX.Element => {
     const dispatch = useDispatch();
     const navigation = useSelector((state: NavigationType) => state.navigation.isOpen);
-
-
-    console.log('navigation')
-    console.log(navigation);
 
     /**
      * @description Toggle the navigation state (Mobile only)
@@ -41,6 +37,7 @@ const HeaderNav = (): React.JSX.Element => {
         }
     };
 
+    // Set our state
     const isOpen = navigation ? 'HeaderNav-isOpen' : '';
 
     return (

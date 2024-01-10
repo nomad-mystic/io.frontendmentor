@@ -10,7 +10,12 @@ const navigationSlice = createSlice({
         toggleNavigation(state) {
             return {
                 isOpen: !state.isOpen,
-            }
+            };
+        },
+        closeNavigation() {
+            return {
+                isOpen: false,
+            };
         },
     }
 });

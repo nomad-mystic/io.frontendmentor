@@ -110,7 +110,7 @@
     }
 
     &-text {
-        border-bottom: 1px solid #383B4B;
+        border-bottom: 1px solid var(--border-color);
         padding-block-end: 5.4rem;
         text-align: center;
         font-size: 15px;

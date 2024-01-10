@@ -26,6 +26,9 @@
     --color-white: hsla(0, 0%, 100%, 1);
     --color-white-light: hsla(0, 0%, 100%, .5021);
 
+    /** UI */
+    --border-color: #383B4B;
+
     /* Grid */
     --main-element-width: 90%;
 
