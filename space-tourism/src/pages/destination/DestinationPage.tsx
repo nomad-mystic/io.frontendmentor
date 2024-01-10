@@ -7,6 +7,7 @@ import './DestinationPage.css';
 
 // Components
 import Header from '../../components/Header/Header';
+import PageHeader from '../../components/PageHeader/PageHeader';
 import DestinationContent from './components/DestinationContent';
 import DestinationImage from './components/DestinationImage';
 
@@ -68,8 +69,12 @@ const DestinationPage = (): React.JSX.Element => {
 
             <main className="DestinationPage-main max-w-container">
                 <section className="DestinationPage-left">
-                    <h2 className="DestinationPage-subTitle Heading-5 uppercase text-white"><span
-                        className="DestinationPage-number">01</span> Pick your destination</h2>
+
+                    <PageHeader
+                        className="DestinationPage-heading"
+                        number="01"
+                        title="Pick your destination"
+                    />
 
                     {
                         data.map((item: DestinationDataInterface): ReactNode => {

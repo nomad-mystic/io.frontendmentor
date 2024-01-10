@@ -1,0 +1,35 @@
+.PageHeader {
+    color: var(--color-white);
+    font-size: 1.6rem;
+    margin-block-end: 3.2rem;
+
+    @screen lg {
+        font-size: 2.8rem;
+        margin-block-end: 15.4rem;
+    }
+
+    &--mobile {
+        display: block;
+
+        @screen md {
+            display: none;
+        }
+    }
+
+    &--desktop {
+        display: none;
+
+        @screen md {
+            display: block;
+        }
+    }
+
+    &-number {
+        opacity: .25;
+        margin-inline-end: 1.6rem;
+
+        @screen lg {
+            margin-inline-end: 2.4rem;
+        }
+    }
+}

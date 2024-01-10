@@ -7,6 +7,7 @@ import './TechnologyPage.css';
 
 // Components
 import Header from '../../components/Header/Header';
+import PageHeader from '../../components/PageHeader/PageHeader';
 import TechnologyContent from './components/TechnologyContent';
 import TechnologyImage from './components/TechnologyImage';
 
@@ -67,8 +68,11 @@ const TechnologyPage = (): React.JSX.Element => {
 
             <main className="TechnologyPage-main max-w-container">
                 <section className="TechnologyPage-left">
-                    <h2 className="TechnologyPage-title Heading-5 uppercase text-white"><span
-                        className="TechnologyPage-number">03</span> SPACE LAUNCH 101</h2>
+                    <PageHeader
+                        className="TechnologyPage-heading"
+                        number="03"
+                        title="SPACE LAUNCH 101"
+                    />
 
                     <section className="TechnologyPage-content flex">
                         <nav className="TechnologyPage-nav">
