@@ -7,6 +7,7 @@ import './CrewPage.css';
 
 // Components
 import Header from '../../components/Header/Header';
+import PageHeader from '../../components/PageHeader/PageHeader';
 import CrewContent from './components/CrewContent';
 import CrewImage from './components/CrewImage';
 
@@ -67,16 +68,20 @@ const CrewPage = (): React.JSX.Element => {
             <Header />
 
             <main className="CrewPage-main max-w-container">
-                <h2 className="CrewPage-heading CrewPage-heading--mobile Heading-5 uppercase text-white">{/*@todo Change this in the DestinationPage ie. -heading */ }
-                    <span className="CrewPage-number">02</span>
-                    Meet your crew
-                </h2>
+
+                <PageHeader
+                    className="CrewPage-heading PageHeader--mobile"
+                    number="02"
+                    title="Meet your crew"
+                />
 
                 <section className="CrewPage-left">
-                    <h2 className="CrewPage-heading CrewPage-heading--desktop Heading-5 uppercase text-white">{/*@todo Change this in the DestinationPage ie. -heading */ }
-                        <span className="CrewPage-number">02</span>
-                        Meet your crew
-                    </h2>
+
+                    <PageHeader
+                        className="CrewPage-heading PageHeader--desktop"
+                        number="02"
+                        title="Meet your crew"
+                    />
 
                     {
                         data.map((item: CrewDataInterface): ReactNode => {
