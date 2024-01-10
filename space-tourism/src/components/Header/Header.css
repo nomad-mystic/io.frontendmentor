@@ -2,9 +2,14 @@
     padding: 2.4rem 0;
     position: relative;
     z-index: 100;
+    margin-block-end: 2.4rem;
 
     @screen md {
         margin: 4rem auto 0;
+    }
+
+    @screen lg {
+        margin-block-end: 7.6rem;
     }
 
     &-logo {
