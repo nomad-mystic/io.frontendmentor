@@ -5,6 +5,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-block-end: 8rem;
 
         @screen md {
             display: grid;
@@ -20,6 +21,7 @@
     &-right {
         justify-self: self-end;
         border-bottom: 1px solid var(--border-color);
+        width: 100%;
     }
 }
 
