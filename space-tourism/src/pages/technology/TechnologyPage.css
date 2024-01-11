@@ -5,6 +5,7 @@
         margin-inline: auto;
         max-width: var(--main-element-width);
         position: relative;
+        padding-block-end: 8rem;
 
         @screen lg {
             display: grid;
@@ -51,10 +52,10 @@ body.TechnologyPage {
     background-size: cover;
 
     @screen md {
-        background-image: url('/destination/background-technology-tablet.jpg');
+        background-image: url('/technology/background-technology-tablet.jpg');
     }
 
     @screen lg {
-        background-image: url('/destination/background-technology-desktop.jpg');
+        background-image: url('/technology/background-technology-desktop.jpg');
     }
 }

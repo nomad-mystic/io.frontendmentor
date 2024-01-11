@@ -37,7 +37,7 @@
     }
 }
 
-@layer components {
+@layer utilities {
     .normal-text {
         font-style: normal;
         font-weight: 400;

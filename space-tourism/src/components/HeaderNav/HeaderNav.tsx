@@ -1,5 +1,5 @@
 // Community
-import React from 'react';
+import React, { RefObject, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -19,6 +19,7 @@ import { navigationAction } from '../../store/slices/navigation/navigation-slice
  */
 const HeaderNav = (): React.JSX.Element => {
     const dispatch = useDispatch();
+    const headerNavRef = useRef(null);
     const navigation = useSelector((state: NavigationType) => state.navigation.isOpen);
 
     /**
@@ -40,8 +41,30 @@ const HeaderNav = (): React.JSX.Element => {
     // Set our state
     const isOpen = navigation ? 'HeaderNav-isOpen' : '';
 
+    /**
+     * @description Set the nav's height (Mobile only)
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @param {RefObject<HTMLElement>} current
+     * @return {void}
+     */
+    const updateNavHeight = ({ current }: RefObject<HTMLElement>): void => {
+        const nav = current as HTMLElement;
+
+        const bodyElement = window.document.body;
+
+        nav.style.setProperty('--mobile-nav-height', `${ bodyElement.getBoundingClientRect().height }px`);
+    };
+
+    useEffect(() => {
+
+        updateNavHeight(headerNavRef);
+
+    }, [navigation])
+
     return (
-        <nav className={ `HeaderNav max-w-[830px] w-full ${ isOpen }` }>
+        <nav className={ `HeaderNav max-w-[830px] w-full ${ isOpen }` } ref={ headerNavRef }>
 
             <div onClick={ toggleNavigation }>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 21" fill="none"

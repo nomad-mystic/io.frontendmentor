@@ -4,7 +4,7 @@ import React from 'react';
 import './TechnologyImage.css';
 
 // Interfaces
-import TechnologyDataInterface from '../../interfaces/TechnologyDataInterface.ts';
+import TechnologyDataInterface from '../../interfaces/TechnologyDataInterface';
 
 /**
  * @description Based on the props passed to this change the image
@@ -18,7 +18,12 @@ import TechnologyDataInterface from '../../interfaces/TechnologyDataInterface.ts
 const TechnologyImage = (props: { data: TechnologyDataInterface }): React.JSX.Element => {
     return (
         <figure className="TechnologyImage-figure">
-            <img className="TechnologyImage-image" src={ props.data.image } alt={ props.data.imageAlt }/>
+            <img
+                className="TechnologyImage-image"
+                srcSet={ `${ props.data.mobileImage } 768w, ${ props.data.desktopImage } 1024w` }
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                alt={ props.data.imageAlt }
+            />
         </figure>
     );
 };
