@@ -36,3 +36,11 @@
         --main-element-width: 1110px;
     }
 }
+
+@layer components {
+    .normal-text {
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
