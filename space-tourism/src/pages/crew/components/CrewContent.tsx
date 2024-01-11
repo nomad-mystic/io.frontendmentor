@@ -18,7 +18,7 @@ const CrewContent = (props: { data: CrewDataInterface }): React.JSX.Element => {
         <article className="CrewPage-content">
             <h2 className="CrewPage-title Heading-4">{ props.data.title }</h2>
             <h1 className="CrewPage-name Heading-3">{ props.data.name }</h1>
-            <p className="CrewPage-body Subheading-2 max-w-[444px] block">{ props.data.body }</p>
+            <p className="CrewPage-body Body max-w-[444px] block">{ props.data.body }</p>
         </article>
     );
 };
