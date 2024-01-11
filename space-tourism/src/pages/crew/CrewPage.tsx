@@ -17,7 +17,7 @@ import data from '../crew/data/data.json';
 // Utils
 import ElementUtils from '../../utils/ElementUtils';
 import UiUtils from '../../utils/UiUtils';
-import CrewNav from './components/CrewNav/CrewNav.tsx';
+import CrewNav from './components/CrewNav/CrewNav';
 
 // Interfaces
 import CrewDataInterface from './interfaces/CrewDataInterface';

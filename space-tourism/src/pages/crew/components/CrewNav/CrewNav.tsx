@@ -4,10 +4,10 @@ import React from 'react';
 import './CrewNav.css';
 
 // Types
-import { ToggleEvent } from '../../types/CrewNav';
+import { ToggleEvent } from '../../types/CrewNavTypes';
 
 /**
- * @description Dumb component for displaying our Crew page images
+ * @description Switch the parent element by nav click
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *

@@ -1,0 +1,49 @@
+.TechnologyNavItem {
+    &-navItem {
+        @apply w-16 h-16;
+        justify-content: center;
+        align-items: center;
+        color: var(--color-white);
+        position: relative;
+        text-align: center;
+        font-family: var(--font-family-bellefair);
+        font-size: 1.6rem;
+        cursor: pointer;
+
+        @screen md {
+            font-size: 2.4rem;
+            @apply w-24 h-24;
+        }
+
+        @screen lg {
+            @apply w-32 h-32;
+            font-size: 3.2rem;
+        }
+
+        &.active {
+            color: #0B0D17;
+
+            .TechnologyNavItem-navShape {
+                &:after {
+                    border: none;
+                    background-color: var(--color-white);
+                }
+            }
+        }
+    }
+
+    &-navNumber {
+        z-index: 10;
+    }
+
+    &-navShape {
+        &:after {
+            content: '';
+            display: block;
+            border: 1px solid hsla(0, 0%, 100%, .25);
+            border-radius: 50%;
+            position: absolute;
+            inset: 0;
+        }
+    }
+}
