@@ -10,6 +10,7 @@ import Header from '../../components/Header/Header';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import TechnologyContent from './components/TechnologyContent/TechnologyContent';
 import TechnologyImage from './components/TechnologyImage/TechnologyImage';
+import TechnologyNav from './components/TechnologyNav/TechnologyNav';
 
 // Utils
 import ElementUtils from '../../utils/ElementUtils';
@@ -45,8 +46,10 @@ const TechnologyPage = (): React.JSX.Element => {
      * @return {void}
      */
     const toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
+        console.log(event);
+
         // Reset our active class
-        ElementUtils.removeClassFromAllElements('.TechnologyPage-main .TechnologyPage-nav menu li');
+        ElementUtils.removeClassFromAllElements('.TechnologyPage-main .TechnologyNav-nav menu li');
 
         const { target, parentListItem } = UiUtils.toggleActive(event, 'SPAN');
 
@@ -76,24 +79,7 @@ const TechnologyPage = (): React.JSX.Element => {
                     />
 
                     <section className="TechnologyPage-content flex">
-                        <nav className="TechnologyPage-nav">
-                            <menu className="flex" onClick={ toggleActive }>
-                                <li className="TechnologyPage-navItem flex active" id="1">
-                                    <span className="TechnologyPage-navNumber">1</span>
-                                    <span className="TechnologyPage-shape"></span>
-                                </li>
-
-                                <li className="TechnologyPage-navItem flex" id="2">
-                                    <span className="TechnologyPage-navNumber">2</span>
-                                    <span className="TechnologyPage-shape"></span>
-                                </li>
-
-                                <li className="TechnologyPage-navItem flex" id="3">
-                                    <span className="TechnologyPage-navNumber">3</span>
-                                    <span className="TechnologyPage-shape"></span>
-                                </li>
-                            </menu>
-                        </nav>
+                        <TechnologyNav toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
 
                         {
                             data.map((item: TechnologyDataInterface): ReactNode => {

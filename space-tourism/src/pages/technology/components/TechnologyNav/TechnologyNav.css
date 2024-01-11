@@ -1,0 +1,17 @@
+.TechnologyNav {
+    &-nav {
+        margin-block-end: 2.6rem;
+
+        @screen md {
+            margin-block-end: 4.4rem;
+        }
+
+        @screen md {
+            margin-block-end: unset;
+        }
+
+        menu {
+            column-gap: 1.6rem;
+        }
+    }
+}
