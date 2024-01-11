@@ -8,8 +8,8 @@ import './CrewPage.css';
 // Components
 import Header from '../../components/Header/Header';
 import PageHeader from '../../components/PageHeader/PageHeader';
-import CrewContent from './components/CrewContent';
-import CrewImage from './components/CrewImage';
+import CrewContent from './components/CrewContent/CrewContent.tsx';
+import CrewImage from './components/CrewImage/CrewImage.tsx';
 
 // Data
 import data from '../crew/data/data.json';
@@ -17,7 +17,7 @@ import data from '../crew/data/data.json';
 // Utils
 import ElementUtils from '../../utils/ElementUtils';
 import UiUtils from '../../utils/UiUtils';
-import CrewNav from './components/CrewNav';
+import CrewNav from './components/CrewNav/CrewNav.tsx';
 
 // Interfaces
 import CrewDataInterface from './interfaces/CrewDataInterface';
@@ -91,13 +91,13 @@ const CrewPage = (): React.JSX.Element => {
                         })
                     }
 
-                    <div className="CrewPage-nav--desktop">
+                    <div className="CrewNav-nav--desktop">
                         <CrewNav toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
                     </div>
 
                 </section>
 
-                <div className="CrewPage-nav--mobile">
+                <div className="CrewNav-nav--mobile">
                     <CrewNav toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
                 </div>
 

@@ -1,0 +1,46 @@
+.CrewNav {
+    &-nav {
+        margin-block-start: 3.2rem;
+
+        @screen md {
+            margin-block-start: 12rem;
+        }
+
+        &--mobile {
+            display: block;
+            order: 2;
+
+            menu {
+                justify-content: center;
+            }
+
+            @screen md {
+                display: none;
+            }
+        }
+
+        &--desktop {
+            display: none;
+
+            @screen md {
+                display: block;
+            }
+        }
+    }
+
+    &-navItem {
+        background-color: var(--color-white);
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 100%;
+        cursor: pointer;
+
+        &:not(.active) {
+            opacity: 0.1744;
+        }
+
+        &:hover:not(.active) {
+            opacity: 0.5001;
+        }
+    }
+}

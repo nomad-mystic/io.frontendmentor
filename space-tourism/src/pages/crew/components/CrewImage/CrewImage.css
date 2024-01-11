@@ -1,0 +1,8 @@
+.CrewImage {
+    &-figure {
+        max-width: 177px;
+        margin-inline: auto;
+    }
+
+    &-img {}
+}

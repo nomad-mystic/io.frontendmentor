@@ -1,8 +1,11 @@
 // Community
 import React from 'react';
 
+// Styles
+import './CrewContent.css';
+
 // Interfaces
-import CrewDataInterface from '../interfaces/CrewDataInterface';
+import CrewDataInterface from '../../interfaces/CrewDataInterface';
 
 /**
  * @description Dumb component for displaying our Crew page body content
@@ -15,10 +18,10 @@ import CrewDataInterface from '../interfaces/CrewDataInterface';
  */
 const CrewContent = (props: { data: CrewDataInterface }): React.JSX.Element => {
     return (
-        <article className="CrewPage-content">
-            <h2 className="CrewPage-title Heading-4">{ props.data.title }</h2>
-            <h1 className="CrewPage-name Heading-3">{ props.data.name }</h1>
-            <p className="CrewPage-body Body max-w-[444px] block">{ props.data.body }</p>
+        <article className="CrewContent-content">
+            <h2 className="CrewContent-title Heading-4">{ props.data.title }</h2>
+            <h1 className="CrewContent-name Heading-3">{ props.data.name }</h1>
+            <p className="CrewContent-body Body max-w-[444px] block">{ props.data.body }</p>
         </article>
     );
 };
