@@ -1,8 +1,11 @@
 // Community
 import React from 'react';
 
+// Styles
+import './DestinationImage.css';
+
 // Interfaces
-import DestinationDataInterface from '../interfaces/DestinationDataInterface';
+import DestinationDataInterface from '../../interfaces/DestinationDataInterface';
 
 /**
  * @description Based on the props passed to this change the image type
@@ -15,8 +18,8 @@ import DestinationDataInterface from '../interfaces/DestinationDataInterface';
  */
 const DestinationImage = (props: { data: DestinationDataInterface }): React.JSX.Element => {
     return (
-        <figure className="DestinationPage-image">
-            <img src={ props.data.image } alt={ props.data.imageAlt }/>
+        <figure className="DestinationImage-figure">
+            <img className="DestinationImage-image" src={ props.data.image } alt={ props.data.imageAlt }/>
         </figure>
     );
 };

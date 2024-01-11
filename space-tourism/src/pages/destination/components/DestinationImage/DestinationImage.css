@@ -1,0 +1,15 @@
+.DestinationImage {
+    &-figure {
+        margin: 3.2rem auto 0;
+        max-width: 170px;
+        max-height: 170px;
+
+        @screen md {
+            margin-block-start: 9.7rem;
+        }
+    }
+
+    &-image {
+        margin-inline-start: auto;
+    }
+}

@@ -25,20 +25,6 @@
         }
     }
 
-    &-image {
-        margin: 3.2rem auto 0;
-        max-width: 170px;
-        max-height: 170px;
-
-        @screen md {
-            margin-block-start: 9.7rem;
-        }
-
-        img {
-            margin-inline-start: auto;
-        }
-    }
-
     &-right {
         display: flex;
         flex-direction: column;
@@ -95,54 +81,6 @@
         &.active {
             border-bottom: 3px solid var(--color-white);
         }
-    }
-
-    &-text {
-        border-bottom: 1px solid var(--border-color);
-        padding-block-end: 5.4rem;
-        text-align: center;
-        font-size: 15px;
-
-        @screen md {
-            text-align: left;
-            font-size: var(--subheading-2-size);
-        }
-    }
-
-    &-data {
-        gap: 3.2rem;
-        text-align: center;
-        padding-block-start: 3.2rem;
-
-        @screen md {
-            gap: 7.9rem;
-        }
-
-        @screen lg {
-            text-align: left;
-            padding-block-start: 2.8rem;
-        }
-
-        h4 {
-            font-family: var(--font-family-barlow);
-            color: var(--color-blue);
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        p {
-            margin-block-start: 1.2rem;
-        }
-    }
-
-    &-distance {}
-
-    &-travel {
-        padding-block-end: 6rem;
     }
 }
 

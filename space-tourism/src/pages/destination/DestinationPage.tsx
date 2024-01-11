@@ -8,8 +8,8 @@ import './DestinationPage.css';
 // Components
 import Header from '../../components/Header/Header';
 import PageHeader from '../../components/PageHeader/PageHeader';
-import DestinationContent from './components/DestinationContent';
-import DestinationImage from './components/DestinationImage';
+import DestinationContent from './components/DestinationContent/DestinationContent';
+import DestinationImage from './components/DestinationImage/DestinationImage';
 
 // Utils
 import ElementUtils from '../../utils/ElementUtils';
@@ -39,6 +39,7 @@ const DestinationPage = (): React.JSX.Element => {
      * @description Switch between our content elements
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
+     * @todo Maybe create a custom React Hook?
      *
      * @param {React.MouseEvent<HTMLElement, MouseEvent>} event
      * @return {void}
