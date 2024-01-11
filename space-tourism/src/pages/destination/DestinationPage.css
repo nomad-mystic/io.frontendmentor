@@ -86,9 +86,6 @@
 
 body.DestinationPage {
     background-image: url('/destination/background-destination-mobile.jpg');
-    background-repeat: no-repeat;
-    width: 100%;
-    background-size: cover;
 
     @screen md {
         background-image: url('/destination/background-destination-tablet.jpg');

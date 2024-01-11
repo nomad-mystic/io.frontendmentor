@@ -55,7 +55,7 @@ const App = (): React.JSX.Element => {
 
         } else {
 
-            const capitalizedPath: string = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
+            const capitalizedPath = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
 
             className = `${capitalizedPath}Page`;
 
