@@ -5,10 +5,11 @@
     margin-block-end: 2.4rem;
 
     @screen md {
-        margin: 4rem auto 0;
+        padding: 0;
     }
 
     @screen lg {
+        margin: 4rem auto 0;
         margin-block-end: 7.6rem;
     }
 
