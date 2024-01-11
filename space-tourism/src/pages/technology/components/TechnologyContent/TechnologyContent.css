@@ -1,4 +1,20 @@
 .TechnologyContent {
+    &-body {
+        @apply flex-col items-center;
+
+        @screen lg {
+            @apply flex-row;
+        }
+    }
+
+    &-header {
+        text-align: center;
+
+        @screen lg {
+            text-align: left;
+        }
+    }
+
     &-subtitle {
 
     }

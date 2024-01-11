@@ -9,7 +9,7 @@ import './TechnologyPage.css';
 import Header from '../../components/Header/Header';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import TechnologyContent from './components/TechnologyContent/TechnologyContent';
-import TechnologyImage from './components/TechnologyImage';
+import TechnologyImage from './components/TechnologyImage/TechnologyImage';
 
 // Utils
 import ElementUtils from '../../utils/ElementUtils';
@@ -94,15 +94,13 @@ const TechnologyPage = (): React.JSX.Element => {
                             </menu>
                         </nav>
 
-                        <section className="TechnologyPage-center">
-                            {
-                                data.map((item: TechnologyDataInterface): ReactNode => {
-                                    if (activeTech === item.id) {
-                                        return (<TechnologyContent key={ item.id } data={ item } />)
-                                    }
-                                })
-                            }
-                        </section>
+                        {
+                            data.map((item: TechnologyDataInterface): ReactNode => {
+                                if (activeTech === item.id) {
+                                    return (<TechnologyContent key={ item.id } data={ item } />)
+                                }
+                            })
+                        }
                     </section>
                 </section>
 

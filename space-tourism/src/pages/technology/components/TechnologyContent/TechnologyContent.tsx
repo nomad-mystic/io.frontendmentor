@@ -18,13 +18,13 @@ import TechnologyDataInterface from '../../interfaces/TechnologyDataInterface';
 const TechnologyContent = (props: { data: TechnologyDataInterface }): React.JSX.Element => {
     return (
         <>
-            <article>
-                <header>
+            <article className="TechnologyContent-body flex">
+                <header className="TechnologyContent-header">
                     <h2 className="TechnologyContent-subtitle text-white">{ props.data.subtitle }</h2>
                     <h1 className="TechnologyContent-title Heading-3">{ props.data.title }</h1>
                 </header>
 
-                <p className="TechnologyContent-body Subheading-2 max-w-[444px] block">{ props.data.body }</p>
+                <p className="TechnologyContent-body Body max-w-[444px] block">{ props.data.body }</p>
             </article>
         </>
     );

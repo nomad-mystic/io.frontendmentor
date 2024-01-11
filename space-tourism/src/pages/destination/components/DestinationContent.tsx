@@ -18,7 +18,7 @@ const DestinationContent = (props: { data: DestinationDataInterface }): React.JS
                     <h1 className="Heading-2">{ props.data.title }</h1>
                 </header>
 
-                <p className="DestinationPage-text Subheading-2 max-w-[444px] block">{ props.data.body }</p>
+                <p className="DestinationPage-text Body max-w-[444px] block">{ props.data.body }</p>
 
                 <section className="DestinationPage-data flex flex-col md:flex-row">
                     <div className="DestinationPage-distance">
