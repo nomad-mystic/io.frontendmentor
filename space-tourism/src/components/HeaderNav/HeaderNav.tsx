@@ -61,7 +61,7 @@ const HeaderNav = (): React.JSX.Element => {
 
         updateNavHeight(headerNavRef);
 
-    }, [navigation])
+    }, [navigation]);
 
     return (
         <nav className={ `HeaderNav max-w-[830px] w-full ${ isOpen }` } ref={ headerNavRef }>
