@@ -1,7 +1,7 @@
 export default interface TechnologyDataInterface {
     id: string;
     subtitle: string;
-    title: string;
+    name: string;
     image: string;
     imageAlt: string;
     body: string;
