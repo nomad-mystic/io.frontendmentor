@@ -40,6 +40,7 @@ const CrewPage = (): React.JSX.Element => {
      * @description Switch between our content elements
      * @private
      * @author Keith Murphy | nomadmystics@gmail.com
+     * @todo Maybe create a custom React Hook?
      *
      * @param {React.MouseEvent<HTMLElement, MouseEvent>} event
      * @return {void}
