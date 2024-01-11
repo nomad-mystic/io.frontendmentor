@@ -8,7 +8,9 @@ import './HeaderNav.css';
 
 // Types
 import { NavigationType } from '../../store/slices/navigation/navigation-types';
-import { navigationAction } from '../../store/slices/navigation/navigation-slice.ts';
+
+// State Actions
+import { navigationAction } from '../../store/slices/navigation/navigation-slice';
 
 /**
  * @description Builds the header navigation elements and state

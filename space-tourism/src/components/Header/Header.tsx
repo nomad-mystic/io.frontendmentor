@@ -11,7 +11,6 @@ import HeaderNav from '../HeaderNav/HeaderNav';
 // Actions
 import { navigationAction } from '../../store/slices/navigation/navigation-slice';
 
-
 /**
  * @description Build the header component
  * @public
