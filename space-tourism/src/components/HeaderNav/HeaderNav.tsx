@@ -78,7 +78,7 @@ const HeaderNav = (): React.JSX.Element => {
                 </svg>
             </div>
 
-            <ul className="flex flex-col  md:flex-row md:gap-[50px]">
+            <ul className="flex flex-col md:flex-row">
                 <li className="NavText">
                     <NavLink to="/">
                         <span className="NavText-number">00 </span>

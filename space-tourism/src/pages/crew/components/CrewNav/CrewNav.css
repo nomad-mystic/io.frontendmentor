@@ -12,6 +12,7 @@
 
             menu {
                 justify-content: center;
+                @apply gap-[16px];
             }
 
             @screen md {
@@ -22,8 +23,18 @@
         &--desktop {
             display: none;
 
+            menu {
+                @apply gap-[16px];
+            }
+
             @screen md {
                 display: block;
+            }
+
+            @screen lg {
+                menu {
+                    @apply gap-[36px];
+                }
             }
         }
     }

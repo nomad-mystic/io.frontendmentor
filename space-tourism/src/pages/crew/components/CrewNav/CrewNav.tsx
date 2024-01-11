@@ -28,7 +28,7 @@ const CrewNav = ({ toggleActive }: ToggleEvent): React.JSX.Element => {
 
     return (
         <nav className="CrewNav-nav">
-            <menu className="flex gap-[36px]" onClick={ toggleActiveHandler }>
+            <menu className="flex" onClick={ toggleActiveHandler }>
                 <li className="CrewNav-navItem active" id="douglas"></li>
                 <li className="CrewNav-navItem" id="mark"></li>
                 <li className="CrewNav-navItem" id="victor"></li>

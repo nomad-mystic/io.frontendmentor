@@ -1,11 +1,8 @@
 .HeaderNav {
-    --close-svg-top: 3.2rem;
-    --mobile-nav-top: calc(6.4rem + var(--close-svg-top));
     --mobile-nav-height: 100vh; /* default */
 
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(40px);
-
     position: absolute;
     right: -100%;
     top: 0;
@@ -16,8 +13,9 @@
 
     @screen md {
         position: relative;
-        max-width: unset;
-        width: 100%;
+        width: 70vw;
+        right: 0;
+        height: auto;
     }
 
     /* Handle states */
@@ -39,17 +37,31 @@
     }
 
     ul {
+        --close-svg-top: 3.2rem;
+        --mobile-nav-top: calc(6.4rem + var(--close-svg-top));
+
         padding-inline-start: 3.2rem;
         margin-block-start: var(--mobile-nav-top);
 
         @screen md {
+            --mobile-nav-top: 0;
             padding-inline-start: 0;
+            justify-content: space-around;
+        }
 
+        @screen lg {
+            @apply gap-[50px];
         }
     }
 
     .NavText {
         @screen md {
+            &:first-of-type {
+                margin-inline-start: 2.4rem;
+            }
+        }
+
+        @screen lg {
             &:first-of-type {
                 margin-inline-start: 12.3rem;
             }
@@ -72,6 +84,14 @@
 
         &-number {
             font-weight: 700;
+
+            @screen md {
+                display: none;
+            }
+
+            @screen lg {
+                display: inline-block;
+            }
         }
     }
 }
