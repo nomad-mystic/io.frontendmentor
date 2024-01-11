@@ -46,8 +46,6 @@ const TechnologyPage = (): React.JSX.Element => {
      * @return {void}
      */
     const toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
-        console.log(event);
-
         // Reset our active class
         ElementUtils.removeClassFromAllElements('.TechnologyPage-main .TechnologyNav-nav menu li');
 

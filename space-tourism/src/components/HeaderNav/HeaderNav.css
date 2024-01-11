@@ -1,6 +1,7 @@
 .HeaderNav {
     --close-svg-top: 3.2rem;
     --mobile-nav-top: calc(6.4rem + var(--close-svg-top));
+    --mobile-nav-height: 100vh; /* default */
 
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(40px);
@@ -10,7 +11,7 @@
     top: 0;
     transition: right .25s linear;
     overflow-x: hidden;
-    height: 100vh;
+    height: var(--mobile-nav-height);
     width: 0;
 
     @screen md {
