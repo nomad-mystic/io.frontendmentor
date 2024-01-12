@@ -1,6 +1,7 @@
 // Community
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // Styles
 import './HomePage.css';
@@ -39,9 +40,11 @@ const HomePage = (): React.JSX.Element => {
 
                 <section className="HomePage-right">
                     <div className="HomePage-circle">
-                        <h3 className="Heading-4 HomePage-circleText">EXPLORE</h3>
-                        <span className="HomePage-shape"></span>
-                        <span className="HomePage-shapeBackground"></span>
+                            <h3 className="Heading-4 HomePage-circleText">EXPLORE</h3>
+                            <Link to='/destination' className="HomePage-circleLink">
+                                <span className="HomePage-shape"></span>
+                            </Link>
+                            <span className="HomePage-shapeBackground"></span>
                     </div>
                 </section>
             </main>

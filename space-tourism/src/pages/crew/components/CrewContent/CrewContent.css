@@ -39,7 +39,12 @@
     &-body {
         margin-block-end: 3.2rem;
 
+        @screen md {
+            @apply max-w-[520px];
+        }
+
         @screen lg {
+            @apply max-w-[444px];
             margin-block-end: 0;
         }
     }
