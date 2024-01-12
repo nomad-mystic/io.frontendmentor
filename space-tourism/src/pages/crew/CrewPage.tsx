@@ -47,7 +47,7 @@ const CrewPage = (): React.JSX.Element => {
      */
     const toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
         // Reset our active class
-        ElementUtils.removeClassFromAllElements('.CrewPage-main .CrewPage-nav menu li');
+        ElementUtils.removeClassFromAllElements('.CrewPage-main .CrewNav-nav menu li');
 
         const { target } = UiUtils.toggleActive(event);
 
