@@ -1,6 +1,7 @@
 // Community
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 // Styles
 import './Header.css';
@@ -8,7 +9,7 @@ import './Header.css';
 // Compontents
 import HeaderNav from '../HeaderNav/HeaderNav';
 
-// Actions
+// State Actions
 import { navigationAction } from '../../store/slices/navigation/navigation-slice';
 
 /**
@@ -40,10 +41,10 @@ const Header = (): React.JSX.Element => {
     return (
         <header className="Header max-w-container block md:flex justify-between items-center">
             <figure className="Header-logo">
-                <a href="/" className="block">
+                <Link to="/">
                     <img src="/shared/logo.svg"
                          alt="Circle with white background and dark star shape in the center" />
-                </a>
+                </Link>
             </figure>
 
             <div className="Header-hamberger" onClick={ toggleNavigation }>
