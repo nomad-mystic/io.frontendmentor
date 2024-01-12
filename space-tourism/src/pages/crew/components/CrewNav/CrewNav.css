@@ -3,6 +3,10 @@
         margin-block-start: 3.2rem;
 
         @screen md {
+            margin-block-start: 4rem;
+        }
+
+        @screen lg {
             margin-block-start: 12rem;
         }
 
@@ -25,6 +29,7 @@
 
             menu {
                 @apply gap-[16px];
+                justify-content: center;
             }
 
             @screen md {

@@ -7,6 +7,10 @@
         align-items: center;
         padding-block-end: 8rem;
 
+        @screen md {
+            padding-block-end: 0;
+        }
+
         @screen lg {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -16,12 +20,21 @@
 
     &-left {
         order: 3;
+
+        @screen md {
+            order: unset;
+        }
     }
 
     &-right {
         justify-self: self-end;
         border-bottom: 1px solid var(--border-color);
         width: 100%;
+
+        @screen md {
+            margin-block-start: 4rem;
+            border-bottom: none;
+        }
     }
 }
 

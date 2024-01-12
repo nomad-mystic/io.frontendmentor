@@ -3,12 +3,15 @@
         margin-inline: auto;
         width: 100%;
         height: 40vh;
+
+        @screen md {
+            height: 50vh;
+        }
     }
 
     &-img {
         width: 100%;
         height: 100%;
-        max-height: 40vh;
         object-fit: contain;
         object-position: bottom;
     }
