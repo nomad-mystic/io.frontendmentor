@@ -5,6 +5,8 @@
         max-height: 170px;
 
         @screen md {
+            max-width: 300px;
+            max-height: 300px;
             margin-block-start: 9.7rem;
         }
     }

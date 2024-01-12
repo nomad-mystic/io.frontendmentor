@@ -32,7 +32,7 @@
     /* Grid */
     --main-element-width: 90%;
 
-    @screen md {
+    @screen lg {
         --main-element-width: 1110px;
     }
 }

@@ -7,6 +7,10 @@
         margin-inline: auto;
 
         @screen md {
+            grid-template-columns: 1fr;
+        }
+
+        @screen lg {
             grid-template-columns: 1fr 1fr;
             margin-inline: auto;
             padding-block-end: 11.8rem;
@@ -32,6 +36,11 @@
         align-items: center;
 
         @screen md {
+            justify-content: center;
+            justify-self: center;
+        }
+
+        @screen lg {
             justify-content: flex-start;
             justify-self: end;
         }
@@ -60,14 +69,15 @@
             flex-direction: column;
             align-items: center;
 
-            @screen md {
-                display: block;
-            }
+            /*@screen md {*/
+            /*    display: block;*/
+            /*}*/
         }
     }
 
     &-navItem {
         padding-block-end: 1.2rem;
+        --nav-size: 1.4rem;
 
         &:hover:not(&.active) {
             cursor: pointer;
@@ -76,6 +86,10 @@
 
         &:not(&.active) {
             color: var(--color-blue);
+        }
+
+        @screen md {
+            --nav-size: 1.6rem;
         }
 
         &.active {

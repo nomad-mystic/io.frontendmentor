@@ -2,6 +2,13 @@
     color: var(--color-white);
     font-size: 1.6rem;
     margin-block-end: 3.2rem;
+    text-align: center;
+
+    @screen md {
+        text-align: left;
+        font-size: 2.0rem;
+        align-self: flex-start;
+    }
 
     @screen lg {
         font-size: 2.8rem;
@@ -11,7 +18,7 @@
     &--mobile {
         display: block;
 
-        @screen md {
+        @screen lg {
             display: none;
         }
     }
@@ -19,7 +26,7 @@
     &--desktop {
         display: none;
 
-        @screen md {
+        @screen lg  {
             display: block;
         }
     }
