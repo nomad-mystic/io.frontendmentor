@@ -40,8 +40,10 @@ const Header = (): React.JSX.Element => {
     return (
         <header className="Header max-w-container block md:flex justify-between items-center">
             <figure className="Header-logo">
-                <img src="/shared/logo.svg"
-                     alt="Circle with white background and dark star shape in the center" />
+                <a href="/" className="block">
+                    <img src="/shared/logo.svg"
+                         alt="Circle with white background and dark star shape in the center" />
+                </a>
             </figure>
 
             <div className="Header-hamberger" onClick={ toggleNavigation }>
