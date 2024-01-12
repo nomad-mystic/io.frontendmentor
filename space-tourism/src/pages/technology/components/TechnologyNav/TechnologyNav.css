@@ -6,7 +6,7 @@
             margin-block-end: 4.4rem;
         }
 
-        @screen md {
+        @screen lg {
             margin-block-end: unset;
         }
 
