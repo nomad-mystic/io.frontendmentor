@@ -51,6 +51,7 @@
 
         @screen lg {
             @apply gap-[50px];
+            justify-content: flex-start;
         }
     }
 
@@ -91,6 +92,7 @@
 
             @screen lg {
                 display: inline-block;
+                margin-inline-end: 1.2rem;
             }
         }
     }
