@@ -53,11 +53,19 @@
         @screen md {
             font-size: var(--heading-1-size);
         }
+
+        @screen lg {
+            padding-block: 2.4rem;
+        }
     }
 
     &-body {
-        font-size: 15px;
+        font-size: var(--body-size);
         margin-inline: auto;
+
+        @screen lg {
+            margin-inline: 0;
+        }
     }
 
     &-right {
@@ -68,6 +76,10 @@
 
         @screen md {
             height: 274px;
+        }
+
+        @screen lg {
+            align-self: end;
         }
 
         h1 {
@@ -95,15 +107,25 @@
         display: block;
         height: 100%;
         width: 100%;
+
+        @screen lg {
+            height: unset;
+            width: unset;
+        }
     }
 
     &-circleText,
-    &-shape,
+    &-circleLink,
     &-shapeBackground {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        @screen lg {
+            right: calc(-274px / 2);
+            left: unset;
+        }
     }
 
     &-shape,
@@ -121,6 +143,10 @@
 
         @screen md {
             font-size: 32px;
+        }
+
+        @screen lg {
+            right: 0;
         }
     }
 
