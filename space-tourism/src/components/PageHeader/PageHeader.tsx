@@ -19,8 +19,8 @@ const PageHeader = (props: React.PropsWithChildren<PageHeaderType>): React.JSX.E
     const classes = `${ props.className } PageHeader Heading-5 uppercase text-white`;
 
     return (
-        <h2 className={ classes }>
-            <span className="PageHeader-number">{ props.number }</span>
+        <h2 className={ classes } data-testid="PageHeaderComponent">
+            <span className="PageHeader-number" data-testid="PageHeader-number">{ props.number }</span>
             { props.title }
         </h2>
     );
