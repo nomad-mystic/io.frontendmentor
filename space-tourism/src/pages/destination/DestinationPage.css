@@ -3,7 +3,8 @@
         display: grid;
         grid-template-rows: auto auto;
         margin-block-start: .8rem;
-        max-width: var(--main-element-width);
+        max-width: var(--main-max-element-width);
+        width: var(--main-element-width);
         margin-inline: auto;
 
         @screen md {

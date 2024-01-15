@@ -1,7 +1,7 @@
 // Community
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+
 
 // Styles
 import './HomePage.css';
@@ -11,6 +11,7 @@ import Header from '../../components/Header/Header';
 
 // State Actions
 import { navigationAction } from '../../store/slices/navigation/navigation-slice';
+import HomeCircle from './components/HomeCircle/HomeCircle.tsx';
 
 /**
  * @description Create the Home page component
@@ -39,13 +40,9 @@ const HomePage = (): React.JSX.Element => {
                 </section>
 
                 <section className="HomePage-right">
-                    <div className="HomePage-circle">
-                            <h3 className="Heading-4 HomePage-circleText">EXPLORE</h3>
-                            <Link to='/destination' className="HomePage-circleLink">
-                                <span className="HomePage-shape"></span>
-                            </Link>
-                            <span className="HomePage-shapeBackground"></span>
-                    </div>
+
+                    <HomeCircle />
+
                 </section>
             </main>
         </>

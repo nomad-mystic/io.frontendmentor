@@ -1,7 +1,8 @@
 .CrewPage {
     &-main {
         margin-inline: auto;
-        max-width: var(--main-element-width);
+        max-width: var(--main-max-element-width);
+        width: var(--main-element-width);
         display: flex;
         flex-direction: column;
         align-items: center;
