@@ -33,7 +33,8 @@
     --main-element-width: 90%;
 
     @screen lg {
-        --main-element-width: 1110px;
+        --main-element-width: 95%;
+        --main-max-element-width: 1110px;
     }
 }
 
