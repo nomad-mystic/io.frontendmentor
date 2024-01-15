@@ -39,7 +39,7 @@ const Header = (): React.JSX.Element => {
     };
 
     return (
-        <header className="Header max-w-container block md:flex justify-between items-center">
+        <header className="Header max-w-container block md:flex justify-between items-center" data-testid="HeaderComponent">
             <figure className="Header-logo">
                 <Link to="/">
                     <img src="/shared/logo.svg"
