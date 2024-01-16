@@ -17,9 +17,6 @@ export default defineConfig({
         globals: true,
         environment: 'jsdom',
         // https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib
-        // setupFiles: './src/test/setup.ts',
-        // you might want to disable it, if you don't have tests that rely on CSS
-        // since parsing CSS is slow
         css: true,
     },
 });

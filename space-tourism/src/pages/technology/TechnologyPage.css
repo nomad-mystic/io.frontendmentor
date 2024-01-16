@@ -10,9 +10,16 @@
 
         @screen lg {
             display: grid;
-            grid-template-columns: 630px 515px;
-            column-gap: 130px;
+            grid-template-columns: minmax(max-content, 630px) minmax(max-content, 545px);
+            column-gap: 5rem;
             padding-block-end: 11.8rem;
+            max-width: 95%;
+        }
+
+        @screen xl {
+            grid-template-columns: 620px 545px;
+            column-gap: 10rem;
+            max-width: 1265px;
         }
     }
 
@@ -43,7 +50,7 @@
         column-gap: 8rem;
 
         @screen lg {
-            @apply gap-[36px];
+            @apply flex-row gap-[36px];
         }
     }
 }

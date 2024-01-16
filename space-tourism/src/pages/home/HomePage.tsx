@@ -2,16 +2,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-
 // Styles
 import './HomePage.css';
 
 // Components
 import Header from '../../components/Header/Header';
+import HomeCircle from './components/HomeCircle/HomeCircle';
 
 // State Actions
 import { navigationAction } from '../../store/slices/navigation/navigation-slice';
-import HomeCircle from './components/HomeCircle/HomeCircle.tsx';
 
 /**
  * @description Create the Home page component
