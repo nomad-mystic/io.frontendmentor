@@ -2,6 +2,10 @@
     &-figure {
         height: 100%;
         width: 100vw;
+
+        @screen lg {
+            width: 100%;
+        }
     }
 
     &-image {
@@ -14,6 +18,10 @@
 
         @screen md {
             max-height: 30vh;
+        }
+
+        @screen lg {
+            max-height: unset;
         }
     }
 }

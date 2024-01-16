@@ -91,5 +91,10 @@
             width: 450px;
             height: 450px;
         }
+
+        /* @todo this needs to be worked out */
+        @screen lg {
+            right: calc(-609px / 2);
+        }
     }
 }

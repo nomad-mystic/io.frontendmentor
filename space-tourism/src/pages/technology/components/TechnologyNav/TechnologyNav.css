@@ -12,6 +12,11 @@
 
         menu {
             column-gap: 1.6rem;
+
+            @screen lg {
+                flex-direction: column;
+                gap: 3.2rem;
+            }
         }
     }
 }

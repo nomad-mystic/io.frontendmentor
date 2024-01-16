@@ -17,11 +17,10 @@ const HomeCircle = (): React.JSX.Element => {
         <div className="HomeCircle-circle">
             <h3 className="Heading-4 HomeCircle-circleText">EXPLORE</h3>
 
-            <Link to='/destination' className="HomeCircle-circleLink">
+            <Link to="/destination" className="HomeCircle-circleLink">
                 <span className="HomeCircle-shape"></span>
+                <span className="HomeCircle-shapeBackground"></span>
             </Link>
-
-            <span className="HomeCircle-shapeBackground"></span>
         </div>
     );
 };

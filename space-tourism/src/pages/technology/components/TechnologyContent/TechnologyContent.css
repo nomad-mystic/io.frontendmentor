@@ -3,7 +3,7 @@
         @apply flex-col items-center;
 
         @screen lg {
-            @apply flex-row;
+            /*@apply flex-row;*/
         }
     }
 
@@ -28,17 +28,16 @@
 
         @screen lg {
             margin-block-end: 1.2rem;
-            font-size: 4rem;
+            font-size: 1.6rem;
         }
     }
 
     &-name {
         margin-block-end: 1.6rem;
-        font-size: 2.4rem;
+        font-size: var(--heading-3-size);
 
         @screen lg {
             margin-block: 1.5rem 2.7rem;
-            font-size: 5.4rem;
         }
     }
 
