@@ -10,16 +10,24 @@
 
         @screen lg {
             display: grid;
-            grid-template-columns: minmax(max-content, 630px) minmax(max-content, 545px);
+            grid-template-columns: minmax(auto, 630px) minmax(auto, 682px);
+            justify-content: center;
             column-gap: 5rem;
             padding-block-end: 11.8rem;
             max-width: 95%;
         }
 
         @screen xl {
-            grid-template-columns: 620px 545px;
-            column-gap: 10rem;
+            column-gap: 0;
             max-width: 1265px;
+            justify-content: end;
+            width: auto;
+        }
+
+        .PageHeader--mobile {
+            @screen md {
+                margin-inline-start: 3.8rem;
+            }
         }
     }
 
@@ -42,6 +50,12 @@
             width: 100%;
             margin-inline-start: 0;
             margin-block-start: 6rem;
+            margin-block-end: 0;
+        }
+
+        @screen xl {
+            margin-block: 0;
+            height: 527px;
         }
     }
 
