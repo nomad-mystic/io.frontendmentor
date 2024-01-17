@@ -1,7 +1,8 @@
+// Community
 import React from 'react';
 
 // Styles
-import './CrewNav.css';
+import './DestinationNav.css';
 
 // Types
 import { ToggleEventType } from '../../../../types/NavTypes';
@@ -14,7 +15,7 @@ import { ToggleEventType } from '../../../../types/NavTypes';
  * @param {ToggleEvent} toggleActive
  * @return {React.JSX.Element}
  */
-const CrewNav = ({ toggleActive }: ToggleEventType): React.JSX.Element => {
+const DestinationNav = ({ toggleActive }: ToggleEventType): React.JSX.Element => {
     /**
      * @description Pass our event to the parent component
      * @public
@@ -27,15 +28,15 @@ const CrewNav = ({ toggleActive }: ToggleEventType): React.JSX.Element => {
     };
 
     return (
-        <nav className="CrewNav-nav">
-            <menu className="flex" onClick={ toggleActiveHandler }>
-                <li className="CrewNav-navItem active" id="douglas"></li>
-                <li className="CrewNav-navItem" id="mark"></li>
-                <li className="CrewNav-navItem" id="victor"></li>
-                <li className="CrewNav-navItem" id="anousheh"></li>
+        <nav className="DestinationNav-nav">
+            <menu className="flex gap-[36px]" onClick={ toggleActiveHandler }>
+                <li className="DestinationNav-navItem NavText active" id="moon">MOON</li>
+                <li className="DestinationNav-navItem NavText" id="mars">MARS</li>
+                <li className="DestinationNav-navItem NavText" id="europa">EUROPA</li>
+                <li className="DestinationNav-navItem NavText" id="titan">TITAN</li>
             </menu>
         </nav>
     );
 };
 
-export default CrewNav;
+export default DestinationNav;

@@ -1,5 +1,5 @@
 import React from 'react';
 
-export type ToggleEvent = {
+export type ToggleEventType = {
     toggleActive: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void
 };
