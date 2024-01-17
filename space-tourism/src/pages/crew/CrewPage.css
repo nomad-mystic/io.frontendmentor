@@ -17,6 +17,10 @@
             grid-template-columns: 1fr 1fr;
             align-items: unset;
         }
+
+        @screen xl {
+            grid-template-rows: minmax(auto, 692px);
+        }
     }
 
     &-left {

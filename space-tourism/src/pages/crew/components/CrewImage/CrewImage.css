@@ -7,6 +7,10 @@
         @screen md {
             height: 50vh;
         }
+
+        @screen xl {
+            height: 100%;
+        }
     }
 
     &-img {

@@ -16,6 +16,10 @@
             margin-inline: auto;
             padding-block-end: 11.8rem;
         }
+
+        @screen xl {
+            padding-block-end: 0;
+        }
     }
 
     &-left {
