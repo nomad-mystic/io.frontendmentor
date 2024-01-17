@@ -3,7 +3,7 @@
         @apply flex-col items-center;
 
         @screen lg {
-            /*@apply flex-row;*/
+            @apply items-start;
         }
     }
 
@@ -39,9 +39,5 @@
         @screen lg {
             margin-block: 1.5rem 2.7rem;
         }
-    }
-
-    &-body {
-
     }
 }

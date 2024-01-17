@@ -18,14 +18,15 @@ import TechnologyDataInterface from '../../interfaces/TechnologyDataInterface';
  */
 const TechnologyImage = (props: { data: TechnologyDataInterface }): React.JSX.Element => {
     return (
-        <figure className="TechnologyImage-figure">
-            <img
-                className="TechnologyImage-image"
-                srcSet={ `${ props.data.mobileImage } 768w, ${ props.data.desktopImage } 1024w` }
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                alt={ props.data.imageAlt }
-            />
-        </figure>
+        <>
+            <div className="TechnologyImage-backgroundImage TechnologyImage-backgroundImage--mobile" style={ {
+                backgroundImage: `url(${ props.data.mobileImage })`,
+            } }></div>
+
+            <div className="TechnologyImage-backgroundImage TechnologyImage-backgroundImage--desktop" style={ {
+                backgroundImage: `url(${ props.data.desktopImage })`,
+            } }></div>
+        </>
     );
 };
 

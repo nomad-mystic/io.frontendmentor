@@ -77,7 +77,8 @@ const TechnologyPage = (): React.JSX.Element => {
                     />
 
                     <section className="TechnologyPage-content flex">
-                        <TechnologyNav toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
+                        <TechnologyNav
+                            toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
 
                         {
                             data.map((item: TechnologyDataInterface): ReactNode => {
