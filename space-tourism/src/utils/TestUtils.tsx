@@ -59,7 +59,7 @@ export default class TestUtils {
      */
     public static setupStore(preloadedState?: Partial<{}>) {
         const rootReducer = combineReducers({
-            navigation: navigationSlice,
+            navigation: navigationSlice.reducer,
         });
 
         return configureStore({
