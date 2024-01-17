@@ -27,18 +27,19 @@
         &--desktop {
             display: none;
 
-            menu {
-                @apply gap-[16px];
-                justify-content: center;
-            }
-
             @screen md {
                 display: block;
+
+                menu {
+                    @apply gap-[16px];
+                    justify-content: center;
+                }
             }
 
             @screen lg {
                 menu {
                     @apply gap-[36px];
+                    justify-content: flex-start;
                 }
             }
         }
