@@ -51,12 +51,6 @@
             align-items: flex-start;
         }
 
-        nav {
-            menu {
-
-            }
-        }
-
         h1 {
             margin-block: 2.4rem;
             font-size: 5.6rem;
@@ -79,28 +73,6 @@
             @screen lg {
                 align-items: flex-start;
             }
-        }
-    }
-
-    &-navItem {
-        padding-block-end: 1.2rem;
-        --nav-size: 1.4rem;
-
-        &:hover:not(&.active) {
-            cursor: pointer;
-            border-bottom: 3px solid var(--color-white-light);
-        }
-
-        &:not(&.active) {
-            color: var(--color-blue);
-        }
-
-        @screen md {
-            --nav-size: 1.6rem;
-        }
-
-        &.active {
-            border-bottom: 3px solid var(--color-white);
         }
     }
 }

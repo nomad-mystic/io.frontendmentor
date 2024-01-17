@@ -10,6 +10,7 @@ import Header from '../../components/Header/Header';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import DestinationContent from './components/DestinationContent/DestinationContent';
 import DestinationImage from './components/DestinationImage/DestinationImage';
+import DestinationNav from './components/DestinationNav/DestinationNav';
 
 // Utils
 import ElementUtils from '../../utils/ElementUtils';
@@ -47,7 +48,7 @@ const DestinationPage = (): React.JSX.Element => {
     const toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
 
         // Reset our active class
-        ElementUtils.removeClassFromAllElements('.DestinationPage-main .DestinationPage-nav menu li');
+        ElementUtils.removeClassFromAllElements('.DestinationPage-main .DestinationNav-nav menu li');
 
         const { target} = UiUtils.toggleActive(event);
 
@@ -88,14 +89,8 @@ const DestinationPage = (): React.JSX.Element => {
                 </section>
 
                 <section className="DestinationPage-right">
-                    <nav className="DestinationPage-nav">
-                        <menu className="flex gap-[36px]" onClick={ toggleActive }>
-                            <li className="DestinationPage-navItem NavText active" id="moon">MOON</li>
-                            <li className="DestinationPage-navItem NavText" id="mars">MARS</li>
-                            <li className="DestinationPage-navItem NavText" id="europa">EUROPA</li>
-                            <li className="DestinationPage-navItem NavText" id="titan">TITAN</li>
-                        </menu>
-                    </nav>
+
+                    <DestinationNav toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
 
                     {
                         data.map((item: DestinationDataInterface): ReactNode => {

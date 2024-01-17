@@ -1,0 +1,24 @@
+.DestinationNav {
+    &-navItem {
+        --nav-size: 1.4rem;
+
+        padding-block-end: 1.2rem;
+
+        &:hover:not(&.active) {
+            cursor: pointer;
+            border-bottom: 3px solid var(--color-white-light);
+        }
+
+        &:not(&.active) {
+            color: var(--color-blue);
+        }
+
+        @screen md {
+            --nav-size: 1.6rem;
+        }
+
+        &.active {
+            border-bottom: 3px solid var(--color-white);
+        }
+    }
+}
