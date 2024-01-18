@@ -9,7 +9,7 @@ import TestUtils from '../../../../utils/TestUtils';
 // Components
 import DestinationNav from './DestinationNav.tsx';
 
-describe('CrewNav component tests that', () => {
+describe('DestinationNav component tests that', () => {
     test('component is rendered', async () => {
         TestUtils.renderWithProviders(<MemoryRouter><DestinationNav toggleActive={() => {}}/></MemoryRouter>);
 
