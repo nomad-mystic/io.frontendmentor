@@ -10,9 +10,9 @@ describe('PageHeader component tests that', () => {
     test('component is rendered', async () => {
         TestUtils.renderWithProviders(<PageHeader />);
 
-        const numberSpan = screen.getByTestId('PageHeaderComponent');
+        const component = screen.getByTestId('PageHeaderComponent');
 
-        expect(numberSpan).toBeInTheDocument();
+        expect(component).toBeInTheDocument();
     });
 
     test('number span is rendered', async () => {

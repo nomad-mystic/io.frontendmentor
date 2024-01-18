@@ -69,7 +69,7 @@ const DestinationPage = (): React.JSX.Element => {
         <>
             <Header />
 
-            <main className="DestinationPage-main max-w-container">
+            <main className="DestinationPage-main max-w-container" data-testid="DestinationPage-main">
                 <section className="DestinationPage-left">
 
                     <PageHeader
