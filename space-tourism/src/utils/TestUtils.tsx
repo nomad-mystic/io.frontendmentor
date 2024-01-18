@@ -4,9 +4,11 @@ import { RenderOptions } from '@testing-library/react';
 import { render } from '@testing-library/react'
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import userEvent from '@testing-library/user-event';
 
 // Slices
 import navigationSlice from '../store/slices/navigation/navigation-slice';
+import { BrowserRouter } from 'react-router-dom';
 
 // Types
 type AppStore = ReturnType<typeof TestUtils.setupStore>
@@ -66,5 +68,22 @@ export default class TestUtils {
             reducer: rootReducer,
             preloadedState,
         });
+    }
+
+    /**
+     * @description
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     * @link https://testing-library.com/docs/example-react-router/
+     *
+     * @return
+     */
+    public static renderWithRouter(ui: React.ReactElement, { route = '/' } = {}) {
+        window.history.pushState({}, 'Test page', route);
+
+        return {
+            user: userEvent.setup(),
+            ...render(ui, { wrapper: BrowserRouter }),
+        }
     }
 }

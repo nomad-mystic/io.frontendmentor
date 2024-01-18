@@ -66,7 +66,7 @@ const HeaderNav = (): React.JSX.Element => {
     }, [navigation]);
 
     return (
-        <nav className={ `HeaderNav max-w-[830px] w-full ${ isOpen }` } ref={ headerNavRef }>
+        <nav className={ `HeaderNav max-w-[830px] w-full ${ isOpen }` } ref={ headerNavRef } data-testid="HeaderNavComponent">
 
             <div onClick={ toggleNavigation }>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 21" fill="none"
@@ -78,30 +78,30 @@ const HeaderNav = (): React.JSX.Element => {
                 </svg>
             </div>
 
-            <ul className="flex flex-col md:flex-row">
+            <ul className="flex flex-col md:flex-row" data-testid="HeaderNavComponent-navItems">
                 <li className="NavText">
-                    <NavLink to="/">
+                    <NavLink to="/" data-testid="HeaderNavComponent-navItems--home">
                         <span className="NavText-number">00 </span>
                         Home
                     </NavLink>
                 </li>
 
                 <li className="NavText">
-                    <NavLink to="/destination">
+                    <NavLink to="/destination" data-testid="HeaderNavComponent-navItems--destination">
                         <span className="NavText-number">01 </span>
                         Destination
                     </NavLink>
                 </li>
 
                 <li className="NavText">
-                    <NavLink to="/crew">
+                    <NavLink to="/crew" data-testid="HeaderNavComponent-navItems--crew">
                         <span className="NavText-number">02 </span>
                         Crew
                     </NavLink>
                 </li>
 
                 <li className="NavText">
-                    <NavLink to="/technology">
+                    <NavLink to="/technology" data-testid="HeaderNavComponent-navItems--technology">
                         <span className="NavText-number">03 </span>
                         Technology
                     </NavLink>
