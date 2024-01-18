@@ -12,7 +12,7 @@ import DestinationDataInterface from '../../interfaces/DestinationDataInterface'
 // Components
 import DestinationImage from './DestinationImage.tsx';
 
-describe('CrewImage component tests that', () => {
+describe('DestinationImage component tests that', () => {
     const props: DestinationDataInterface = {
         image: '/destination/image-moon.webp',
         imageAlt: 'Image of the Moon',
