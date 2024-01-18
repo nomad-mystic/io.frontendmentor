@@ -28,12 +28,12 @@ const DestinationNav = ({ toggleActive }: ToggleEventType): React.JSX.Element =>
     };
 
     return (
-        <nav className="DestinationNav-nav">
+        <nav className="DestinationNav-nav" data-testid="DestinationNavComponent">
             <menu className="flex gap-[36px]" onClick={ toggleActiveHandler }>
-                <li className="DestinationNav-navItem NavText active" id="moon">MOON</li>
-                <li className="DestinationNav-navItem NavText" id="mars">MARS</li>
-                <li className="DestinationNav-navItem NavText" id="europa">EUROPA</li>
-                <li className="DestinationNav-navItem NavText" id="titan">TITAN</li>
+                <li className="DestinationNav-navItem NavText active" id="moon" data-testid="DestinationNav-navItem--moon">MOON</li>
+                <li className="DestinationNav-navItem NavText" id="mars" data-testid="DestinationNav-navItem--mars">MARS</li>
+                <li className="DestinationNav-navItem NavText" id="europa" data-testid="DestinationNav-navItem--europa">EUROPA</li>
+                <li className="DestinationNav-navItem NavText" id="titan" data-testid="DestinationNav-navItem--titan">TITAN</li>
             </menu>
         </nav>
     );

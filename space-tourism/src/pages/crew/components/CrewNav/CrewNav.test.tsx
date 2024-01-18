@@ -18,7 +18,7 @@ describe('CrewNav component tests that', () => {
         expect(content).toBeInTheDocument();
     });
 
-    test('the img element has the correct attributes', async () => {
+    test('the navItems have the correct attributes', async () => {
         TestUtils.renderWithProviders(<MemoryRouter><CrewNav toggleActive={() => {}}/></MemoryRouter>);
 
         const douglas = screen.getByTestId('CrewNav-navItem--douglas');
