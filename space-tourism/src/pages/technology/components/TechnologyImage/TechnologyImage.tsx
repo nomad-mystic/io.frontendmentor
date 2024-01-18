@@ -21,11 +21,11 @@ const TechnologyImage = (props: { data: TechnologyDataInterface }): React.JSX.El
         <>
             <div className="TechnologyImage-backgroundImage TechnologyImage-backgroundImage--mobile" style={ {
                 backgroundImage: `url(${ props.data.mobileImage })`,
-            } }></div>
+            } } data-testid="TechnologyImageComponent-mobile"></div>
 
             <div className="TechnologyImage-backgroundImage TechnologyImage-backgroundImage--desktop" style={ {
                 backgroundImage: `url(${ props.data.desktopImage })`,
-            } }></div>
+            } } data-testid="TechnologyImageComponent-desktop"></div>
         </>
     );
 };
