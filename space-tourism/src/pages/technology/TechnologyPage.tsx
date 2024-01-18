@@ -100,7 +100,7 @@ const TechnologyPage = (): React.JSX.Element => {
                     {
                         data.map((item: TechnologyDataInterface): ReactNode => {
                             if (activeTech === item.id) {
-                                return (<TechnologyImage key={ item.id } data={ item } data-testid="TechnologyImageComponent"/>)
+                                return (<TechnologyImage key={ item.id } data={ item } />)
                             }
                         })
                     }

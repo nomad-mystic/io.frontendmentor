@@ -34,7 +34,7 @@ const TechnologyNav = ({ toggleActive }: ToggleEvent): React.JSX.Element => {
     };
 
     return (
-        <nav className="TechnologyNav-nav">
+        <nav className="TechnologyNav-nav" data-testid="TechnologyNavComponent">
             <menu className="flex" onClick={ toggleActiveHandler }>
                 {
                     items.map((item): ReactNode => {
