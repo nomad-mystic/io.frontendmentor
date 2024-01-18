@@ -9,6 +9,7 @@
 * Tailwind
 * PostCSS
 * Node.js
+* Vite
 * Figma (Design)
 * React Testing Library
 
