@@ -18,8 +18,8 @@ import DestinationDataInterface from '../../interfaces/DestinationDataInterface'
  */
 const DestinationImage = (props: { data: DestinationDataInterface }): React.JSX.Element => {
     return (
-        <figure className="DestinationImage-figure">
-            <img className="DestinationImage-image" src={ props.data.image } alt={ props.data.imageAlt }/>
+        <figure className="DestinationImage-figure" data-testid="DestinationImageComponent">
+            <img className="DestinationImage-image" src={ props.data.image } alt={ props.data.imageAlt } data-testid="DestinationImageComponent-image"/>
         </figure>
     );
 };

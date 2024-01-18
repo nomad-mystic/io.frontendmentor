@@ -22,7 +22,7 @@ describe('CrewContent component tests that', () => {
     test('component is rendered', async () => {
         TestUtils.renderWithProviders(<MemoryRouter><CrewContent data={ props } /></MemoryRouter>);
 
-        const content = screen.getByTestId('CrewContent-content');
+        const content = screen.getByTestId('CrewContentComponent');
 
         expect(content).toBeInTheDocument();
     });
@@ -30,9 +30,9 @@ describe('CrewContent component tests that', () => {
     test('children elements have the correct text', async () => {
         TestUtils.renderWithProviders(<MemoryRouter><CrewContent data={ props } /></MemoryRouter>);
 
-        const title = screen.getByTestId('CrewContent-title');
-        const name = screen.getByTestId('CrewContent-name');
-        const body = screen.getByTestId('CrewContent-body');
+        const title = screen.getByTestId('CrewContentComponent-title');
+        const name = screen.getByTestId('CrewContentComponent-name');
+        const body = screen.getByTestId('CrewContentComponent-body');
 
         expect(title).toHaveTextContent('Testing Title');
         expect(name).toHaveTextContent('Testing Name');
