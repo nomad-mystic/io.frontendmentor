@@ -15,6 +15,9 @@ export default class UiUtils {
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
+     * @param {React.MouseEvent<HTMLElement, MouseEvent>} event
+     * @param {string} tagName
+     * @param {string} parentItemSelector
      * @return {toggleActiveTypes}
      */
     public static toggleActive = (event: React.MouseEvent<HTMLElement, MouseEvent>, tagName: string = 'LI', parentItemSelector: string = 'li'): toggleActiveTypes => {

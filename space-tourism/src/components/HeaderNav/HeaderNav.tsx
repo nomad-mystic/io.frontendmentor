@@ -24,6 +24,9 @@ const HeaderNav = (): React.JSX.Element => {
     const headerNavRef = useRef(null);
     const navigation = useSelector((state: NavigationType) => state.navigation.isOpen);
 
+    // Set our state
+    const isOpen = navigation ? 'HeaderNav-isOpen' : '';
+
     /**
      * @description Toggle the navigation state (Mobile only)
      * @public
@@ -39,9 +42,6 @@ const HeaderNav = (): React.JSX.Element => {
             dispatch(navigationAction.toggleNavigation());
         }
     };
-
-    // Set our state
-    const isOpen = navigation ? 'HeaderNav-isOpen' : '';
 
     /**
      * @description Set the nav's height (Mobile only)
@@ -66,7 +66,8 @@ const HeaderNav = (): React.JSX.Element => {
     }, [navigation]);
 
     return (
-        <nav className={ `HeaderNav max-w-[830px] w-full ${ isOpen }` } ref={ headerNavRef } data-testid="HeaderNavComponent">
+        <nav className={ `HeaderNav max-w-[830px] w-full ${ isOpen }` } ref={ headerNavRef }
+             data-testid="HeaderNavComponent">
 
             <div onClick={ toggleNavigation }>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20 21" fill="none"

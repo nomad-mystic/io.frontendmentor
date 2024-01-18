@@ -11,7 +11,8 @@ import TechnologyNav from './TechnologyNav';
 
 describe('TechnologyNavComponent component tests that', () => {
     test('component is rendered', async () => {
-        TestUtils.renderWithProviders(<MemoryRouter><TechnologyNav toggleActive={ () => {} } /></MemoryRouter>);
+        TestUtils.renderWithProviders(<MemoryRouter><TechnologyNav toggleActive={ () => {
+        } } /></MemoryRouter>);
 
         const content = screen.getByTestId('TechnologyNavComponent');
 
@@ -19,7 +20,8 @@ describe('TechnologyNavComponent component tests that', () => {
     });
 
     test('child component is rendered', async () => {
-        TestUtils.renderWithProviders(<MemoryRouter><TechnologyNav toggleActive={ () => {} } /></MemoryRouter>);
+        TestUtils.renderWithProviders(<MemoryRouter><TechnologyNav toggleActive={ () => {
+        } } /></MemoryRouter>);
 
         const children = await screen.findAllByTestId('TechnologyNavItemComponent');
 

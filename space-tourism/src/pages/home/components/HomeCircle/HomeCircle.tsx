@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import './HomeCircle.css';
 
 /**
- * @description
+ * @description Create the circle shape on the HomePage
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *

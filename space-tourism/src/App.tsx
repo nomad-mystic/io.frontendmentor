@@ -57,7 +57,7 @@ const App = (): React.JSX.Element => {
 
             const capitalizedPath = cleanPathname.charAt(0).toUpperCase() + cleanPathname.slice(1);
 
-            className = `${capitalizedPath}Page`;
+            className = `${ capitalizedPath }Page`;
 
         }
 
@@ -78,10 +78,10 @@ const App = (): React.JSX.Element => {
 
     return (
         <Routes>
-            <Route path="/" element={ <HomePage /> }/>
-            <Route path="/destination" element={ <DestinationPage/> }/>
-            <Route path="/crew" element={ <CrewPage/> }/>
-            <Route path="/technology" element={ <TechnologyPage/> }/>
+            <Route path="/" element={ <HomePage /> } />
+            <Route path="/destination" element={ <DestinationPage /> } />
+            <Route path="/crew" element={ <CrewPage /> } />
+            <Route path="/technology" element={ <TechnologyPage /> } />
         </Routes>
     );
 };

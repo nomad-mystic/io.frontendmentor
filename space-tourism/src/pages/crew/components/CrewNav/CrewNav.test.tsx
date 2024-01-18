@@ -11,7 +11,8 @@ import CrewNav from './CrewNav';
 
 describe('CrewNav component tests that', () => {
     test('component is rendered', async () => {
-        TestUtils.renderWithProviders(<MemoryRouter><CrewNav toggleActive={() => {}}/></MemoryRouter>);
+        TestUtils.renderWithProviders(<MemoryRouter><CrewNav toggleActive={ () => {
+        } } /></MemoryRouter>);
 
         const content = screen.getByTestId('CrewNavComponent');
 
@@ -19,7 +20,8 @@ describe('CrewNav component tests that', () => {
     });
 
     test('the navItems have the correct attributes', async () => {
-        TestUtils.renderWithProviders(<MemoryRouter><CrewNav toggleActive={() => {}}/></MemoryRouter>);
+        TestUtils.renderWithProviders(<MemoryRouter><CrewNav toggleActive={ () => {
+        } } /></MemoryRouter>);
 
         const douglas = screen.getByTestId('CrewNav-navItem--douglas');
         const mark = screen.getByTestId('CrewNav-navItem--mark');

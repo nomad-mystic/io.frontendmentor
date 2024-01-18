@@ -21,11 +21,15 @@ const TechnologyContent = (props: { data: TechnologyDataInterface }): React.JSX.
         <>
             <article className="TechnologyContent-body flex" data-testid="TechnologyContentComponent">
                 <header className="TechnologyContent-header">
-                    <h2 className="TechnologyContent-subtitle text-white normal-text" data-testid="TechnologyContentComponent-subtitle">{ props.data.subtitle }</h2>
-                    <h1 className="TechnologyContent-name Heading-3 normal-text" data-testid="TechnologyContentComponent-name">{ props.data.name }</h1>
+                    <h2 className="TechnologyContent-subtitle text-white normal-text"
+                        data-testid="TechnologyContentComponent-subtitle">{ props.data.subtitle }</h2>
+
+                    <h1 className="TechnologyContent-name Heading-3 normal-text"
+                        data-testid="TechnologyContentComponent-name">{ props.data.name }</h1>
                 </header>
 
-                <p className="TechnologyContent-body Body max-w-[444px] block normal-text" data-testid="TechnologyContentComponent-body">{ props.data.body }</p>
+                <p className="TechnologyContent-body Body max-w-[444px] block normal-text"
+                   data-testid="TechnologyContentComponent-body">{ props.data.body }</p>
             </article>
         </>
     );

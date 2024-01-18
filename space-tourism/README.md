@@ -22,3 +22,7 @@ $ npm run dev
 ```
 
 Check terminal for dev URL
+
+### Helpful links:
+* https://redux.js.org/usage/writing-tests
+* https://vitest.dev/guide/#projects-using-vitest
