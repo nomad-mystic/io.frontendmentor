@@ -6,4 +6,4 @@ export default interface DestinationDataInterface {
     body?: string;
     distance?: string;
     time?: string;
-}
+};

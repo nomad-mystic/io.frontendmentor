@@ -1,5 +1,5 @@
 // Community
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { MemoryRouter } from 'react-router-dom';
 
@@ -8,9 +8,6 @@ import TestUtils from '../../utils/TestUtils';
 
 // Components
 import HeaderNav from './HeaderNav';
-
-// https://redux.js.org/usage/writing-tests
-// https://vitest.dev/guide/#projects-using-vitest
 
 describe('HeaderNav component tests that', () => {
     test('component is rendered', async () => {

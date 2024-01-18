@@ -1,30 +1,4 @@
 .TechnologyImage {
-    &-figure {
-        height: 100%;
-        width: 100vw;
-
-        @screen lg {
-            width: 100%;
-        }
-    }
-
-    &-image {
-        object-fit: cover;
-        object-position: center;
-        width: 100%;
-        height: 100%;
-        max-width: 100%;
-        max-height: 40vh;
-
-        @screen md {
-            /*max-height: 30vh;*/
-        }
-
-        @screen lg {
-            max-height: unset;
-        }
-    }
-
     &-backgroundImage {
         width: 100%;
         background-repeat: no-repeat;
@@ -33,12 +7,11 @@
         &--mobile {
             max-width: 100%;
             height: 40vh;
-            max-height: 40vh;
             background-size: cover;
             background-position: center center;
 
             @screen md {
-                height: 30vh;
+                height: 45vh;
             }
 
             @screen lg {

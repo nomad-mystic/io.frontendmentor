@@ -50,7 +50,7 @@ const DestinationPage = (): React.JSX.Element => {
         // Reset our active class
         ElementUtils.removeClassFromAllElements('.DestinationPage-main .DestinationNav-nav menu li');
 
-        const { target} = UiUtils.toggleActive(event);
+        const { target } = UiUtils.toggleActive(event);
 
         if (target) {
             target.classList.add('active');
@@ -90,7 +90,8 @@ const DestinationPage = (): React.JSX.Element => {
 
                 <section className="DestinationPage-right">
 
-                    <DestinationNav toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
+                    <DestinationNav
+                        toggleActive={ (e: React.MouseEvent<HTMLElement, MouseEvent>) => toggleActive(e) } />
 
                     {
                         data.map((item: DestinationDataInterface): ReactNode => {

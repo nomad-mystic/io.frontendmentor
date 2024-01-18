@@ -6,4 +6,4 @@ export default interface TechnologyDataInterface {
     mobileImage?: string;
     imageAlt?: string;
     body?: string;
-}
+};

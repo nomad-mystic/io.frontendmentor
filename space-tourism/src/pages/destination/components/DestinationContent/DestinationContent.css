@@ -7,7 +7,7 @@
     &-data {
         gap: 3.2rem;
         text-align: center;
-        padding-block-start: 3.2rem;
+        padding-block-start: 3rem;
 
         @screen md {
             gap: 7.9rem;
@@ -34,9 +34,10 @@
         }
     }
 
-    &-distance {}
+    &-distance {
+    }
 
     &-travel {
-        padding-block-end: 6rem;
+        padding-block-end: 5rem;
     }
 }

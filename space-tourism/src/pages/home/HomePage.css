@@ -14,13 +14,13 @@
             grid-row-gap: 10rem;
         }
 
-         @screen lg {
-             grid-template-columns: minmax(auto, 1fr) minmax(auto, 1fr);
-             grid-template-rows: 1fr;
-             margin-block-start: 25rem;
-             padding-block-end: 0;
-             grid-gap: 0;
-         }
+        @screen lg {
+            grid-template-columns: minmax(auto, 1fr) minmax(auto, 1fr);
+            grid-template-rows: 1fr;
+            margin-block-start: 25rem;
+            padding-block-end: 0;
+            grid-gap: 0;
+        }
 
         @screen xl {
             grid-template-columns: minmax(auto, 2fr) minmax(auto, 1fr);

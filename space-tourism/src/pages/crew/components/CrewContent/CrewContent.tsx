@@ -19,8 +19,11 @@ import CrewDataInterface from '../../interfaces/CrewDataInterface';
 const CrewContent = (props: { data: CrewDataInterface }): React.JSX.Element => {
     return (
         <article className="CrewContent-content" data-testid="CrewContentComponent">
-            <h2 className="CrewContent-title Heading-4" data-testid="CrewContentComponent-title">{ props.data.title }</h2>
+            <h2 className="CrewContent-title Heading-4"
+                data-testid="CrewContentComponent-title">{ props.data.title }</h2>
+
             <h1 className="CrewContent-name Heading-3" data-testid="CrewContentComponent-name">{ props.data.name }</h1>
+
             <p className="CrewContent-body Body block" data-testid="CrewContentComponent-body">{ props.data.body }</p>
         </article>
     );

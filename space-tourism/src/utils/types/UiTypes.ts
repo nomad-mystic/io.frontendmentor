@@ -1,4 +1,4 @@
 export type toggleActiveTypes = {
-    target?: HTMLElement;
-    parentListItem?: Element | null;
-}
+    target?: HTMLElement,
+    parentListItem?: Element | null,
+};

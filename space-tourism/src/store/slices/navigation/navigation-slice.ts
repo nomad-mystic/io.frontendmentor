@@ -1,6 +1,13 @@
+// Community
 import { createSlice } from '@reduxjs/toolkit';
 
-
+/**
+ * @description Create our slice for the navigation reducer
+ * @public
+ * @author Keith Murphy | nomadmystics@gmail.com
+ *
+ * @return {Slice}
+ */
 const navigationSlice = createSlice({
     name: 'navigation',
     initialState: {

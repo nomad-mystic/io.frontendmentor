@@ -11,7 +11,8 @@ import DestinationNav from './DestinationNav.tsx';
 
 describe('DestinationNav component tests that', () => {
     test('component is rendered', async () => {
-        TestUtils.renderWithProviders(<MemoryRouter><DestinationNav toggleActive={() => {}}/></MemoryRouter>);
+        TestUtils.renderWithProviders(<MemoryRouter><DestinationNav toggleActive={ () => {
+        } } /></MemoryRouter>);
 
         const content = screen.getByTestId('DestinationNavComponent');
 
@@ -19,7 +20,8 @@ describe('DestinationNav component tests that', () => {
     });
 
     test('the navItems have the correct attributes', async () => {
-        TestUtils.renderWithProviders(<MemoryRouter><DestinationNav toggleActive={() => {}}/></MemoryRouter>);
+        TestUtils.renderWithProviders(<MemoryRouter><DestinationNav toggleActive={ () => {
+        } } /></MemoryRouter>);
 
         const moon = screen.getByTestId('DestinationNav-navItem--moon');
         const mars = screen.getByTestId('DestinationNav-navItem--mars');
@@ -33,7 +35,8 @@ describe('DestinationNav component tests that', () => {
     });
 
     test('the navItems have the correct text', async () => {
-        TestUtils.renderWithProviders(<MemoryRouter><DestinationNav toggleActive={() => {}}/></MemoryRouter>);
+        TestUtils.renderWithProviders(<MemoryRouter><DestinationNav toggleActive={ () => {
+        } } /></MemoryRouter>);
 
         const moon = screen.getByTestId('DestinationNav-navItem--moon');
         const mars = screen.getByTestId('DestinationNav-navItem--mars');

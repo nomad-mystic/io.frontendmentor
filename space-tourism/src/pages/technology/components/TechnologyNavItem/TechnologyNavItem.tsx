@@ -17,8 +17,11 @@ import { TechnologyNavItemType } from '../../types/TechnologyNavItemTypes';
  */
 const TechnologyNavItem = (props: React.PropsWithChildren<TechnologyNavItemType>): React.JSX.Element => {
     return (
-        <li className={ `${props.className} normal-text` } id={ props.id.toString() } data-testid="TechnologyNavItemComponent">
-            <span className="TechnologyNavItem-navNumber" data-testid="TechnologyNavItemComponent-navNumber">{ props.number }</span>
+        <li className={ `${ props.className } normal-text` } id={ props.id.toString() }
+            data-testid="TechnologyNavItemComponent">
+            <span className="TechnologyNavItem-navNumber"
+                  data-testid="TechnologyNavItemComponent-navNumber">{ props.number }</span>
+
             <span className="TechnologyNavItem-navShape"></span>
         </li>
     );

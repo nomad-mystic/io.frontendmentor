@@ -10,7 +10,7 @@ import TestUtils from '../../../../utils/TestUtils';
 import DestinationDataInterface from '../../interfaces/DestinationDataInterface';
 
 // Components
-import DestinationImage from './DestinationImage.tsx';
+import DestinationImage from './DestinationImage';
 
 describe('DestinationImage component tests that', () => {
     const props: DestinationDataInterface = {
