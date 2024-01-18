@@ -18,8 +18,8 @@ import CrewDataInterface from '../../interfaces/CrewDataInterface';
  */
 const CrewImage = (props: { data: CrewDataInterface }): React.JSX.Element => {
     return (
-        <figure className="CrewImage-figure">
-            <img className="CrewImage-img" src={ props.data.image } alt={ props.data.imageAlt } />
+        <figure className="CrewImage-figure" data-testid="CrewImageComponent">
+            <img className="CrewImage-img" data-testid="CrewImageComponent-image" src={ props.data.image } alt={ props.data.imageAlt } />
         </figure>
     );
 };
