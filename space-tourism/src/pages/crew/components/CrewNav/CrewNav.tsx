@@ -27,12 +27,12 @@ const CrewNav = ({ toggleActive }: ToggleEventType): React.JSX.Element => {
     };
 
     return (
-        <nav className="CrewNav-nav">
+        <nav className="CrewNav-nav" data-testid="CrewNavComponent">
             <menu className="flex" onClick={ toggleActiveHandler }>
-                <li className="CrewNav-navItem active" id="douglas"></li>
-                <li className="CrewNav-navItem" id="mark"></li>
-                <li className="CrewNav-navItem" id="victor"></li>
-                <li className="CrewNav-navItem" id="anousheh"></li>
+                <li className="CrewNav-navItem active" id="douglas" data-testid="CrewNav-navItem--douglas"></li>
+                <li className="CrewNav-navItem" id="mark" data-testid="CrewNav-navItem--mark"></li>
+                <li className="CrewNav-navItem" id="victor" data-testid="CrewNav-navItem--victor"></li>
+                <li className="CrewNav-navItem" id="anousheh" data-testid="CrewNav-navItem--anousheh"></li>
             </menu>
         </nav>
     );
