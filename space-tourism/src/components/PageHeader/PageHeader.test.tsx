@@ -1,10 +1,11 @@
 import { screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import TestUtils from '../../utils/TestUtils';
-import PageHeader from './PageHeader';
 
-// https://redux.js.org/usage/writing-tests
-// https://vitest.dev/guide/#projects-using-vitest
+// Utils
+import TestUtils from '../../utils/TestUtils';
+
+// Components
+import PageHeader from './PageHeader';
 
 describe('PageHeader component tests that', () => {
     test('component is rendered', async () => {
