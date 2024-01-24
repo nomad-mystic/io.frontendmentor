@@ -1,0 +1,6 @@
+@layer base {
+    :root {
+        --border-radius-l: 1rem;
+        --border-radius-s: .6rem;
+    }
+}
