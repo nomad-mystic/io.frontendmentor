@@ -1,3 +1,50 @@
 @layer base {
+    :root {
+        --font-family: Outfit, Helvetica, sans-serif;
+        --font-size-header-l: 3.2rem;
+        --font-size-header-m: 2.4rem;
+        --font-size-header-s: 2.4rem;
+        --font-size-header-xs: 1.8rem;
+        --font-size-body-m: 1.5rem;
+        --font-size-body-s: 1.3rem;
+    }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .header-l {
+        font-size: var(--font-size-header-l);
+        letter-spacing: -0.5px;
+    }
+
+    .header-m {
+        font-size: var(--font-size-header-m);
+        font-weight: 300;
+    }
+
+    .header-s {
+        font-size: var(--font-size-header-s);
+    }
+
+    .header-xs {
+        font-size: var(--font-size-header-xs);
+    }
+
+    .body-m {
+        font-size: var(--font-size-body-m);
+    }
+
+    .body-s {
+        font-size: var(--font-size-body-s);
+        opacity: 0.75;
+    }
 }
