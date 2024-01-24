@@ -1,0 +1,11 @@
+@layer base {
+    :root {
+        --color-red: #FC4747;
+        --color-dark-blue: #10141E;
+        --color-grey-blue: #5A698F;
+        --color-semi-dark-blue: #161D2F;
+        --color-white: #FFFFFF;
+
+        --border-color-grey-blue: #5A698F;
+    }
+}
