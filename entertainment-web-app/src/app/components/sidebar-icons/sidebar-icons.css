@@ -8,6 +8,11 @@
     }
 
     &-icon {
-
+        &:hover {
+            svg,
+            path {
+                fill: var(--color-red);
+            }
+        }
     }
 }
