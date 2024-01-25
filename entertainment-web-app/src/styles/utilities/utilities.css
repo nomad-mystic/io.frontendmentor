@@ -10,4 +10,14 @@
         grid-row-gap: 3.6rem;
         margin: 3.2rem auto 0;
     }
+
+    .isVisible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .isInvisible {
+        opacity: 0;
+        visibility: hidden;
+    }
 }

@@ -28,12 +28,15 @@ const Search = () => {
     const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
         const target = event.target as HTMLInputElement;
 
-
         if (target && typeof target !== 'undefined' && target.tagName && target.value !== '') {
 
-            showHideMainContent();
+            hideContent();
 
             console.log(target.value);
+
+        } else {
+
+            showContent()
 
         }
     }
@@ -45,8 +48,25 @@ const Search = () => {
      *
      * @return
      */
-    const showHideMainContent = () => {
+    const hideContent = () => {
+        const contentElement = window.document.getElementById('AllContent') as HTMLElement;
 
+        contentElement.classList.add('isInvisible');
+        contentElement.classList.remove('isVisible');
+    };
+
+    /**
+     * @description
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return
+     */
+    const showContent = () => {
+        const contentElement = window.document.getElementById('AllContent') as HTMLElement;
+
+        contentElement.classList.add('isVisible');
+        contentElement.classList.remove('isInvisible');
     };
 
     return (
