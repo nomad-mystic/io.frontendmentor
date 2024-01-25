@@ -1,10 +1,14 @@
 .SideBar {
     background-color: var(--color-semi-dark-blue);
     border-radius: var(--border-radius-xl);
+    display: flex;
+    align-items: center;
 
     @screen xl {
         grid-row-start: 1;
         grid-row-end: 12;
         height: 960px;
+        flex-direction: column;
+        padding-block-start: 3.2rem;
     }
 }
