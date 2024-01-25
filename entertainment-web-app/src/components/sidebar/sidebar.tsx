@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 // Styles
 import './sidebar.css';
@@ -11,12 +12,18 @@ import { SidebarIconsTypes } from './sidebar-types';
 
 // Components
 import SidebarIcons from '../sidebar-icons/sidebar-icons';
-import Image from 'next/image';
 
+/**
+ * @description 
+ * @public 
+ * @author Keith Murphy | nomadmystics@gmail.com
+ *
+ * @return 
+ */
 const Sidebar = () => {
     return (
         <aside className="SideBar">
-            <Image src="/root.svg"
+            <Image src="/assets/logo.svg"
                    alt=""
                    width={ 32 }
                    height={ 25 }
