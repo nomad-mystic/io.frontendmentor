@@ -1,11 +1,13 @@
 .MovieItem {
     position: relative;
 
-    &:hover {
-        .MovieItem-overlay {
-            opacity: 1;
-            visibility: visible;
-            transition: var(--transiton-r);
+    .MovieItem-imageContainer {
+        &:hover {
+            .MovieItem-overlay {
+                opacity: 1;
+                visibility: visible;
+                transition: var(--transiton-r);
+            }
         }
     }
 
