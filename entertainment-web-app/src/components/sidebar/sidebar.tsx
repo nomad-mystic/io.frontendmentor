@@ -14,11 +14,11 @@ import { SidebarIconsTypes } from './sidebar-types';
 import SidebarIcons from '../sidebar-icons/sidebar-icons';
 
 /**
- * @description 
- * @public 
+ * @description
+ * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return 
+ * @return
  */
 const Sidebar = () => {
     return (
