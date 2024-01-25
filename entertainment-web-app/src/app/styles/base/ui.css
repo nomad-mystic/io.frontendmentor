@@ -2,6 +2,7 @@
     :root {
         --border-radius-xl: 2rem;
         --border-radius-l: 1rem;
-        --border-radius-s: .6rem;
+        --border-radius-s: 1rem;
+        --border-radius-xs: .6rem;
     }
 }

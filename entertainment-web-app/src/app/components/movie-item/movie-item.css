@@ -1,0 +1,16 @@
+.MovieItem {
+    &-image {
+        border-radius: var(--border-radius-s);
+    }
+
+    &-meta {
+        display: flex;
+        align-items: center;
+        column-gap: .8rem;
+        margin-block-start: .8rem;
+    }
+
+    h2 {
+        margin-block-start: .8rem;
+    }
+}
