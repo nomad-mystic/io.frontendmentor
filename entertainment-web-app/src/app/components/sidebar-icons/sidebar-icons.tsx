@@ -1,14 +1,12 @@
 // Community
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 // Styles
 import './sidebar-icons.css';
 
 // Types
 import { SidebarIconsTypes } from '@/app/components/sidebar/sidebar-types';
-
 
 /**
  * @description
