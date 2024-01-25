@@ -14,10 +14,12 @@
     .isVisible {
         opacity: 1;
         visibility: visible;
+        transition: var(--transiton-r);
     }
 
     .isInvisible {
         opacity: 0;
         visibility: hidden;
+        transition: var(--transiton-r);
     }
 }

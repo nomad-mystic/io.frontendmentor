@@ -36,7 +36,7 @@ const Search = () => {
 
         } else {
 
-            showContent()
+            showContent();
 
         }
     }
