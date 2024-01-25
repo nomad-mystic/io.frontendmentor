@@ -1,7 +1,7 @@
 'use client';
 
 // Community
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
 // Styles
 import './search.css';
@@ -14,13 +14,23 @@ import './search.css';
  * @return
  */
 const Search = () => {
+    const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+        const target = event.target as HTMLInputElement;
+
+        if (target && typeof target !== 'undefined' && target.tagName) {
+
+            console.log(target.value);
+
+        }
+    }
+
     return (
         <section className="Search">
             <form>
                 <span className="Search-icon"></span>
 
                 <label htmlFor="">
-                    <input type="text" className="header-m" />
+                    <input type="text" className="header-m" onChange={ handleSearchChange } />
                 </label>
             </form>
         </section>
