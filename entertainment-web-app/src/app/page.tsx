@@ -1,9 +1,9 @@
 import React from 'react';
 
 // Components
-import Search from '@/app/components/search/search';
-import Sidebar from '@/app/components/sidebar/sidebar';
-import MainContent from '@/app/components/main-content/main-content';
+import Search from '@/components/search/search';
+import Sidebar from '@/components/sidebar/sidebar';
+import MainContent from '@/components/main-content/main-content';
 
 const Home = () => {
     return (

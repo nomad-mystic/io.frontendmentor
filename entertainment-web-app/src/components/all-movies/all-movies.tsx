@@ -7,10 +7,10 @@ import './all-movies.css';
 import data from '../../data/data.json';
 
 // Types
-import { MovieDataType } from '@/app/data/data-types';
+import { MovieDataType } from '@/data/data-types';
 
 // Components
-import MovieItem from '@/app/components/movie-item/movie-item';
+import MovieItem from '@/components/movie-item/movie-item';
 
 /**
  * @description

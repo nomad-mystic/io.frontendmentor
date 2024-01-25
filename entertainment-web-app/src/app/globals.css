@@ -1,12 +1,12 @@
-@import './styles/base/base.css';
-@import './styles/base/colors.css';
-@import './styles/base/typography.css';
-@import 'styles/base/ui.css';
+@import '../styles/base/base.css';
+@import '../styles/base/colors.css';
+@import '../styles/base/typography.css';
+@import '../styles/base/ui.css';
 
-@import './styles/components/buttons.css';
+@import '../styles/components/buttons.css';
 
 
-@import 'styles/utilities/utilities.css';
+@import '../styles/utilities/utilities.css';
 
 @tailwind base;
 @tailwind components;
