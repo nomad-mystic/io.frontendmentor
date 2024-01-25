@@ -4,5 +4,7 @@
         --border-radius-l: 1rem;
         --border-radius-s: 1rem;
         --border-radius-xs: .6rem;
+
+        --transiton-r: all .4s linear;
     }
 }

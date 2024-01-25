@@ -23,12 +23,22 @@ const MovieItem = (props: { data: MovieDataType }) => {
         <article className="MovieItem">
             <Bookmark />
 
-            <Image src={ props.data.thumbnail.regular.large }
-                   alt={ props.data.title }
-                   width={ 280 }
-                   height={ 174 }
-                   className="MovieItem-image"
-            />
+            <div className="MovieItem-imageContainer">
+
+                <span className="MovieItem-overlay">
+                    <span className="MovieItem-play">
+                        <span className="icon"></span>
+                        <h4 className="header-xs">Play</h4>
+                    </span>
+                </span>
+
+                <Image src={ props.data.thumbnail.regular.large }
+                       alt={ props.data.title }
+                       width={ 280 }
+                       height={ 174 }
+                       className="MovieItem-image"
+                />
+            </div>
 
             <section className="MovieItem-meta">
                 <p className="body-s">{ props.data.year }</p>
