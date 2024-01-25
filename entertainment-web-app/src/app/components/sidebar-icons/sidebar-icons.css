@@ -1,0 +1,13 @@
+.SidebarIcons {
+    display: flex;
+
+    @screen xl {
+        flex-direction: column;
+        row-gap: 4rem;
+        margin-block-start: 7.4rem;
+    }
+
+    &-icon {
+
+    }
+}

@@ -1,26 +1,26 @@
 [
     {
         "id": 1,
-        "src": "../public/home.svg",
+        "src": "/home.svg",
         "alt": "",
-        "path": ""
+        "path": "/home"
     },
     {
         "id": 2,
-        "src": "../public/movies.svg",
+        "src": "/movies.svg",
         "alt": "",
-        "path": ""
+        "path": "/movies"
     },
     {
         "id": 3,
-        "src": "../public/tv.svg",
+        "src": "/tv.svg",
         "alt": "",
-        "path": ""
+        "path": "/tv"
     },
     {
         "id": 4,
-        "src": "../public/bookmarks.svg",
+        "src": "/bookmark.svg",
         "alt": "",
-        "path": ""
+        "path": "/bookmarks"
     }
 ]

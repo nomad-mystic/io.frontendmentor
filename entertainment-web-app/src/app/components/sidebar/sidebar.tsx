@@ -7,17 +7,30 @@ import './sidebar.css';
 import icons from './sidebar-data.json';
 
 // Types
-import { SidebarIcons } from '@/app/components/sidebar/sidebar-types';
+import { SidebarIconsTypes } from '@/app/components/sidebar/sidebar-types';
+
+// Components
+import SidebarIcons from '@/app/components/sidebar-icons/sidebar-icons';
+import Image from 'next/image';
 
 const Sidebar = () => {
-     const images = [];
-
-
     return (
         <aside className="SideBar">
-            {
+            <Image src="/root.svg"
+                   alt=""
+                   width={ 32 }
+                   height={ 25 }
+            />
 
-            }
+            <section className="SidebarIcons">
+                {
+                    icons.map((icon: SidebarIconsTypes) => {
+                        return (
+                            <SidebarIcons key={ icon.id } data={ icon } />
+                        );
+                    })
+                }
+            </section>
         </aside>
     );
 };

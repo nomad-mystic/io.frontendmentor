@@ -1,4 +1,4 @@
-export type SidebarIcons = {
+export type SidebarIconsTypes = {
     id: number,
     src: string,
     alt: string,
