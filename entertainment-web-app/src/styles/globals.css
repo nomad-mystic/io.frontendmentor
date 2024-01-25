@@ -1,0 +1,15 @@
+@import 'base/base.css';
+@import 'base/colors.css';
+@import 'base/typography.css';
+@import 'base/ui.css';
+
+@import 'components/buttons.css';
+
+
+@import 'utilities/utilities.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {}

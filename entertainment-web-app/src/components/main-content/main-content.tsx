@@ -4,7 +4,7 @@ import React from 'react';
 import './main-content.css';
 
 // Components
-import AllMovies from '@/app/components/all-movies/all-movies';
+import AllMovies from '@/components/all-movies/all-movies';
 
 /**
  * @description

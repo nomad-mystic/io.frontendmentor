@@ -7,10 +7,10 @@ import './sidebar.css';
 import icons from './sidebar-data.json';
 
 // Types
-import { SidebarIconsTypes } from '@/app/components/sidebar/sidebar-types';
+import { SidebarIconsTypes } from './sidebar-types';
 
 // Components
-import SidebarIcons from '@/app/components/sidebar-icons/sidebar-icons';
+import SidebarIcons from '../sidebar-icons/sidebar-icons';
 import Image from 'next/image';
 
 const Sidebar = () => {

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 
 // Styles
-import './globals.css';
+import '../styles/globals.css';
 
 const inter = Outfit({ subsets: ['latin'] });
 

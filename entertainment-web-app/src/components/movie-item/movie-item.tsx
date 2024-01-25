@@ -6,10 +6,10 @@ import Image from 'next/image';
 import './movie-item.css';
 
 // Types
-import { MovieDataType } from '@/app/data/data-types';
+import { MovieDataType } from '@/data/data-types';
 
 // Components
-import Bookmark from '@/app/components/bookmark/bookmark';
+import Bookmark from '@/components/bookmark/bookmark';
 
 /**
  * @description

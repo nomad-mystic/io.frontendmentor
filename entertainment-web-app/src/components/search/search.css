@@ -1,0 +1,43 @@
+.Search {
+    @screen xl {
+        grid-column-start: 2;
+        grid-column-end: 12;
+        grid-row-start: 1;
+        grid-row-end: 1;
+        height: 4.7rem;
+    }
+
+    form {
+        margin-block-start: 3.2rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        column-gap: 2.4rem;
+
+        label,
+        input {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            color: var(--color-white);
+
+            &:focus-visible,
+            &:focus-within,
+            &:focus {
+                outline: none;
+            }
+        }
+
+        input {
+            border-bottom: 1px solid var(--color-grey-blue);
+        }
+    }
+
+    &-icon {
+        background-image: url('/assets/icon-search.svg');
+        display: block;
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+}
