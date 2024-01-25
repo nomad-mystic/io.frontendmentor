@@ -1,4 +1,6 @@
 .MovieItem {
+    position: relative;
+
     &-image {
         border-radius: var(--border-radius-s);
     }
@@ -10,7 +12,7 @@
         margin-block-start: .8rem;
     }
 
-    h2 {
+    &-title {
         margin-block-start: .8rem;
     }
 }

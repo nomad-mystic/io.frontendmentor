@@ -1,5 +1,3 @@
-'use client'
-
 // Community
 import React from 'react';
 import Image from 'next/image';
@@ -9,6 +7,9 @@ import './movie-item.css';
 
 // Types
 import { MovieDataType } from '@/app/data/data-types';
+
+// Components
+import Bookmark from '@/app/components/bookmark/bookmark';
 
 /**
  * @description
@@ -20,12 +21,15 @@ import { MovieDataType } from '@/app/data/data-types';
 const MovieItem = (props: { data: MovieDataType }) => {
     return (
         <article className="MovieItem">
+            <Bookmark />
+
             <Image src={ props.data.thumbnail.regular.large }
                    alt={ props.data.title }
                    width={ 280 }
                    height={ 174 }
                    className="MovieItem-image"
             />
+
             <section className="MovieItem-meta">
                 <p className="body-s">{ props.data.year }</p>
 
@@ -41,7 +45,8 @@ const MovieItem = (props: { data: MovieDataType }) => {
 
                 <p className="body-s">{ props.data.rating }</p>
             </section>
-            <h2 className="header-xs">{ props.data.title }</h2>
+
+            <h2 className="MovieItem-title header-xs">{ props.data.title }</h2>
         </article>
     );
 };

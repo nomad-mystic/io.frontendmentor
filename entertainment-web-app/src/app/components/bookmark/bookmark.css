@@ -1,0 +1,26 @@
+.Bookmark {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    cursor: pointer;
+
+    &:hover {
+        circle,
+        path {
+            transition: all .5s linear;
+        }
+
+        circle {
+            fill: var(--color-white);
+        }
+
+        path {
+            stroke: var(--color-dark-blue);
+        }
+    }
+
+    circle,
+    path {
+        transition: all .5s linear;
+    }
+}
