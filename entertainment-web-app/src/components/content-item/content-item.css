@@ -1,9 +1,9 @@
-.MovieItem {
+.ContentItem {
     position: relative;
 
-    .MovieItem-imageContainer {
+    .ContentItem-imageContainer {
         &:hover {
-            .MovieItem-overlay {
+            .ContentItem-overlay {
                 opacity: 1;
                 visibility: visible;
                 transition: var(--transiton-r);
@@ -67,6 +67,26 @@
         align-items: center;
         column-gap: .8rem;
         margin-block-start: .8rem;
+
+        .category {
+            display: flex;
+            align-items: center;
+            column-gap: .6rem;
+        }
+
+        .icon {
+            width: 1.2rem;
+            height: 1.2rem;
+            display: block;
+
+            &.Movie {
+                background-image: url('/assets/icon-category-movie.svg');
+            }
+
+            &.TV {
+                background-image: url('/assets/icon-category-tv.svg');
+            }
+        }
     }
 
     &-title {
