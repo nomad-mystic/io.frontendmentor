@@ -1,6 +1,4 @@
 .MainContent {
-    background-color: #ffffff;
-
     @screen xl {
         grid-column-start: 2;
         grid-column-end: 12;
