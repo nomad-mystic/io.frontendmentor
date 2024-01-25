@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 
 // Styles
-import './movie-item.css';
+import './content-item.css';
 
 // Types
 import { MovieDataType } from '@/data/data-types';
@@ -18,15 +18,15 @@ import Bookmark from '@/components/bookmark/bookmark';
  *
  * @return
  */
-const MovieItem = (props: { data: MovieDataType }) => {
+const ContentItem = (props: { data: MovieDataType }) => {
     return (
-        <article className="MovieItem">
+        <article className="ContentItem">
             <Bookmark />
 
-            <div className="MovieItem-imageContainer">
+            <div className="ContentItem-imageContainer">
 
-                <span className="MovieItem-overlay">
-                    <span className="MovieItem-play">
+                <span className="ContentItem-overlay">
+                    <span className="ContentItem-play">
                         <span className="icon"></span>
                         <h4 className="header-xs">Play</h4>
                     </span>
@@ -36,11 +36,11 @@ const MovieItem = (props: { data: MovieDataType }) => {
                        alt={ props.data.title }
                        width={ 280 }
                        height={ 174 }
-                       className="MovieItem-image"
+                       className="ContentItem-image"
                 />
             </div>
 
-            <section className="MovieItem-meta">
+            <section className="ContentItem-meta">
                 <p className="body-s">{ props.data.year }</p>
 
                 <svg xmlns="http://www.w3.org/2000/svg" width="3" height="3" viewBox="0 0 3 3" fill="none">
@@ -56,9 +56,9 @@ const MovieItem = (props: { data: MovieDataType }) => {
                 <p className="body-s">{ props.data.rating }</p>
             </section>
 
-            <h2 className="MovieItem-title header-xs">{ props.data.title }</h2>
+            <h2 className="ContentItem-title header-xs">{ props.data.title }</h2>
         </article>
     );
 };
 
-export default MovieItem;
+export default ContentItem;

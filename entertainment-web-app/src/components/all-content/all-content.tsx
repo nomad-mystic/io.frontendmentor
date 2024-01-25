@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Styles
-import './all-movies.css';
+import './all-content.css';
 
 // Data
 import data from '../../data/data.json';
@@ -10,7 +10,7 @@ import data from '../../data/data.json';
 import { MovieDataType } from '@/data/data-types';
 
 // Components
-import MovieItem from '@/components/movie-item/movie-item';
+import MovieItem from '@/components/content-item/content-item';
 
 /**
  * @description
@@ -19,12 +19,12 @@ import MovieItem from '@/components/movie-item/movie-item';
  *
  * @return
  */
-const AllMovies = () => {
+const AllContent = () => {
     return (
-        <section className="AllMovies">
-            <h2 className="AllMovies-header header-l">Recommended for you</h2>
+        <section className="AllContent" id="AllContent">
+            <h2 className="AllContent-header header-l">Recommended for you</h2>
 
-            <section className="AllMovies-movies">
+            <section className="AllContent-movies">
                 {
                     data.map((movie: MovieDataType) => {
                         return (
@@ -37,4 +37,4 @@ const AllMovies = () => {
     );
 };
 
-export default AllMovies;
+export default AllContent;

@@ -4,7 +4,7 @@ import React from 'react';
 import './main-content.css';
 
 // Components
-import AllMovies from '@/components/all-movies/all-movies';
+import AllContent from '@/components/all-content/all-content';
 
 /**
  * @description
@@ -17,7 +17,7 @@ const MainContent = () => {
     return (
         <main className="MainContent">
 
-            <AllMovies />
+            <AllContent />
 
         </main>
     );

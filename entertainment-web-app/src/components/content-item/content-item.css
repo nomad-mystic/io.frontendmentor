@@ -1,9 +1,9 @@
-.MovieItem {
+.ContentItem {
     position: relative;
 
-    .MovieItem-imageContainer {
+    .ContentItem-imageContainer {
         &:hover {
-            .MovieItem-overlay {
+            .ContentItem-overlay {
                 opacity: 1;
                 visibility: visible;
                 transition: var(--transiton-r);
