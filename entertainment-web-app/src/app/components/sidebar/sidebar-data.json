@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "src": "../public/home.svg",
+        "alt": "",
+        "path": ""
+    },
+    {
+        "id": 2,
+        "src": "../public/movies.svg",
+        "alt": "",
+        "path": ""
+    },
+    {
+        "id": 3,
+        "src": "../public/tv.svg",
+        "alt": "",
+        "path": ""
+    },
+    {
+        "id": 4,
+        "src": "../public/bookmarks.svg",
+        "alt": "",
+        "path": ""
+    }
+]
