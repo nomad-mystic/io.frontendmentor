@@ -1,0 +1,14 @@
+.AllMovies {
+    &-header {
+        margin-block-end: 3.2rem;
+    }
+
+    &-movies {
+        @screen xl {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(auto, 1fr));
+            column-gap: 4rem;
+            row-gap: 3.2rem;
+        }
+    }
+}

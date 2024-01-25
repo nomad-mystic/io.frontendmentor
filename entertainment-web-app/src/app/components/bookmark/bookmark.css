@@ -1,0 +1,28 @@
+.Bookmark {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    cursor: pointer;
+    z-index: 20;
+
+    &:hover {
+        circle,
+        path {
+            transition: all .5s linear;
+        }
+
+        circle {
+            fill: var(--color-white);
+            opacity: 1;
+        }
+
+        path {
+            stroke: var(--color-dark-blue);
+        }
+    }
+
+    circle,
+    path {
+        transition: all .5s linear;
+    }
+}
