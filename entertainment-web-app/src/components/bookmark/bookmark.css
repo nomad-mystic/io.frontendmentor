@@ -21,6 +21,25 @@
         }
     }
 
+    svg {
+        &.isBookmarked {
+            circle,
+            path {
+                transition: none;
+            }
+
+            circle {
+                fill: var(--color-dark-blue);
+                opacity: 0.500647;
+            }
+
+            path {
+                fill: var(--color-white);
+                stroke: var(--color-white);
+            }
+        }
+    }
+
     circle,
     path {
         transition: all .5s linear;
