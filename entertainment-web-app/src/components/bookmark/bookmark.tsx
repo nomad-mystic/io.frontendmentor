@@ -11,9 +11,7 @@ import { MovieDataType } from '@/data/data-types';
 
 // Utils
 import StorageUtils from '@/utils/storage-utils';
-
-// Data
-import data from '../../data/data.json';
+import ItemUtils from '@/utils/item-utils';
 
 /**
  * @description
@@ -39,7 +37,7 @@ const Bookmark = () => {
 
         if (target && typeof target !== 'undefined') {
 
-            const currentObject = StorageUtils.getItemTitle(target);
+            const currentObject = ItemUtils.getItemTitle(target);
 
             if (!currentObject || typeof currentObject === 'undefined') {
                 return;
@@ -70,7 +68,7 @@ const Bookmark = () => {
         const current = divElement.current as HTMLDivElement;
 
         // Extract the object
-        const currentObject = StorageUtils.getItemTitle(current);
+        const currentObject = ItemUtils.getItemTitle(current);
 
         if (!currentObject || typeof currentObject === 'undefined') {
             return;
