@@ -15,7 +15,7 @@ import AllContent from '@/components/all-content/all-content';
  */
 const MainContent = () => {
     return (
-        <main className="MainContent">
+        <main className="MainContent Content">
 
             <AllContent />
 

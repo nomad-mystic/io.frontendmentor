@@ -4,7 +4,7 @@ import React from 'react';
 // Components
 import Search from '@/components/search/search';
 import Sidebar from '@/components/sidebar/sidebar';
-import BookmarkContent from '@/components/bookmark-content/bookmark-content';
+import BookmarkContent from '@/app/bookmarks/components/bookmark-content/bookmark-content';
 
 /**
  * @description

@@ -23,12 +23,16 @@
         transition: var(--transiton-r);
     }
 
-    .MainContent {
+    .Content {
         @screen xl {
             grid-column-start: 2;
             grid-column-end: 12;
             grid-row-start: 2;
             grid-row-end: 12;
+        }
+
+        &-header {
+            margin-block-end: 3.2rem;
         }
     }
 
@@ -40,4 +44,6 @@
             row-gap: 3.2rem;
         }
     }
+
+
 }

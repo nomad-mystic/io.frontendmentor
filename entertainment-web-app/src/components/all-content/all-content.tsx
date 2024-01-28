@@ -22,7 +22,7 @@ import ContentItem from '@/components/content-item/content-item';
 const AllContent = () => {
     return (
         <section className="AllContent" id="AllContent">
-            <h2 className="AllContent-header header-l">Recommended for you</h2>
+            <h2 className="Content-header header-l">Recommended for you</h2>
 
             <section className="AllContent-movies ItemContent">
                 {

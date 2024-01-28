@@ -14,26 +14,28 @@ import ContentItem from '@/components/content-item/content-item';
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return
+ * @return {React.JSX.Element}
  */
-const BookmarkContent = () => {
+const BookmarkContent = (): React.JSX.Element => {
     const [bookmarkContent, setBookmarkContent] = useState<Array<MovieDataType>>([])
 
     useEffect(() => {
-        let bookmarks = JSON.parse(window.sessionStorage.getItem('bookmarks') || '');
+        let bookmarks = window.sessionStorage.getItem('bookmarks') || '';
 
         if (!bookmarks || typeof bookmarks === 'undefined') {
             return;
         }
 
-        setBookmarkContent(bookmarks);
+        setBookmarkContent(JSON.parse(bookmarks));
     }, []);
 
     return (
-        <main className="BookmarkContent MainContent">
+        <main className="BookmarkContent Content">
+            <h2 className="Content-header header-l">Bookmarks</h2>
+
             <section className="ItemContent">
                 {
-                    bookmarkContent.map((item ) => {
+                    bookmarkContent.map((item) => {
                         // @ts-ignore
                         const objectItem = JSON.parse(item);
 
