@@ -22,4 +22,22 @@
         visibility: hidden;
         transition: var(--transiton-r);
     }
+
+    .MainContent {
+        @screen xl {
+            grid-column-start: 2;
+            grid-column-end: 12;
+            grid-row-start: 2;
+            grid-row-end: 12;
+        }
+    }
+
+    .ItemContent {
+        @screen xl {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(auto, 1fr));
+            column-gap: 4rem;
+            row-gap: 3.2rem;
+        }
+    }
 }

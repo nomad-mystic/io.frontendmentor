@@ -1,8 +1,3 @@
 .MainContent {
-    @screen xl {
-        grid-column-start: 2;
-        grid-column-end: 12;
-        grid-row-start: 2;
-        grid-row-end: 12;
-    }
+
 }

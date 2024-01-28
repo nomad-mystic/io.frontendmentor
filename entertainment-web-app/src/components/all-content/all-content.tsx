@@ -10,7 +10,7 @@ import data from '../../data/data.json';
 import { MovieDataType } from '@/data/data-types';
 
 // Components
-import MovieItem from '@/components/content-item/content-item';
+import ContentItem from '@/components/content-item/content-item';
 
 /**
  * @description
@@ -24,11 +24,11 @@ const AllContent = () => {
         <section className="AllContent" id="AllContent">
             <h2 className="AllContent-header header-l">Recommended for you</h2>
 
-            <section className="AllContent-movies">
+            <section className="AllContent-movies ItemContent">
                 {
-                    data.map((movie: MovieDataType) => {
+                    data.map((item: MovieDataType) => {
                         return (
-                            <MovieItem key={ movie.title } data={ movie } />
+                            <ContentItem key={ item.title } data={ item } />
                         );
                     })
                 }

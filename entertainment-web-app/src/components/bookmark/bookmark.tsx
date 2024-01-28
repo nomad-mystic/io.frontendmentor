@@ -9,9 +9,11 @@ import './bookmark.css'
 // Types
 import { MovieDataType } from '@/data/data-types';
 
+// Utils
+import StorageUtils from '@/utils/storage-utils';
+
 // Data
 import data from '../../data/data.json';
-import { type } from 'node:os';
 
 /**
  * @description
@@ -37,7 +39,7 @@ const Bookmark = () => {
 
         if (target && typeof target !== 'undefined') {
 
-            const currentObject = getItemTitle(target);
+            const currentObject = StorageUtils.getItemTitle(target);
 
             if (!currentObject || typeof currentObject === 'undefined') {
                 return;
@@ -48,91 +50,11 @@ const Bookmark = () => {
                 return !prevState;
             });
 
-            // updateLocalStorage(currentObject);
-        }
-    };
-
-    /**
-     * @description
-     * @public
-     * @author Keith Murphy | nomadmystics@gmail.com
-     *
-     * @param {HTMLDivElement} element
-     * @return {MovieDataType | undefined}
-     */
-    const getItemTitle = (element: HTMLDivElement): MovieDataType | undefined => {
-        // Get the parent
-        const currentItem = element.closest('.ContentItem');
-
-        if (!currentItem || typeof currentItem === 'undefined') {
-            return;
-        }
-
-        // Extract title
-        const title = currentItem?.querySelector('.ContentItem-title');
-
-        if (!title || typeof title === 'undefined') {
-            return;
-        }
-
-        const titleContent = title.innerHTML;
-
-        // Get our current object by title
-        const currentObject = findCurrentObject(titleContent);
-
-        if (!currentObject || typeof currentObject === 'undefined') {
-            return;
-        }
-
-        return currentObject;
-    };
-
-    /**
-     * @description
-     * @public
-     * @author Keith Murphy | nomadmystics@gmail.com
-     *
-     * @param {string} titleContent
-     * @return {MovieDataType | undefined}
-     */
-    const findCurrentObject = (titleContent: string): MovieDataType | undefined => {
-        const currentObject = data.filter((item) => {
-            return item.title === titleContent;
-        });
-
-        if (!currentObject) {
-            return;
-        }
-
-        return currentObject[0];
-    };
-
-    /**
-     * @description
-     * @public
-     * @author Keith Murphy | nomadmystics@gmail.com
-     *
-     * @return
-     */
-    const updateLocalStorage = (currentObject: MovieDataType) => {
-        // Set initial state
-        if (!window.sessionStorage.getItem('bookmarks') || typeof window.sessionStorage.getItem('bookmarks') === 'undefined') {
-            window.sessionStorage.setItem('bookmarks', JSON.stringify([]));
-        }
-
-        let bookmarks = window.sessionStorage.getItem('bookmarks');
-
-        if (bookmarks && typeof bookmarks !== 'undefined') {
-            let bookmarksArray = JSON.parse(bookmarks);
-
-            bookmarksArray.push(JSON.stringify(currentObject));
-
-            window.sessionStorage.setItem('bookmarks', JSON.stringify(bookmarksArray));
-
-            // console.log(JSON.parse(bookmarks as string) || null);
-            // console.log(bookmarksArray);
-
-            console.log(JSON.parse(window.sessionStorage.getItem('bookmarks') as string));
+            if (bookmarked) {
+                StorageUtils.removeBookmarkFromStorage(currentObject);
+            } else {
+                StorageUtils.addBookmarkToStorage(currentObject);
+            }
         }
     };
 
@@ -148,18 +70,27 @@ const Bookmark = () => {
         const current = divElement.current as HTMLDivElement;
 
         // Extract the object
-        const currentObject = getItemTitle(current);
+        const currentObject = StorageUtils.getItemTitle(current);
 
         if (!currentObject || typeof currentObject === 'undefined') {
             return;
         }
 
         // Our session storage
-        let bookmarks = JSON.parse(window.sessionStorage.getItem('bookmarks') || '');
+        let bookmarksStorage = window.sessionStorage.getItem('bookmarks');
 
-        if (!bookmarks || typeof bookmarks === 'undefined') {
-            return;
+        // console.log(bookmarksStorage);
+
+        // Make sure we have valid JSON
+        if (!bookmarksStorage || typeof bookmarksStorage === 'undefined') {
+            bookmarksStorage = '[]';
         }
+
+        let bookmarks = JSON.parse(bookmarksStorage);
+
+        // if (!bookmarks || typeof bookmarks === 'undefined') {
+        //     return;
+        // }
 
         // Set our state if there is a matching-bookmarked object
         bookmarks.map((bookmark: string) => {
