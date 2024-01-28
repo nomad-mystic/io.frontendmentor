@@ -20,13 +20,13 @@ const BookmarkContent = () => {
     const [bookmarkContent, setBookmarkContent] = useState<Array<MovieDataType>>([])
 
     useEffect(() => {
-        let bookmarks = JSON.parse(window.sessionStorage.getItem('bookmarks') || '');
+        let bookmarks = window.sessionStorage.getItem('bookmarks') || '';
 
         if (!bookmarks || typeof bookmarks === 'undefined') {
             return;
         }
 
-        setBookmarkContent(bookmarks);
+        setBookmarkContent(JSON.parse(bookmarks));
     }, []);
 
     return (
