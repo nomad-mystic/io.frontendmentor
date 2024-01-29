@@ -58,7 +58,7 @@ const TrendingItem = (props: { data: MovieDataType }): React.JSX.Element => {
                         <p className="body-s">{ props.data.rating }</p>
                     </section>
 
-                    <h2 className="ContentItem-title header-xs">{ props.data.title }</h2>
+                    <h2 className="ContentItem-title header-s">{ props.data.title }</h2>
                 </div>
             </div>
         </article>

@@ -1,5 +1,7 @@
+'use client';
+
 // Community
-import React from 'react';
+import React, { useRef } from 'react';
 
 // Styles
 import './trending.css';
@@ -21,11 +23,30 @@ import TrendingItem from '@/components/trending/trending-item/trending-item';
  * @return {React.JSX.Element}
  */
 const Trending = (): React.JSX.Element => {
+    const trending = useRef<HTMLDivElement>(null);
+
+    const handleWheelMovement = (event: React.WheelEvent) => {
+        let items = window.document.getElementById('Trending-items');
+
+        // event.preventDefault();
+
+        if (!items || typeof items === 'undefined') {
+            return;
+        }
+
+        console.dir(trending.current);
+        console.dir(trending.current);
+        console.dir(event);
+
+        items.scrollLeft += event.deltaY;
+    };
+
+
     return (
-        <div className="Trending">
+        <div className="Trending" ref={ trending }>
             <h2 className="Content-header header-l">Trending</h2>
 
-            <section className="Trending-items">
+            <section className="Trending-items" onWheel={ handleWheelMovement } id="Trending-items">
                 {
                     data.map((item: MovieDataType) => {
                         if (item.isTrending) {

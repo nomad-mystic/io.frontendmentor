@@ -5,6 +5,7 @@
         grid-row-start: 1;
         grid-row-end: 1;
         height: 4.7rem;
+        margin-block-end: 3.4rem;
     }
 
     form {

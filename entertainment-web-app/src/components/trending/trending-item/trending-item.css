@@ -1,4 +1,6 @@
 .TrendingItem {
+    position: relative;
+
     .ContentItem {
         &-image {
             object-fit: cover;
@@ -18,6 +20,8 @@
         position: absolute;
         top: 0;
         width: 100%;
+        padding-inline-start: 2.4rem;
+        padding-block-end: 2.4rem;
     }
 
     .ContentItem-imageContainer {
