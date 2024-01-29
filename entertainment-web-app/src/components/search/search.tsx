@@ -5,7 +5,7 @@ import React, { ChangeEvent, useState } from 'react';
 
 // Styles
 import './search.css';
-import SearchResults from '@/components/search-results/search-results';
+import SearchResults from '@/components/search/search-results/search-results';
 
 /**
  * @description

@@ -4,7 +4,7 @@ import React from 'react';
 import './all-content.css';
 
 // Data
-import data from '../../data/data.json';
+import data from '../../../data/data.json';
 
 // Types
 import { MovieDataType } from '@/data/data-types';

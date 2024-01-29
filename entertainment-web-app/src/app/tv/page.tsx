@@ -8,10 +8,10 @@ import TvContent from '@/app/tv/components/tv-content/tv-content';
 
 /**
  * @description Build the TV page
- * @public 
+ * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return 
+ * @return
  */
 const TvPage = () => {
     return (
