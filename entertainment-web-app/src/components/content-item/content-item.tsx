@@ -10,6 +10,7 @@ import { MovieDataType } from '@/data/data-types';
 
 // Components
 import Bookmark from '@/components/bookmark/bookmark';
+import ContentMeta from '@/components/content-meta/content-meta';
 
 /**
  * @description
@@ -40,24 +41,7 @@ const ContentItem = (props: { data: MovieDataType }): React.JSX.Element => {
                 />
             </div>
 
-            <section className="ContentItem-meta">
-                <p className="body-s">{ props.data.year }</p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="3" height="3" viewBox="0 0 3 3" fill="none">
-                    <circle opacity="0.5" cx="1.5" cy="1.5" r="1.5" fill="white" />
-                </svg>
-
-                <p className="body-s category"><span className={ `icon ${ props.data.category }` }></span>{ props.data.category }
-                </p>
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="3" height="3" viewBox="0 0 3 3" fill="none">
-                    <circle opacity="0.5" cx="1.5" cy="1.5" r="1.5" fill="white" />
-                </svg>
-
-                <p className="body-s">{ props.data.rating }</p>
-            </section>
-
-            <h2 className="ContentItem-title header-xs">{ props.data.title }</h2>
+            <ContentMeta data={ props.data } />
         </article>
     );
 };
