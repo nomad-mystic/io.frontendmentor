@@ -11,7 +11,7 @@ import icons from './sidebar-data.json';
 import { SidebarIconsTypes } from './sidebar-types';
 
 // Components
-import SidebarIcons from '../sidebar-icons/sidebar-icons';
+import SidebarIcons from '@/components/sidebar/sidebar-icons/sidebar-icons';
 
 /**
  * @description

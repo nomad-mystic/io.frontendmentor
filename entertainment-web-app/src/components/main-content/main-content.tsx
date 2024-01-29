@@ -5,7 +5,7 @@ import React from 'react';
 import './main-content.css';
 
 // Components
-import AllContent from '@/components/all-content/all-content';
+import AllContent from '@/components/main-content/all-content/all-content';
 import Trending from '@/components/trending/trending';
 
 /**
