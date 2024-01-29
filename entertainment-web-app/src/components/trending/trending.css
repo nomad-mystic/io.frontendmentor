@@ -1,3 +1,17 @@
 .Trending {
-    
+    &-items {
+        display: flex;
+        overflow-x: scroll;
+        column-gap: 4rem;
+
+        .ContentItem {
+            width: 100%;
+            min-width: 470px;
+
+            &-image {
+                object-fit: contain;
+                width: 470px;
+            }
+        }
+    }
 }
