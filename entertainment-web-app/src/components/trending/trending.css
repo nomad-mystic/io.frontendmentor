@@ -1,17 +1,20 @@
 .Trending {
     &-items {
         display: flex;
-        overflow-x: scroll;
+        overflow-y: auto;
+        overflow-x: hidden;
         column-gap: 4rem;
+        scrollbar-width: none;
+        width: 100%;
+        height: 230px;
+        margin-block-end: 4rem;
 
-        .ContentItem {
-            width: 100%;
-            min-width: 470px;
+        /*transform: rotate(-90deg);*/
+        /*transform-origin: right top;*/
+        /*transform: rotate(-90deg) translateY(-470px);*/
 
-            &-image {
-                object-fit: contain;
-                width: 470px;
-            }
+        &::-webkit-scrollbar {
+            display: none;
         }
     }
 }
