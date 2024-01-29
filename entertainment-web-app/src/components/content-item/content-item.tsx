@@ -16,9 +16,9 @@ import Bookmark from '@/components/bookmark/bookmark';
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return
+ * @return {React.JSX.Element}
  */
-const ContentItem = (props: { data: MovieDataType }) => {
+const ContentItem = (props: { data: MovieDataType }): React.JSX.Element => {
     return (
         <article className="ContentItem">
             <Bookmark />

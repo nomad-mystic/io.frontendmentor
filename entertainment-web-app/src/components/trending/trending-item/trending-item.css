@@ -1,3 +1,28 @@
 .TrendingItem {
+    .ContentItem {
+        &-image {
+            object-fit: cover;
+            width: 470px;
+            height: 230px;
+            max-width: 100%;
+            display: block;
+        }
+    }
 
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        z-index: 20;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .ContentItem-imageContainer {
+        width: 470px;
+        max-width: 470px;
+        height: 100%;
+    }
 }

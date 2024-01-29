@@ -11,7 +11,7 @@ import data from '@/data/data.json';
 import { MovieDataType } from '@/data/data-types';
 
 // Components
-import ContentItem from '@/components/content-item/content-item';
+import TrendingItem from '@/components/trending/trending-item/trending-item';
 
 /**
  * @description Build the trending content
@@ -30,7 +30,7 @@ const Trending = (): React.JSX.Element => {
                     data.map((item: MovieDataType) => {
                         if (item.isTrending) {
                             return (
-                                <ContentItem key={ item.title } data={ item } />
+                                <TrendingItem key={ item.title } data={ item } />
                             );
                         }
                     })
