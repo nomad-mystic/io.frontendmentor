@@ -29,7 +29,7 @@ export default class ItemUtils {
         }
 
         // Extract title
-        const title = currentItem?.querySelector('.ContentItem-title');
+        const title = currentItem?.querySelector('.ContentMeta-title');
 
         if (!title || typeof title === 'undefined') {
             return;

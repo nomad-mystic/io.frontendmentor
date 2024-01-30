@@ -1,6 +1,5 @@
 // Community
 import React from 'react';
-import Image from 'next/image';
 
 // Styles
 import './content-item.css';
@@ -11,12 +10,15 @@ import { MovieDataType } from '@/data/data-types';
 // Components
 import Bookmark from '@/components/bookmark/bookmark';
 import ContentMeta from '@/components/content-meta/content-meta';
+import ContentImage from '@/components/content-item/content-image/content-image';
 
 /**
  * @description
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
+ * @param {object} props
+ * @param {MovieDataType} props.data
  * @return {React.JSX.Element}
  */
 const ContentItem = (props: { data: MovieDataType }): React.JSX.Element => {
@@ -24,22 +26,11 @@ const ContentItem = (props: { data: MovieDataType }): React.JSX.Element => {
         <article className="ContentItem">
             <Bookmark />
 
-            <div className="ContentItem-imageContainer">
+            <section className="ContentItem-imageContainer">
 
-                <span className="ContentItem-overlay">
-                    <span className="ContentItem-play">
-                        <span className="icon"></span>
-                        <h4 className="header-xs">Play</h4>
-                    </span>
-                </span>
+                <ContentImage data={ props.data } />
 
-                <Image src={ props.data.thumbnail.regular.large }
-                       alt={ props.data.title }
-                       width={ 280 }
-                       height={ 174 }
-                       className="ContentItem-image"
-                />
-            </div>
+            </section>
 
             <ContentMeta data={ props.data } />
         </article>

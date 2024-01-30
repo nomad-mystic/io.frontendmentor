@@ -13,9 +13,11 @@ import { SidebarIconsTypes } from '@/components/sidebar/sidebar-types';
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return
+ * @param {object} props
+ * @param {SidebarIconsTypes} props.data
+ * @return {React.JSX.Element}
  */
-const SidebarIcons = (props: { data: SidebarIconsTypes }) => {
+const SidebarIcons = (props: { data: SidebarIconsTypes }): React.JSX.Element => {
     const svg = `
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
             ${ props.data.src }
