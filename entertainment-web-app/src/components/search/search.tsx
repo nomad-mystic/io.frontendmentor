@@ -20,9 +20,12 @@ import { MovieDataType } from '@/types/data-types';
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
+ * @param {object} props
+ * @param {string} props.searchType
+ * @param {string} props.placeholder
  * @return {React.JSX.Element}
  */
-const Search = (): React.JSX.Element => {
+const Search = (props: { searchType: string, placeholder: string }): React.JSX.Element => {
     const [selected, setSelected] = useState<MovieDataType[]>([]);
     const [searchValue, setSearchValue] = useState('');
     const searchInput = useRef<HTMLInputElement>(null);
@@ -126,7 +129,7 @@ const Search = (): React.JSX.Element => {
                            ref={ searchInput }
                            className="header-m"
                            onChange={ handleSearchChange }
-                           placeholder="Search for movies or TV series" />
+                           placeholder={ props.placeholder } />
                 </label>
             </form>
 
