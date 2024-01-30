@@ -5,7 +5,7 @@ import React from 'react';
 import './content-meta.css';
 
 // Types
-import { MovieDataType } from '@/data/data-types';
+import { MovieDataType } from '@/types/data-types';
 
 /**
  * @description

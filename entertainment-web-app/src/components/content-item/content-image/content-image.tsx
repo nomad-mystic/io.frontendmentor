@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 // Types
-import { MovieDataType } from '@/data/data-types';
+import { MovieDataType } from '@/types/data-types';
 
 /**
  * @description

@@ -5,7 +5,7 @@ import React from 'react';
 import './content-item.css';
 
 // Types
-import { MovieDataType } from '@/data/data-types';
+import { MovieDataType } from '@/types/data-types';
 
 // Components
 import Bookmark from '@/components/bookmark/bookmark';
