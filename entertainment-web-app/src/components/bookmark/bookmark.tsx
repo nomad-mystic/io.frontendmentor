@@ -14,13 +14,13 @@ import StorageUtils from '@/utils/storage-utils';
 import ItemUtils from '@/utils/item-utils';
 
 /**
- * @description
+ * @description Build the functionality for our bookmarks
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return
+ * @return {React.JSX.Element}
  */
-const Bookmark = () => {
+const Bookmark = (): React.JSX.Element => {
     const [bookmarked, setBookmarked] = useState(false);
     const divElement = useRef<HTMLDivElement>(null);
 

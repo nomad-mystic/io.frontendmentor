@@ -17,6 +17,8 @@ import ContentImage from '@/components/content-item/content-image/content-image'
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
+ * @param {object} props
+ * @param {MovieDataType} props.data
  * @return {React.JSX.Element}
  */
 const ContentItem = (props: { data: MovieDataType }): React.JSX.Element => {

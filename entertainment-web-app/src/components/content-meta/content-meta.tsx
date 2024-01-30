@@ -12,6 +12,8 @@ import { MovieDataType } from '@/data/data-types';
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
+ * @param {object} props
+ * @param {MovieDataType} props.data
  * @return {React.JSX.Element}
  */
 const ContentMeta = (props: { data: MovieDataType }): React.JSX.Element => {

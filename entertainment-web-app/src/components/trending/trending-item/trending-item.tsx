@@ -17,6 +17,8 @@ import TrendingImage from '@/components/trending/trending-image/trending-image';
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
+ * @param {object} props
+ * @param {MovieDataType} props.data
  * @return {React.JSX.Element}
  */
 const TrendingItem = (props: { data: MovieDataType }): React.JSX.Element => {

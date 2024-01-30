@@ -7,7 +7,16 @@ import Image from 'next/image';
 // Types
 import { MovieDataType } from '@/data/data-types';
 
-const TrendingImage = (props: {data: MovieDataType}) => {
+/**
+ * @description Build our images for the trending component
+ * @public
+ * @author Keith Murphy | nomadmystics@gmail.com
+ *
+ * @param {object} props
+ * @param {MovieDataType} props.data
+ * @return {React.JSX.Element}
+ */
+const TrendingImage = (props: { data: MovieDataType }): React.JSX.Element => {
     const [loading, setLoading] = useState(true);
 
     return (
