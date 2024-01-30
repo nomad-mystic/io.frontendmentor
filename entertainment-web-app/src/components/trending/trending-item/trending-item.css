@@ -28,6 +28,7 @@
         width: 470px;
         max-width: 470px;
         height: 100%;
+        cursor: pointer;
     }
 
     .ContentMeta-title {

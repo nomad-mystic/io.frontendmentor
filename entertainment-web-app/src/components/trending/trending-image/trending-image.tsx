@@ -22,7 +22,7 @@ const TrendingImage = (props: { data: MovieDataType }): React.JSX.Element => {
     return (
         <>
             <span className="ContentItem-overlay"
-                  style={ { opacity: loading ? 0 : 1 } }
+                  style={ { display: loading ? 'none' : 'flex' } }
             >
                 <span className="ContentItem-play">
                     <span className="icon"></span>

@@ -1,16 +1,6 @@
 .ContentItem {
     position: relative;
 
-    .ContentItem-imageContainer {
-        &:hover {
-            .ContentItem-overlay {
-                opacity: 1;
-                visibility: visible;
-                transition: var(--transiton-r);
-            }
-        }
-    }
-
     &-imageContainer {
         position: relative;
     }
@@ -64,5 +54,15 @@
 
     .ContentMeta-title {
         font-size: var(--font-size-header-xs);
+    }
+}
+
+.ContentItem-imageContainer {
+    &:hover {
+        .ContentItem-overlay {
+            opacity: 1;
+            visibility: visible;
+            transition: var(--transiton-r);
+        }
     }
 }

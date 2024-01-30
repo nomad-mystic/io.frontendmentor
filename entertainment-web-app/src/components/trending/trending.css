@@ -9,10 +9,6 @@
         height: 230px;
         margin-block-end: 4rem;
 
-        /*transform: rotate(-90deg);*/
-        /*transform-origin: right top;*/
-        /*transform: rotate(-90deg) translateY(-470px);*/
-
         &::-webkit-scrollbar {
             display: none;
         }
