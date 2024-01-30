@@ -8,7 +8,7 @@ import ContentItem from '@/components/content-item/content-item';
 import data from '@/data/data.json';
 
 // Types
-import { MovieDataType } from '@/data/data-types';
+import { MovieDataType } from '@/types/data-types';
 
 /**
  * @description Build the Movies page

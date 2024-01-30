@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { MovieDataType } from '@/data/data-types';
+import { MovieDataType } from '@/types/data-types';
 
 const SearchResults = (props: { selected: Array<MovieDataType>}) => {
 

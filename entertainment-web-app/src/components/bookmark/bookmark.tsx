@@ -6,9 +6,6 @@ import React, { useEffect, useRef, useState } from 'react';
 // Styles
 import './bookmark.css'
 
-// Types
-import { MovieDataType } from '@/data/data-types';
-
 // Utils
 import StorageUtils from '@/utils/storage-utils';
 import ItemUtils from '@/utils/item-utils';

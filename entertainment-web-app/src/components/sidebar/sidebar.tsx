@@ -5,10 +5,10 @@ import Image from 'next/image';
 import './sidebar.css';
 
 // Data
-import icons from './sidebar-data.json';
+import icons from '../../data/sidebar-data.json';
 
 // Types
-import { SidebarIconsTypes } from './sidebar-types';
+import { SidebarIconsTypes } from '../../types/sidebar-types';
 
 // Components
 import SidebarIcons from '@/components/sidebar/sidebar-icons/sidebar-icons';
@@ -24,7 +24,7 @@ const Sidebar = () => {
     return (
         <aside className="SideBar">
             <Image src="/assets/logo.svg"
-                   alt=""
+                   alt="Red image of a movie reel"
                    width={ 32 }
                    height={ 25 }
             />
@@ -38,6 +38,14 @@ const Sidebar = () => {
                     })
                 }
             </section>
+
+            <Image
+                src="/assets/image-avatar.png"
+                alt="Red image of a movie reel"
+                width={ 32 }
+                height={ 25 }
+                className="SideBar-avatar"
+            />
         </aside>
     );
 };

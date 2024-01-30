@@ -1,5 +1,5 @@
 // Types
-import { MovieDataType } from '@/data/data-types';
+import { MovieDataType } from '@/types/data-types';
 
 // Data
 import data from '@/data/data.json';

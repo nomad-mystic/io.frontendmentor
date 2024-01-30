@@ -1,4 +1,4 @@
-import { MovieDataType } from '@/data/data-types';
+import { MovieDataType } from '@/types/data-types';
 
 /**
  * @classdesc

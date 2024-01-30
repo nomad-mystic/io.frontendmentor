@@ -9,6 +9,15 @@
         grid-row-end: 12;
         height: 960px;
         flex-direction: column;
+        justify-content: space-between;
         padding-block-start: 3.2rem;
+    }
+
+    &-avatar {
+        border: 1px solid var(--color-white);
+        border-radius: 4rem;
+        width: 4rem;
+        height: 4rem;
+        margin-block-end: 2.4rem;
     }
 }

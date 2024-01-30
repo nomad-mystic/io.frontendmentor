@@ -6,7 +6,7 @@ import Link from 'next/link';
 import './sidebar-icons.css';
 
 // Types
-import { SidebarIconsTypes } from '@/components/sidebar/sidebar-types';
+import { SidebarIconsTypes } from '@/types/sidebar-types';
 
 /**
  * @description

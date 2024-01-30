@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 // Types
-import { MovieDataType } from '@/data/data-types';
+import { MovieDataType } from '@/types/data-types';
 
 /**
  * @description Build our images for the trending component
@@ -22,7 +22,7 @@ const TrendingImage = (props: { data: MovieDataType }): React.JSX.Element => {
     return (
         <>
             <span className="ContentItem-overlay"
-                  style={ { opacity: loading ? 0 : 1 } }
+                  style={ { display: loading ? 'none' : 'flex' } }
             >
                 <span className="ContentItem-play">
                     <span className="icon"></span>

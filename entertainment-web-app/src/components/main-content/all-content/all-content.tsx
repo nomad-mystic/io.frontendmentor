@@ -7,7 +7,7 @@ import './all-content.css';
 import data from '../../../data/data.json';
 
 // Types
-import { MovieDataType } from '@/data/data-types';
+import { MovieDataType } from '@/types/data-types';
 
 // Components
 import ContentItem from '@/components/content-item/content-item';
