@@ -1,16 +1,49 @@
-import React, { ReactNode } from 'react';
+// Community
+import React from 'react';
 
+// Styles
+import './search-results.css';
+
+// Types
 import { MovieDataType } from '@/types/data-types';
 
-const SearchResults = (props: { selected: Array<MovieDataType>}) => {
+// Components
+import ContentItem from '@/components/content-item/content-item';
 
-    console.log(props);
-
-
+/**
+ * @description Build the search results component
+ * @public
+ * @author Keith Murphy | nomadmystics@gmail.com
+ *
+ * @param {object} props
+ * @param {Array<MovieDataType>} props.selected
+ * @param {string} props.searchValue
+ * @return {React.JSX.Element}
+ */
+const SearchResults = (props: { selected: Array<MovieDataType>, searchValue: string }): React.JSX.Element => {
     return (
-        <div>
+        <section className="SearchResults">
 
-        </div>
+            {
+                props.selected.length > 0 &&
+                <h2 className="header-l SearchResults-title">Found { props.selected.length } results for '{ props.searchValue }'</h2>
+            }
+
+            {
+                props.selected.length <= 0 &&
+                <h2 className="header-l SearchResults-title">Not results found</h2>
+            }
+
+            <section className="ItemContent">
+                {
+                    props.selected.map((item: MovieDataType) => {
+                        return (
+                            <ContentItem key={ item.title } data={ item } />
+                        )
+                    })
+                }
+            </section>
+        </section>
     );
 };
 

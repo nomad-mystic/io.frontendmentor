@@ -1,0 +1,7 @@
+.SearchResults {
+    margin-block-start: 3.4rem;
+
+    &-title {
+        margin-block-end: 3.2rem;
+    }
+}
