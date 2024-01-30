@@ -22,6 +22,24 @@
         transition: var(--transiton-r);
     }
 
+    .isLoading {
+        background: #80899d;
+        position: absolute;
+        inset: 0;
+        border-radius: var(--border-radius-s);
+        animation: loading 2s ease-in-out infinite alternate;
+
+        @keyframes loading {
+            0% {
+                opacity: .75;
+            }
+
+            100% {
+                opacity: .25;
+            }
+        }
+    }
+
     .Content {
         @screen xl {
             grid-column-start: 2;
