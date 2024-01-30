@@ -5,11 +5,10 @@
         grid-row-start: 1;
         grid-row-end: 1;
         height: 4.7rem;
-        margin-block-end: 3.4rem;
+        margin-block-start: 3.2rem;
     }
 
     form {
-        margin-block-start: 3.2rem;
         height: 100%;
         display: flex;
         align-items: center;
@@ -31,10 +30,12 @@
         }
 
         input {
-            border-bottom: 1px solid var(--color-grey-blue);
-
             &::placeholder {
                 opacity: 0.4979;
+            }
+
+            &:focus {
+                border-bottom: 1px solid var(--color-grey-blue);
             }
         }
     }
