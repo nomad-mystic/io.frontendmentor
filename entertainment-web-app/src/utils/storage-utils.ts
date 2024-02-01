@@ -81,4 +81,20 @@ export default class StorageUtils {
             window.sessionStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
         }
     }
+
+    /**
+     * @description
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return
+     */
+    public static getBookmarksFromStorage = () => {
+        // Set initial state
+        if (!window.sessionStorage.getItem('bookmarks') || typeof window.sessionStorage.getItem('bookmarks') === 'undefined') {
+            window.sessionStorage.setItem('bookmarks', JSON.stringify([]))
+        }
+
+        return JSON.parse(window.sessionStorage.getItem('bookmarks') ?? '[]');
+    }
 }

@@ -8,7 +8,7 @@ import MainContent from '@/components/main-content/main-content';
 const Home = () => {
     return (
         <div className="container">
-            <Search searchType="all" placeholder="Search for movies or TV series"/>
+            <Search searchType="All" placeholder="Search for movies or TV series"/>
 
             <Sidebar />
 

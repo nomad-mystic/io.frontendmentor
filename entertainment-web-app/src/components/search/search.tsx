@@ -12,6 +12,9 @@ import SearchResults from '@/components/search/search-results/search-results';
 // Data
 import data from '@/data/data.json';
 
+// Utils
+import StorageUtils from '@/utils/storage-utils';
+
 // Types
 import { MovieDataType } from '@/types/data-types';
 
@@ -64,21 +67,47 @@ const Search = (props: { searchType: string, placeholder: string }): React.JSX.E
      * @return {void}
      */
     const filterContent = (searchInput: HTMLInputElement | null): void => {
-
+        // Bail early
         if (!searchInput || typeof searchInput === 'undefined') {
             return;
         }
 
+        // Get our value
         const inputValue = searchInput.value;
+        let filteredValues = [];
 
-        const filteredValues = data.filter((item: MovieDataType) => {
-            let title = item.title.toLowerCase();
+        if (props.searchType === 'Bookmarks') {
+            // Gather adn build our bookmarks data as JSON from sessionStorage
+            const bookmarks = StorageUtils.getBookmarksFromStorage() ?? [];
+            const bookmarkJSON = bookmarks.map((item: string) => JSON.parse(item));
 
-            if (title.includes(inputValue.toLowerCase())) {
-                return item;
-            }
-        });
+            filteredValues = bookmarkJSON.filter((item: MovieDataType) => {
+                let title = item.title.toLowerCase();
 
+                // If we are searching our bookmarks
+                if (title.includes(inputValue.toLowerCase())) {
+                    return item;
+                }
+            });
+
+        } else {
+
+            filteredValues = data.filter((item: MovieDataType) => {
+                let title = item.title.toLowerCase();
+
+                // If we are searching 'All'
+                if (title.includes(inputValue.toLowerCase()) && props.searchType === 'All') {
+                    return item;
+                }
+
+                // If we are searching for 'Movie' and 'TV Series'
+                if (title.includes(inputValue.toLowerCase()) && props.searchType === item.category) {
+                    return item;
+                }
+            });
+        }
+
+        // Make sure we have items
         if (filteredValues && filteredValues.length > 0) {
 
             setSelected(filteredValues);
