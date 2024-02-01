@@ -7,6 +7,7 @@ import Image from 'next/image';
 // Styles
 import './auth.css';
 import Link from 'next/link';
+import FormUtils from '@/utils/form-utils';
 
 /**
  * @description
@@ -30,32 +31,13 @@ const AuthPage = (): React.JSX.Element => {
         // console.log(emailElement);
         // console.log(passwordElement);
 
-        if (!validateFormElements(emailElement)) {
+        if (!FormUtils.validateFormElements(emailElement.current)) {
             setIsEmailInvalid(true);
         }
 
-        if (!validateFormElements(passwordElement)) {
+        if (!FormUtils.validateFormElements(passwordElement.current)) {
             setIsPasswordInvalid(true);
         }
-
-    };
-
-    /**
-     * @description
-     * @public
-     * @author Keith Murphy | nomadmystics@gmail.com
-     *
-     * @param {RefObject<HTMLInputElement>} element
-     * @return boolean
-     */
-    const validateFormElements = (element: RefObject<HTMLInputElement>) => {
-        let isValid = true;
-
-        if (!element.current || typeof element.current === 'undefined' || element.current.value === '') {
-            return false;
-        }
-
-        return isValid;
     };
 
     return (

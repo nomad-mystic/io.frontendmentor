@@ -5,10 +5,8 @@ import { MovieDataType } from '@/types/data-types';
 import data from '@/data/data.json';
 
 /**
- * @classdesc
- * @class
- * @extends
- * @implements
+ * @classdesc Handle functionality for content items
+ * @class ItemUtils
  * @author Keith Murphy | nomadmystics@gmail.com
  */
 export default class ItemUtils {

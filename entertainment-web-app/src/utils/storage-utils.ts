@@ -1,10 +1,8 @@
 import { MovieDataType } from '@/types/data-types';
 
 /**
- * @classdesc
- * @class
- * @extends
- * @implements
+ * @classdesc Handle functionality for window.sessionStorage
+ * @class StorageUtils
  * @author Keith Murphy | nomadmystics@gmail.com
  */
 export default class StorageUtils {
@@ -80,7 +78,7 @@ export default class StorageUtils {
 
             window.sessionStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
         }
-    }
+    };
 
     /**
      * @description
@@ -96,5 +94,5 @@ export default class StorageUtils {
         }
 
         return JSON.parse(window.sessionStorage.getItem('bookmarks') ?? '[]');
-    }
+    };
 }
