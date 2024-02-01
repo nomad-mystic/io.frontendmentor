@@ -22,14 +22,14 @@ export default class ItemUtils {
      */
     public static getItemTitle = (element: HTMLDivElement): MovieDataType | undefined => {
         // Get the parent
-        const currentItem = element.closest('.ContentItem');
+        const currentItem = element.closest('.ContentItem, .TrendingItem');
 
         if (!currentItem || typeof currentItem === 'undefined') {
             return;
         }
 
         // Extract title
-        const title = currentItem?.querySelector('.ContentMeta-title');
+        const title = currentItem?.querySelector('.ContentMeta-title, .TrendingItem');
 
         if (!title || typeof title === 'undefined') {
             return;
