@@ -1,1 +1,7 @@
-.BookmarkContent {}
+.BookmarkContent {
+    &-movies {}
+
+    &-tv {
+        margin-block-start: 4rem;
+    }
+}
