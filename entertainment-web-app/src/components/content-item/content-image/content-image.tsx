@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { MovieDataType } from '@/types/data-types';
 
 /**
- * @description
+ * @description Common component for building an item's image
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *

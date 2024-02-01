@@ -35,7 +35,7 @@ const Trending = (): React.JSX.Element => {
      */
     const handleWheelMovement = (event: React.WheelEvent): void => {
         console.log(event);
-        
+
         if (event.cancelable) {
             event.preventDefault();
         }
@@ -55,7 +55,9 @@ const Trending = (): React.JSX.Element => {
 
             // bodyElement.style.
 
-            items.scrollLeft += event.deltaY;
+            if (items) {
+                items.scrollLeft += event.deltaY;
+            }
         });
     };
 

@@ -26,7 +26,7 @@ const SearchResults = (props: { selected: Array<MovieDataType>, searchValue: str
 
             {
                 props.selected.length > 0 &&
-                <h2 className="header-l SearchResults-title">Found { props.selected.length } results for '{ props.searchValue }'</h2>
+                <h2 className="header-l SearchResults-title">Found { props.selected.length } results for &#39;{ props.searchValue }&#39;</h2>
             }
 
             {
