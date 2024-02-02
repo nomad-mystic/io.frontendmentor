@@ -1,7 +1,7 @@
 'use client'
 
 // Community
-import React, { RefObject, useRef, useState } from 'react';
+import React, { RefObject, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 
 // Styles
@@ -10,6 +10,7 @@ import Link from 'next/link';
 import FormUtils from '@/utils/form-utils';
 import StorageUtils from '@/utils/storage-utils';
 import AuthUtils from '@/utils/auth-utils';
+import { type } from 'node:os';
 
 /**
  * @description
@@ -25,7 +26,9 @@ const AuthPage = (): React.JSX.Element => {
     const passwordElement = useRef<HTMLInputElement>(null);
     const [isPasswordInvalid, setIsPasswordInvalid] = useState(false);
 
+    // Get our refs
     const authElement = useRef<HTMLDivElement>(null);
+    const currentAuthElement = authElement.current;
 
     /**
      * @description
@@ -38,10 +41,8 @@ const AuthPage = (): React.JSX.Element => {
         // Stop the form submitting
         event.preventDefault();
 
-        // Get our refs
         const currentEmail = emailElement.current;
         const currentPassword = passwordElement.current;
-        const currentAuthElement = authElement.current;
 
         if (!FormUtils.validateFormElements(currentEmail)) {
             setIsEmailInvalid(true);
@@ -66,6 +67,16 @@ const AuthPage = (): React.JSX.Element => {
             currentAuthElement,
         });
     };
+
+    useEffect(() => {
+        const authStorage = StorageUtils.getStorageArray('auth');
+
+        // Check initial state
+        if (authStorage && typeof authStorage !== 'undefined' && authStorage.length > 0) {
+            AuthUtils.setVisualStates(currentAuthElement);
+        }
+
+    }, []);
 
     return (
         <section className="Auth" ref={ authElement }>

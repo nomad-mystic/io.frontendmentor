@@ -55,16 +55,27 @@ export default class AuthUtils {
             }
 
             if (authStorageArray?.email === currentEmail?.value && authStorageArray?.password === currentPassword?.value) {
-                const authPoint = window.document.querySelector('.AuthPoint');
-
-                if (authPoint && typeof authPoint !== 'undefined') {
-                    authPoint.classList.add('isVisible');
-                }
-
-                if (currentAuthElement && typeof currentAuthElement !== 'undefined') {
-                    currentAuthElement.classList.add('isInvisible');
-                }
+                this.setVisualStates(currentAuthElement);
             }
+        }
+    }
+
+    /**
+     * @description
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return
+     */
+    public static setVisualStates = (currentAuthElement: HTMLDivElement | null) => {
+        const authPoint = window.document.querySelector('.AuthPoint');
+
+        if (authPoint && typeof authPoint !== 'undefined') {
+            authPoint.classList.add('isVisible');
+        }
+
+        if (currentAuthElement && typeof currentAuthElement !== 'undefined') {
+            currentAuthElement.classList.add('isInvisible');
         }
     }
 }
