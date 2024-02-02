@@ -20,7 +20,7 @@ import { MovieDataType } from '@/types/data-types';
 const TvContent = (): React.JSX.Element => {
     return (
         <main className="TvContent Content">
-            <h2 className="Content-header header-l">Movies</h2>
+            <h2 className="Content-header header-l">TV Series</h2>
 
             <section className="ItemContent">
                 {
