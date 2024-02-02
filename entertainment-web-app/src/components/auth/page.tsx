@@ -8,6 +8,8 @@ import Image from 'next/image';
 import './auth.css';
 import Link from 'next/link';
 import FormUtils from '@/utils/form-utils';
+import StorageUtils from '@/utils/storage-utils';
+import AuthUtils from '@/utils/auth-utils';
 
 /**
  * @description
@@ -23,25 +25,50 @@ const AuthPage = (): React.JSX.Element => {
     const passwordElement = useRef<HTMLInputElement>(null);
     const [isPasswordInvalid, setIsPasswordInvalid] = useState(false);
 
+    const authElement = useRef<HTMLDivElement>(null);
+
+    /**
+     * @description
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return
+     */
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        // Stop the form submitting
         event.preventDefault();
 
+        // Get our refs
+        const currentEmail = emailElement.current;
+        const currentPassword = passwordElement.current;
+        const currentAuthElement = authElement.current;
 
-        // console.log(event);
-        // console.log(emailElement);
-        // console.log(passwordElement);
-
-        if (!FormUtils.validateFormElements(emailElement.current)) {
+        if (!FormUtils.validateFormElements(currentEmail)) {
             setIsEmailInvalid(true);
         }
 
-        if (!FormUtils.validateFormElements(passwordElement.current)) {
+        if (!FormUtils.validateFormElements(currentPassword)) {
             setIsPasswordInvalid(true);
         }
+
+        const authStorage = StorageUtils.getStorageArray('auth');
+
+        // Add our user to the auth storage
+        // They are not signed or don't have an account
+        AuthUtils.createAuthStorage(authStorage, {
+            currentEmail,
+            currentPassword,
+        });
+
+        AuthUtils.setVisualStateAfterLogin(authStorage, {
+            currentEmail,
+            currentPassword,
+            currentAuthElement,
+        });
     };
 
     return (
-        <section className="Auth">
+        <section className="Auth" ref={ authElement }>
             <header className="Auth-header">
                 <Image
                     src="/assets/logo.svg"

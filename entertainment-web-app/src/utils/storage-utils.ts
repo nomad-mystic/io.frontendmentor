@@ -85,14 +85,25 @@ export default class StorageUtils {
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @return
+     * @return array
      */
-    public static getBookmarksFromStorage = () => {
+    public static getStorageArray = (storageType: string) => {
         // Set initial state
-        if (!window.sessionStorage.getItem('bookmarks') || typeof window.sessionStorage.getItem('bookmarks') === 'undefined') {
-            window.sessionStorage.setItem('bookmarks', JSON.stringify([]))
+        if (!window.sessionStorage.getItem(storageType) || typeof window.sessionStorage.getItem(storageType) === 'undefined') {
+            window.sessionStorage.setItem(storageType, JSON.stringify([]))
         }
 
-        return JSON.parse(window.sessionStorage.getItem('bookmarks') ?? '[]');
+        return JSON.parse(window.sessionStorage.getItem(storageType) ?? '[]');
+    };
+
+    /**
+     * @description
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return
+     */
+    public static createStorageArray = (storageType: string, data: Array<{}>) => {
+        window.sessionStorage.setItem(storageType, JSON.stringify(data));
     };
 }

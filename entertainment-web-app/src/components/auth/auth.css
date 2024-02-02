@@ -4,6 +4,10 @@
     justify-content: flex-start;
     align-items: center;
 
+    &.isInvisible {
+        display: none;
+    }
+
     &-header {
         margin-block-start: 7.2rem;
     }
