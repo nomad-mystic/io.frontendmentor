@@ -1,10 +1,8 @@
 import { MovieDataType } from '@/types/data-types';
 
 /**
- * @classdesc
- * @class
- * @extends
- * @implements
+ * @classdesc Handle functionality for window.sessionStorage
+ * @class StorageUtils
  * @author Keith Murphy | nomadmystics@gmail.com
  */
 export default class StorageUtils {
@@ -80,7 +78,23 @@ export default class StorageUtils {
 
             window.sessionStorage.setItem('bookmarks', JSON.stringify(updatedBookmarks));
         }
-    }
+    };
+
+    /**
+     * @description
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return array
+     */
+    public static getStorageArray = (storageType: string) => {
+        // Set initial state
+        if (!window.sessionStorage.getItem(storageType) || typeof window.sessionStorage.getItem(storageType) === 'undefined') {
+            window.sessionStorage.setItem(storageType, JSON.stringify([]))
+        }
+
+        return JSON.parse(window.sessionStorage.getItem(storageType) ?? '[]');
+    };
 
     /**
      * @description
@@ -89,12 +103,7 @@ export default class StorageUtils {
      *
      * @return
      */
-    public static getBookmarksFromStorage = () => {
-        // Set initial state
-        if (!window.sessionStorage.getItem('bookmarks') || typeof window.sessionStorage.getItem('bookmarks') === 'undefined') {
-            window.sessionStorage.setItem('bookmarks', JSON.stringify([]))
-        }
-
-        return JSON.parse(window.sessionStorage.getItem('bookmarks') ?? '[]');
-    }
+    public static createStorageArray = (storageType: string, data: Array<{}>) => {
+        window.sessionStorage.setItem(storageType, JSON.stringify(data));
+    };
 }

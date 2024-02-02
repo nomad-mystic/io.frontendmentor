@@ -6,13 +6,15 @@
         font-weight: 300;
         line-height: normal;
         text-align: center;
-
+        padding-block: 1.6rem;
         background-color: var(--color-red);
         color: var(--color-white);
+        transition: var(--transiton-r);
 
         &:hover {
             background-color: var(--color-white);
             color: var(--color-semi-dark-blue);
+            transition: var(--transiton-r);
         }
     }
 }
