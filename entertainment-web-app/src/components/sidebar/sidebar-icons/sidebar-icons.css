@@ -14,5 +14,11 @@
                 fill: var(--color-red);
             }
         }
+
+        &.isActive {
+            path {
+                fill: white;
+            }
+        }
     }
 }
