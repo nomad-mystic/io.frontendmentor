@@ -36,7 +36,8 @@ const BookmarkContent = (): React.JSX.Element => {
         <main className="BookmarkContent Content">
             <section className="BookmarkContent-movies">
                 <header>
-                    <h2 className="Content-header header-l">Bookmarked Movies</h2>
+                    { bookmarkContent.length > 0 && <h2 className="Content-header header-l">Bookmarked Movies</h2> }
+                    { bookmarkContent.length <= 0 && <h2 className="Content-header header-l">No Bookmarks Found!</h2> }
                 </header>
 
                 <section className="ItemContent">
@@ -62,7 +63,7 @@ const BookmarkContent = (): React.JSX.Element => {
 
             <section className="BookmarkContent-tv">
                 <header>
-                    <h2 className="Content-header header-l">Bookmarked TV Series</h2>
+                    { bookmarkContent.length > 0 && <h2 className="Content-header header-l">Bookmarked TV Series</h2> }
                 </header>
 
                 <section className="ItemContent">
