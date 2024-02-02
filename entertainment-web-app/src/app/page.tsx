@@ -5,7 +5,7 @@ import React from 'react';
 import Search from '@/components/search/search';
 import Sidebar from '@/components/sidebar/sidebar';
 import MainContent from '@/components/main-content/main-content';
-import AuthPage from '@/components/auth/page';
+import AuthPage from '@/components/auth/auth';
 
 /**
  * @description Starting point for the app

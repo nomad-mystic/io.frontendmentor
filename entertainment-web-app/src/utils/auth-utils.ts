@@ -1,5 +1,5 @@
 import StorageUtils from '@/utils/storage-utils';
-import { AuthTypes } from '@/types/auth-types';
+import { AuthStorageTypes } from '@/types/auth-types';
 
 /**
  * @classdesc
@@ -15,7 +15,7 @@ export default class AuthUtils {
      *
      * @return
      */
-    public static createAuthStorage = <T extends Array<AuthTypes>>(authStorage: T, authData: AuthTypes) => {
+    public static createAuthStorage = <T extends Array<AuthStorageTypes>>(authStorage: T, authData: AuthStorageTypes) => {
         if (!authStorage || typeof authStorage === 'undefined' || authStorage.length <= 0) {
             // Extract our values
             const { currentEmail, currentPassword } = authData;
@@ -38,14 +38,13 @@ export default class AuthUtils {
      *
      * @return
      */
-    public static setVisualStateAfterLogin = <T extends Array<AuthTypes>>(authStorage: T, authData: AuthTypes) => {
+    public static setVisualStateAfterLogin = <T extends Array<AuthStorageTypes>>(authStorage: T, authData: AuthStorageTypes) => {
         // They have a session check auth data
         if (authStorage && typeof authStorage !== 'undefined' && authStorage.length > 0) {
             const {
                 currentEmail,
                 currentPassword,
-                currentConfirmPassword = null,
-                currentAuthElement = null
+                currentConfirmPassword = null
             } = authData;
 
             const authStorageArray = StorageUtils.getStorageArray('auth')[0];
@@ -55,7 +54,7 @@ export default class AuthUtils {
             }
 
             if (authStorageArray?.email === currentEmail?.value && authStorageArray?.password === currentPassword?.value) {
-                this.setVisualStates(currentAuthElement);
+                this.setVisualStates();
             }
         }
     }
@@ -67,8 +66,9 @@ export default class AuthUtils {
      *
      * @return
      */
-    public static setVisualStates = (currentAuthElement: HTMLDivElement | null) => {
+    public static setVisualStates = (authSelector: string = '.Auth') => {
         const authPoint = window.document.querySelector('.AuthPoint');
+        const currentAuthElement = window.document.querySelector(authSelector);
 
         if (authPoint && typeof authPoint !== 'undefined') {
             authPoint.classList.add('isVisible');
