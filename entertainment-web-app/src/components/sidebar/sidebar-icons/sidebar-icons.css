@@ -1,5 +1,6 @@
 .SidebarIcons {
     display: flex;
+    column-gap: 2.4rem;
 
     @screen xl {
         flex-direction: column;
@@ -8,6 +9,16 @@
     }
 
     &-icon {
+        svg {
+            width: 1.6rem;
+            height: 1.6rem;
+
+            @screen md {
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+
         &:hover {
             svg,
             path {

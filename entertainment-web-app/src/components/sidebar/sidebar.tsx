@@ -18,15 +18,16 @@ import SidebarIcons from '@/components/sidebar/sidebar-icons/sidebar-icons';
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return
+ * @return React.JSX.Element
  */
-const Sidebar = () => {
+const Sidebar = (): React.JSX.Element => {
     return (
         <aside className="SideBar">
             <Image src="/assets/logo.svg"
                    alt="Red image of a movie reel"
                    width={ 32 }
                    height={ 25 }
+                   className="SideBar-rootImage"
             />
 
             <section className="SidebarIcons">

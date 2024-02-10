@@ -28,8 +28,12 @@
     }
 
     .header-m {
-        font-size: var(--font-size-header-m);
+        font-size: 1.6rem;
         font-weight: 300;
+
+        @screen md {
+            font-size: var(--font-size-header-m);
+        }
     }
 
     .header-s {
