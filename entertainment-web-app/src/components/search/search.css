@@ -1,9 +1,17 @@
 .Search {
+    order: 2;
+    height: 2.4rem;
+    margin-block-start: 2.4rem;
+    width: 90%;
+    max-width: 100vw;
+
+
     @screen xl {
         grid-column-start: 2;
         grid-column-end: 12;
         grid-row-start: 1;
         grid-row-end: 1;
+        width: 100%;
         height: 4.7rem;
         margin-block-start: 3.2rem;
     }
@@ -42,8 +50,14 @@
 
     &-icon {
         background-image: url('/assets/icon-search.svg');
+        background-size: cover;
         display: block;
-        width: 3.2rem;
-        height: 3.2rem;
+        width: 2.4rem;
+        height: 2.4rem;
+
+        @screen md {
+            width: 3.2rem;
+            height: 3.2rem;
+        }
     }
 }

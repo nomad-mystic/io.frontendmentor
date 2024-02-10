@@ -2,13 +2,19 @@
     .container {
         --max-with-l: 1440px;
 
+        display: flex;
+        flex-direction: column;
         width: calc(var(--max-with-l) - calc(3.2rem * 2));
-        display: grid;
-        grid-template-columns: repeat(11, minmax(auto, 1fr));
-        grid-template-rows: 8rem auto;
-        grid-column-gap: 3.6rem;
-        grid-row-gap: 3.6rem;
-        margin: 3.2rem auto 5.4rem;
+        margin: 0 auto 5.4rem;
+
+        @screen xl {
+            display: grid;
+            grid-template-columns: repeat(11, minmax(auto, 1fr));
+            grid-template-rows: 8rem auto;
+            grid-column-gap: 3.6rem;
+            grid-row-gap: 3.6rem;
+            margin: 3.2rem auto 5.4rem;
+        }
     }
 
     .isVisible {
@@ -63,18 +69,18 @@
         }
     }
 
-    .AuthPoint {
-        opacity: 0;
-        visibility: hidden;
-        display: none;
-        transition: var(--transiton-r);
+    /*.AuthPoint {*/
+    /*    opacity: 0;*/
+    /*    visibility: hidden;*/
+    /*    display: none;*/
+    /*    transition: var(--transiton-r);*/
 
-        &.isVisible {
-            display: grid;
-            opacity: 1;
-            visibility: visible;
-            height: 100%;
-            transition: var(--transiton-r);
-        }
-    }
+    /*    &.isVisible {*/
+    /*        display: grid;*/
+    /*        opacity: 1;*/
+    /*        visibility: visible;*/
+    /*        height: 100%;*/
+    /*        transition: var(--transiton-r);*/
+    /*    }*/
+    /*}*/
 }

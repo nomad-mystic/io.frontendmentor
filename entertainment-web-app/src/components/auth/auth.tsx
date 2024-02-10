@@ -57,13 +57,13 @@ const AuthPage = (): React.JSX.Element => {
                     height={ 25 }
                 />
             </header>
-            {
-                isLogin && <AuthLogin handlePanelStates={ handlePanelStates } />
-            }
+            {/*{*/}
+            {/*    isLogin && <AuthLogin handlePanelStates={ handlePanelStates } />*/}
+            {/*}*/}
 
-            {
-                !isLogin && <AuthSignup handlePanelStates={ handlePanelStates } />
-            }
+            {/*{*/}
+            {/*    !isLogin && <AuthSignup handlePanelStates={ handlePanelStates } />*/}
+            {/*}*/}
         </section>
     );
 };
