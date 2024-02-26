@@ -1,12 +1,13 @@
 .Search {
     order: 2;
     height: 2.4rem;
-    margin-block-start: 2.4rem;
     max-width: 100vw;
+    margin-block: 2.4rem;
     padding-inline: 1.6rem;
 
     @screen md {
         padding-inline: 2.4rem;
+        margin-block: 3.2 rem;
     }
 
     @screen xl {
@@ -16,7 +17,7 @@
         grid-row-end: 1;
         width: 100%;
         height: 4.7rem;
-        margin-block-start: 3.2rem;
+        margin-block: 3.2rem 0;
         padding-inline: unset;
     }
 
@@ -41,13 +42,17 @@
             }
         }
 
+        label {
+            &:has(input:focus) {
+                box-shadow: 0 1px 0 var(--color-grey-blue);
+            }
+        }
+
         input {
+            caret-color: var(--color-red);
+
             &::placeholder {
                 opacity: 0.4979;
-            }
-
-            &:focus {
-                border-bottom: 1px solid var(--color-grey-blue);
             }
         }
     }

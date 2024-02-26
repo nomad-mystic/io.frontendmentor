@@ -51,6 +51,7 @@
 
     .Content {
         padding-inline: 1.6rem;
+        order: 3;
 
         @screen md {
             padding-inline: 2.4rem;
@@ -96,7 +97,6 @@
     /*    visibility: hidden;*/
     /*    display: none;*/
     /*    transition: var(--transiton-r);*/
-
     /*    &.isVisible {*/
     /*        display: grid;*/
     /*        opacity: 1;*/
