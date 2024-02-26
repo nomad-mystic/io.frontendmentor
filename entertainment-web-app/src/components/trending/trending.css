@@ -1,13 +1,14 @@
 .Trending {
+    margin-block-end: 4rem;
+
     &-items {
         display: flex;
         overflow-y: auto;
-        overflow-x: hidden;
+        overflow-x: visible;
         column-gap: 4rem;
         scrollbar-width: none;
         width: 100%;
         height: 230px;
-        margin-block-end: 4rem;
 
         &::-webkit-scrollbar {
             display: none;
