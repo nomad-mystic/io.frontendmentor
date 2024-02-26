@@ -3,6 +3,7 @@
 
     &-imageContainer {
         position: relative;
+        width: 100%;
     }
 
     &-overlay {
@@ -69,6 +70,7 @@
 
     &-image {
         border-radius: var(--border-radius-s);
+        width: 100%;
     }
 
     .ContentMeta-title {
