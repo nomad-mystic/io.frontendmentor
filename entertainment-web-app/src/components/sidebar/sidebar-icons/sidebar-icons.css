@@ -2,6 +2,10 @@
     display: flex;
     column-gap: 2.4rem;
 
+    @screen md {
+        row-gap: 3.2rem;
+    }
+
     @screen xl {
         flex-direction: column;
         row-gap: 4rem;

@@ -77,7 +77,7 @@ const Search = (props: { searchType: string, placeholder: string }): React.JSX.E
         let filteredValues = [];
 
         if (props.searchType === 'Bookmarks') {
-            // Gather adn build our bookmarks data as JSON from sessionStorage
+            // Gather and build our bookmarks data as JSON from sessionStorage
             const bookmarks = StorageUtils.getStorageArray('bookmarks') ?? [];
             const bookmarkJSON = bookmarks.map((item: string) => JSON.parse(item));
 

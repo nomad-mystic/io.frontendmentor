@@ -8,7 +8,7 @@ import MoviesContent from '@/app/movies/components/movies-content/movies-content
 
 const MoviesPage = () => {
     return (
-        <div className="container">
+        <div className="Container">
             <Search searchType="Movie" placeholder="Search for movies" />
 
             <Sidebar />

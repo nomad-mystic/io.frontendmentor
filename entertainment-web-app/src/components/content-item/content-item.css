@@ -3,6 +3,7 @@
 
     &-imageContainer {
         position: relative;
+        width: 100%;
     }
 
     &-overlay {
@@ -23,12 +24,17 @@
 
     &-play {
         position: absolute;
-        width: 117px;
-        height: 48px;
+        width: 80px;
+        height: 32px;
         display: flex;
         justify-content: space-around;
         align-items: center;
         color: var(--color-white);
+
+        @screen md {
+            width: 117px;
+            height: 48px;
+        }
 
         &::before {
             content: '';
@@ -43,13 +49,28 @@
 
         .icon {
             background-image: url('/assets/icon-play.svg');
-            width: 3rem;
-            height: 3rem;
+            background-size: contain;
+            width: 2rem;
+            height: 2rem;
+
+            @screen lg {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+
+        h4 {
+            font-size: 1.6rem;
+
+            @screen lg {
+                font-size: var(--font-size-header-xs);
+            }
         }
     }
 
     &-image {
         border-radius: var(--border-radius-s);
+        width: 100%;
     }
 
     .ContentMeta-title {

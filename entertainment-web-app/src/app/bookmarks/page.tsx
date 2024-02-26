@@ -15,7 +15,7 @@ import BookmarkContent from '@/app/bookmarks/components/bookmark-content/bookmar
  */
 const BookmarksPage = () => {
     return (
-        <div className="container">
+        <div className="Container">
             <Search searchType="Bookmarks" placeholder="Search for bookmarked shows" />
 
             <Sidebar />

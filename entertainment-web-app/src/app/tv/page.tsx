@@ -15,7 +15,7 @@ import TvContent from '@/app/tv/components/tv-content/tv-content';
  */
 const TvPage = () => {
     return (
-        <div className="container">
+        <div className="Container">
             <Search searchType="TV Series" placeholder="Search for TV series" />
 
             <Sidebar />

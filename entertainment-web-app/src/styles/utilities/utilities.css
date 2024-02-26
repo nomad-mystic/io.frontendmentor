@@ -1,11 +1,11 @@
 @layer utilities {
-    .container {
-        --max-with-l: 1440px;
+    .Container {
+        --max-width-l: 1440px;
 
         display: flex;
         flex-direction: column;
-        width: calc(var(--max-with-l) - calc(3.2rem * 2));
         margin: 0 auto 5.4rem;
+        width: 100%;
 
         @screen xl {
             display: grid;
@@ -13,6 +13,8 @@
             grid-template-rows: 8rem auto;
             grid-column-gap: 3.6rem;
             grid-row-gap: 3.6rem;
+            width: calc(100vw - calc(3.2rem * 2));
+            max-width: var(--max-width-l);
             margin: 3.2rem auto 5.4rem;
         }
     }
@@ -48,21 +50,42 @@
     }
 
     .Content {
+        padding-inline: 1.6rem;
+        order: 3;
+
+        @screen md {
+            padding-inline: 2.4rem;
+        }
+
         @screen xl {
             grid-column-start: 2;
             grid-column-end: 12;
             grid-row-start: 2;
             grid-row-end: 12;
+            padding-inline: 0;
         }
 
         &-header {
-            margin-block-end: 3.2rem;
+            margin-block-end: 2.4rem;
+
+            @screen xl {
+                margin-block-end: 3.2rem;
+            }
         }
     }
 
     .ItemContent {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(auto, 1fr));
+        gap: 1.6rem;
+
+        @screen lg {
+            grid-template-columns: repeat(3, minmax(auto, 1fr));
+            column-gap: 3.2rem;
+            row-gap: 2.4rem;
+        }
+
         @screen xl {
-            display: grid;
             grid-template-columns: repeat(4, minmax(auto, 1fr));
             column-gap: 4rem;
             row-gap: 3.2rem;
@@ -74,7 +97,6 @@
     /*    visibility: hidden;*/
     /*    display: none;*/
     /*    transition: var(--transiton-r);*/
-
     /*    &.isVisible {*/
     /*        display: grid;*/
     /*        opacity: 1;*/

@@ -1,9 +1,14 @@
 .Bookmark {
     position: absolute;
-    top: 1.6rem;
-    right: 1.6rem;
+    top: .8rem;
+    right: .8rem;
     cursor: pointer;
     z-index: 20;
+
+    @screen md {
+        top: 1.6rem;
+        right: 1.6rem;
+    }
 
     &:hover {
         circle,

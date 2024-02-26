@@ -17,7 +17,7 @@ import MainContent from '@/components/main-content/main-content';
 const Home = (): React.JSX.Element => {
     return (
         <>
-            <div className="container AuthPoint">
+            <div className="Container AuthPoint">
                 <Search searchType="All" placeholder="Search for movies or TV series" />
 
                 <Sidebar />
