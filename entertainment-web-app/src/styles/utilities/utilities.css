@@ -1,6 +1,6 @@
 @layer utilities {
     .Container {
-        --max-with-l: 1440px;
+        --max-width-l: 1440px;
 
         display: flex;
         flex-direction: column;
@@ -14,7 +14,7 @@
             grid-column-gap: 3.6rem;
             grid-row-gap: 3.6rem;
             width: calc(100vw - calc(3.2rem * 2));
-            max-width: var(--max-with-l);
+            max-width: var(--max-width-l);
             margin: 3.2rem auto 5.4rem;
         }
     }
