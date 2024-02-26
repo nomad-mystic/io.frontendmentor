@@ -13,7 +13,8 @@
             grid-template-rows: 8rem auto;
             grid-column-gap: 3.6rem;
             grid-row-gap: 3.6rem;
-            width: calc(var(--max-with-l) - calc(3.2rem * 2));
+            width: calc(100vw - calc(3.2rem * 2));
+            max-width: var(--max-with-l);
             margin: 3.2rem auto 5.4rem;
         }
     }
