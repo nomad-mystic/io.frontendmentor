@@ -2,9 +2,8 @@
     order: 2;
     height: 2.4rem;
     margin-block-start: 2.4rem;
-    width: 90%;
     max-width: 100vw;
-
+    padding-inline: 1.6rem;
 
     @screen xl {
         grid-column-start: 2;

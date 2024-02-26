@@ -19,7 +19,7 @@ const MainContent = (): React.JSX.Element => {
     return (
         <main className="MainContent Content">
 
-            <Trending />
+            {/*<Trending />*/}
 
             <AllContent />
 
