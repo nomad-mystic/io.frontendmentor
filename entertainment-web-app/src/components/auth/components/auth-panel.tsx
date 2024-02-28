@@ -52,11 +52,6 @@ const AuthPanel = () => {
             currentEmail,
             currentPassword,
         });
-
-        AuthUtils.setVisualStateAfterLogin(authStorage, {
-            currentEmail,
-            currentPassword
-        });
     };
 
     return (
