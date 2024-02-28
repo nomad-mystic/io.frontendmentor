@@ -1,9 +1,12 @@
+// Community
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
+import React from 'react';
 
 // Styles
 import '../styles/globals.css';
 
+// Fonts
 const inter = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = {

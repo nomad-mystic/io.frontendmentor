@@ -1,9 +1,6 @@
 // Community
 import React, { PropsWithChildren } from 'react';
 
-// Types
-import { AuthStates } from '@/types/auth-types';
-
 /**
  * @description
  * @public
@@ -11,7 +8,7 @@ import { AuthStates } from '@/types/auth-types';
  *
  * @return
  */
-const AuthSignup = (props: PropsWithChildren<AuthStates>) => {
+const Signup = () => {
     return (
         <main className="AuthMain">
             <section className="AuthSignup Auth-panel">
@@ -21,4 +18,4 @@ const AuthSignup = (props: PropsWithChildren<AuthStates>) => {
     );
 };
 
-export default AuthSignup;
+export default Signup;
