@@ -24,9 +24,10 @@ import TrendingItem from '@/components/trending/trending-item/trending-item';
  */
 const Trending = (): React.JSX.Element => {
     const trending = useRef<HTMLDivElement>(null);
+    const trendingItems = useRef<HTMLDivElement>(null);
 
     /**
-     * @description
+     * @description Create the scrolling effect on wheel movement
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
@@ -34,49 +35,62 @@ const Trending = (): React.JSX.Element => {
      * @return {void}
      */
     const handleWheelMovement = (event: React.WheelEvent): void => {
-        console.log(event);
-
         if (event.cancelable) {
             event.preventDefault();
         }
 
-        let items = window.document.getElementById('Trending-items');
-        let bodyElement = window.document.body;
+        let items = trendingItems.current;
 
         if (!items || typeof items === 'undefined') {
             return;
         }
 
         requestAnimationFrame(() => {
-            // console.dir(trending.current);
-            // console.dir(trending.current);
-            // console.log('handleWheelMovement');
-            // console.dir(event);
-
-            // bodyElement.style.
-
             if (items) {
                 items.scrollLeft += event.deltaY;
             }
         });
     };
 
-    const handleWheelCapture = (event: React.WheelEvent) => {
+    /**
+     * @description Prevent the body from scrolling when the user enters the trending area
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @param {React.MouseEvent} event
+     * @return {void}
+     */
+    const handleWheelEnter = (event: React.MouseEvent): void => {
+        let bodyElement = window.document.body;
 
-        // console.log('handleWheelCapture');
-        // console.log(event);
+        bodyElement.style.overflowY = 'hidden';
+    }
 
+    /**
+     * @description Allow the body to scroll when the user leaves the trending area
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @param {React.MouseEvent} event
+     * @return {void}
+     */
+    const handleWheelLeave = (event: React.MouseEvent): void => {
+        let bodyElement = window.document.body;
 
+        bodyElement.style.overflowY = 'inherit';
     }
 
     return (
         <div className="Trending" ref={ trending }>
             <h2 className="Content-header header-l">Trending</h2>
 
-            <section className="Trending-items" onWheel={ (e) => {
-                handleWheelMovement(e)
-            } } onWheelCapture={ handleWheelCapture }
-                     id="Trending-items">
+            <section id="Trending-items"
+                     ref={trendingItems}
+                     className="Trending-items"
+                     onWheel={ (e) => { handleWheelMovement(e) } }
+                     onMouseEnter={ (e) => { handleWheelEnter(e) } }
+                     onMouseLeave={ (e) => { handleWheelLeave(e) } }
+            >
                 {
                     data.map((item: MovieDataType) => {
                         if (item.isTrending) {
