@@ -1,4 +1,4 @@
-export type formElementsTypes = {
+export type FormElementsTypes = {
     elementType?: string;
     type?: string;
     id?: string;
@@ -6,14 +6,15 @@ export type formElementsTypes = {
     warning?: {
         text?: string;
     };
+    required?: boolean,
 };
 
-export type formSubmitTypes = {
+export type FormSubmitTypes = {
     type?: 'submit' | 'reset' | 'button' | undefined;
     text?: string;
 };
 
-export type footerValuesTypes = {
+export type FooterValuesTypes = {
     text: string;
     linkText: string;
     url: string;

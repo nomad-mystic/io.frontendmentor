@@ -5,7 +5,7 @@ import React from 'react';
 import AuthPanel from '@/components/auth/components/auth-panel';
 
 // Types
-import { formElementsTypes, formSubmitTypes, footerValuesTypes } from '@/types/input-types';
+import { FormElementsTypes, FormSubmitTypes, FooterValuesTypes } from '@/types/input-types';
 
 /**
  * @description
@@ -15,7 +15,8 @@ import { formElementsTypes, formSubmitTypes, footerValuesTypes } from '@/types/i
  * @return
  */
 const Signup = () => {
-    const formElements: Array<formElementsTypes> = [
+    // Build our form
+    const formElements: Array<FormElementsTypes> = [
         {
             elementType: 'input',
             type: 'email',
@@ -24,6 +25,7 @@ const Signup = () => {
             warning: {
                 text: 'Can’t be empty',
             },
+            required: true,
         },
         {
             elementType: 'input',
@@ -33,6 +35,7 @@ const Signup = () => {
             warning: {
                 text: 'Can’t be empty',
             },
+            required: true,
         },
         {
             elementType: 'input',
@@ -42,15 +45,16 @@ const Signup = () => {
             warning: {
                 text: 'Can’t be empty',
             },
+            required: true,
         },
     ];
 
-    const formSubmit: formSubmitTypes = {
+    const formSubmit: FormSubmitTypes = {
         type: 'submit',
         text: 'Create an account',
     };
 
-    const footerValues: footerValuesTypes = {
+    const footerValues: FooterValuesTypes = {
         text: 'Already have an account?',
         linkText: 'Login',
         url: '/login',

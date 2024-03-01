@@ -10,7 +10,8 @@ import StorageUtils from '@/utils/storage-utils';
 import AuthUtils from '@/utils/auth-utils';
 
 // Types
-import { formElementsTypes, footerValuesTypes, formSubmitTypes } from '@/types/input-types';
+import { FormElementsTypes, FooterValuesTypes, FormSubmitTypes } from '@/types/input-types';
+import { AuthFormValueType } from '@/types/auth-types';
 
 /**
  * @description
@@ -20,12 +21,13 @@ import { formElementsTypes, footerValuesTypes, formSubmitTypes } from '@/types/i
  * @return React.JSX.Element
  */
 const AuthPanel = (props: {
-    formElements: Array<formElementsTypes>,
-    formSubmit: formSubmitTypes,
-    footerValues: footerValuesTypes,
+    formElements: Array<FormElementsTypes>,
+    formSubmit: FormSubmitTypes,
+    footerValues: FooterValuesTypes,
     title: string,
 }) => {
     const [formValues, setFormValues] = useState({});
+    const [formValidationMessage, setFormValidationMessage] = useState('');
     const formElement = useRef<HTMLFormElement>(null);
 
     /**
@@ -39,54 +41,30 @@ const AuthPanel = (props: {
         // Stop the form submitting
         event.preventDefault();
 
-        // Local State
-        let localInValid: string[] = [];
-
         // Event delegation
         const target = event.target as HTMLFormElement;
 
-        console.log(target);
-
         if (!target || typeof target === 'undefined' || target.tagName !== 'FORM') {
-            return;
+            setFormValidationMessage('There was an issue with submitting the form. Please try again!');
         }
 
-        const current = formElement.current as HTMLFormElement | undefined;
+        const { email = null, password = null }: any  = FormUtils.validateFormElements(formValues);
 
-        const formData = new FormData(current);
-        // output as an object
-        console.log(Object.fromEntries(Object.entries(formData)));
+        console.log(password, email);
 
-        // for (const input in formValues) {
-        //     if (Object.hasOwn(formValues, input)) {
-        //         // @ts-ignore
-        //         const value = formValues[input];
+        if (!password || !email) {
+            setFormValidationMessage('Password or Email are invalid. Please try again!');
+        }
+
+
+        // if (isValid) {
+        //     const authStorage = StorageUtils.getStorageArray('auth');
         //
-        //         console.log(`${input}: ${value}`);
-        //
-        //         let isValid = FormUtils.validateFormElements(value);
-        //
-        //         if (!isValid) {
-        //             localInValid.push(input);
-        //         }
-        //
-        //         console.log(isValid);
-        //     }
+        //     AuthUtils.createAuthStorage(authStorage, {
+        //         email: formValues.email,
+        //         password: formValues.password,
+        //     });
         // }
-        //
-        // console.log(localInValid);
-
-        if (localInValid.length <= 0) {
-            // const authStorage = StorageUtils.getStorageArray('auth');
-            //
-            // // Add our user to the auth storage
-            // // They are not signed or don't have an account
-            // AuthUtils.createAuthStorage(authStorage, {
-            //     currentEmail,
-            //     currentPassword,
-            // });
-        }
-
     };
 
     return (
@@ -109,6 +87,7 @@ const AuthPanel = (props: {
                                                }
                                            })
                                        } }
+                                       required={ element.required ?? false }
                                 />
                                 <span className={ `body-s text-red isValid` }>{ element.warning?.text }</span>
                             </label>

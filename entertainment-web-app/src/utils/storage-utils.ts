@@ -87,13 +87,13 @@ export default class StorageUtils {
      *
      * @return array
      */
-    public static getStorageArray = (storageType: string) => {
+    public static getStorageArray = (storageName: string) => {
         // Set initial state
-        if (!window.sessionStorage.getItem(storageType) || typeof window.sessionStorage.getItem(storageType) === 'undefined') {
-            window.sessionStorage.setItem(storageType, JSON.stringify([]))
+        if (!window.sessionStorage.getItem(storageName) || typeof window.sessionStorage.getItem(storageName) === 'undefined') {
+            window.sessionStorage.setItem(storageName, JSON.stringify([]))
         }
 
-        return JSON.parse(window.sessionStorage.getItem(storageType) ?? '[]');
+        return JSON.parse(window.sessionStorage.getItem(storageName) ?? '[]');
     };
 
     /**
