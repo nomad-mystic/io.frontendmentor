@@ -10,30 +10,38 @@ import '../../components/auth/auth.css';
 import LoginComponent from '@/app/login/components/login';
 import AuthHeader from '@/components/auth/components/auth-header';
 import StorageUtils from '@/utils/storage-utils';
-import { redirect } from 'next/navigation';
+
+// Server Actions
+import { redirectByPath } from '@/actions/redirect';
 
 /**
- * @description
+ * @description Page for the Login form
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
  * @return {React.JSX.Element}
  */
 const Login = (): React.JSX.Element => {
-
-    const [isLogin, setIsLogin] = useState(true);
+    const [isVisible, setIsVisible] = useState('isInvisible');
 
     useEffect(() => {
         const authStorage = StorageUtils.getStorageArray('auth');
 
         // Check initial state
         if (authStorage && typeof authStorage !== 'undefined' && authStorage.length > 0) {
-            redirect('/home');
+
+            // If there is a storage item redirect to homepage
+            redirectByPath('/home').catch(() => {});
+
+        } else {
+
+            setIsVisible('isVisible');
+
         }
     }, []);
 
     return (
-        <section className="Auth">
+        <section className={`Auth isInvisible ${isVisible}`}>
             <AuthHeader />
 
             <LoginComponent />

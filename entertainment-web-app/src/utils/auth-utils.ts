@@ -1,5 +1,5 @@
 import StorageUtils from '@/utils/storage-utils';
-import { AuthStorageTypes } from '@/types/auth-types';
+import { AuthFormValueType } from '@/types/auth-types';
 
 /**
  * @classdesc
@@ -15,15 +15,15 @@ export default class AuthUtils {
      *
      * @return
      */
-    public static createAuthStorage = <T extends Array<AuthStorageTypes>>(authStorage: T, authData: AuthStorageTypes) => {
+    public static createAuthStorage = <T extends Array<AuthFormValueType>>(authStorage: T, authData: AuthFormValueType) => {
         if (!authStorage || typeof authStorage === 'undefined' || authStorage.length <= 0) {
             // Extract our values
-            const { currentEmail, currentPassword } = authData;
+            const { email, password } = authData;
 
             const data = [
                 {
-                    email: currentEmail?.value,
-                    password: currentPassword?.value,
+                    email: email,
+                    password: password,
                 },
             ];
 

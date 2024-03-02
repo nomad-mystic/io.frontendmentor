@@ -1,7 +1,7 @@
 'use client';
 
 // Community
-import React, { useRef, useState } from 'react';
+import React, { BaseSyntheticEvent, useRef, useState } from 'react';
 import Link from 'next/link';
 
 // Utils
@@ -10,107 +10,154 @@ import StorageUtils from '@/utils/storage-utils';
 import AuthUtils from '@/utils/auth-utils';
 
 // Types
-import { formElementsTypes, footerValuesTypes, formSubmitTypes } from '@/types/input-types';
+import { FormElementsTypes, FooterValuesTypes, FormSubmitTypes } from '@/types/input-types';
+
+// Server Actions
+import { redirectByPath } from '@/actions/redirect';
 
 /**
  * @description
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return React.JSX.Element
+ * @return {React.JSX.Element}
  */
 const AuthPanel = (props: {
-    formElements: Array<formElementsTypes>,
-    formSubmit: formSubmitTypes,
-    footerValues: footerValuesTypes,
+    formElements: Array<FormElementsTypes>,
+    formSubmit: FormSubmitTypes,
+    footerValues: FooterValuesTypes,
     title: string,
-}) => {
+}): React.JSX.Element => {
+    // States
     const [formValues, setFormValues] = useState({});
-    const formElement = useRef<HTMLFormElement>(null);
+    const [formValidationMessage, setFormValidationMessage] = useState('');
 
     /**
-     * @description
+     * @description Handle the Form submission
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @return
+     * @return {void}
      */
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         // Stop the form submitting
         event.preventDefault();
-
-        // Local State
-        let localInValid: string[] = [];
 
         // Event delegation
         const target = event.target as HTMLFormElement;
 
-        console.log(target);
-
         if (!target || typeof target === 'undefined' || target.tagName !== 'FORM') {
+            setFormValidationMessage('There was an issue with submitting the form. Please try again!');
+
             return;
         }
 
-        const current = formElement.current as HTMLFormElement | undefined;
+        // Extract our values after validation
+        const { email = null, password = null }: any = FormUtils.validateFormElements(formValues);
 
-        const formData = new FormData(current);
-        // output as an object
-        console.log(Object.fromEntries(Object.entries(formData)));
+        if (!password || !email) {
+            setFormValidationMessage('Password or Email are invalid. Please try again!');
 
-        // for (const input in formValues) {
-        //     if (Object.hasOwn(formValues, input)) {
-        //         // @ts-ignore
-        //         const value = formValues[input];
-        //
-        //         console.log(`${input}: ${value}`);
-        //
-        //         let isValid = FormUtils.validateFormElements(value);
-        //
-        //         if (!isValid) {
-        //             localInValid.push(input);
-        //         }
-        //
-        //         console.log(isValid);
-        //     }
-        // }
-        //
-        // console.log(localInValid);
-
-        if (localInValid.length <= 0) {
-            // const authStorage = StorageUtils.getStorageArray('auth');
-            //
-            // // Add our user to the auth storage
-            // // They are not signed or don't have an account
-            // AuthUtils.createAuthStorage(authStorage, {
-            //     currentEmail,
-            //     currentPassword,
-            // });
+            return;
         }
 
+        // Get and set our storage item
+        const authStorage = StorageUtils.getStorageArray('auth');
+
+        AuthUtils.createAuthStorage(authStorage, {
+            email: email,
+            password: btoa(password),
+        });
+
+        // After our validation redirect to homepage
+        redirectByPath('/home').catch(() => setFormValidationMessage('There was an issue with redirecting!'));
+    };
+
+    /**
+     * @description Bases on the input used show or hide warning
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return {void}
+     */
+    const handleWarning = <T extends BaseSyntheticEvent>(event: T): void => {
+        const target = event.target;
+
+        if (target && typeof target !== 'undefined') {
+            if (target.value === '') {
+
+                event.target.classList.add('isInvalid');
+
+            } else {
+                event.target.classList.remove('isInvalid');
+            }
+        }
+    };
+
+    /**
+     * @description Update our input's state and show or hide warning
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return {void}
+     */
+    const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>, element: FormElementsTypes): void => {
+        handleWarning(event);
+
+        setFormValues((prevState) => {
+            return {
+                ...prevState,
+                [`${ element.id }`]: event.target.value,
+            }
+        })
+    };
+
+    /**
+     * @description Show or hide warning message
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return {void}
+     */
+    const onFocusHandler = (event: React.FocusEvent<HTMLInputElement>): void => {
+        handleWarning(event);
+    };
+
+    /**
+     * @description Show or hide warning message
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return {void}
+     */
+    const onBlurHandler = (event: React.FocusEvent<HTMLInputElement>): void => {
+        handleWarning(event);
     };
 
     return (
         <>
-            <h2 className="AuthTitle header-l">{ props.title }</h2>
+            <h2 className="Auth-title header-l">{ props.title }</h2>
 
-            <form onSubmit={ handleSubmit } ref={ formElement }>
+            <form onSubmit={ handleSubmit } >
                 {
                     props.formElements.map((element) => {
                         return (
-                            <label key={ element?.id }>
+                            <label key={ element?.id } htmlFor={ element?.id }>
                                 <input type={ element?.type }
                                        id={ element?.id }
                                        placeholder={ element?.placeholder }
                                        onChange={ (e) => {
-                                           setFormValues((prevState) => {
-                                               return {
-                                                   ...prevState,
-                                                   [`${ element.id }`]: e.target.value,
-                                               }
-                                           })
+                                           onChangeHandler(e, element);
                                        } }
+                                       required={ element.required ?? false }
+                                       onFocus={ (e) => onFocusHandler(e) }
+                                       onBlur={ (e) => onBlurHandler(e) }
+                                       className={``}
                                 />
-                                <span className={ `body-s text-red isValid` }>{ element.warning?.text }</span>
+
+                                <span className="Auth-warning body-s text-red">
+                                    { element.warning?.text }
+                                </span>
                             </label>
                         );
                     })
@@ -118,7 +165,10 @@ const AuthPanel = (props: {
 
                 {
                     <button className={ `body-m button` }
-                            type={ props.formSubmit.type }>{ props.formSubmit.text }</button>
+                            type={ props.formSubmit.type }
+                    >
+                        { props.formSubmit.text }
+                    </button>
                 }
             </form>
 
@@ -127,6 +177,7 @@ const AuthPanel = (props: {
                     <Link href={ props.footerValues.url }
                           className="text-red">{ props.footerValues.linkText }</Link>
                 </p>
+                <span className="body-s text-red">{ formValidationMessage }</span>
             </footer>
         </>
     );

@@ -5,10 +5,10 @@ import Image from 'next/image';
 import './sidebar.css';
 
 // Data
-import icons from '../../data/sidebar-data.json';
+import icons from '@/data/sidebar-data.json';
 
 // Types
-import { SidebarIconsTypes } from '../../types/sidebar-types';
+import { SidebarIconsTypes } from '@/types/sidebar-types';
 
 // Components
 import SidebarIcons from '@/components/sidebar/sidebar-icons/sidebar-icons';

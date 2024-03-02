@@ -8,8 +8,22 @@
         display: none;
     }
 
+    &.isVisible {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
     &-header {
         margin-block-start: 7.2rem;
+    }
+
+    &-warning {
+        position: absolute;
+        right: 0;
+        top: 1.2rem;
+        opacity: 0;
+        visibility: hidden;
     }
 
     &-panel {
@@ -29,9 +43,10 @@
 
         label {
             position: relative;
+            margin-block-start: 2.4rem;
 
             &:last-of-type {
-                margin-block: 2.4rem 4rem;
+                margin-block-end: 4rem;
             }
 
             input {
@@ -41,25 +56,15 @@
                 padding: .8rem 0 1.8rem 1.6rem;
                 color: var(--color-white);
                 font-size: var(--font-size-body-m);
+                caret-color: var(--color-red);
 
                 &:focus {
                     outline: none;
                     border-bottom: 1px solid var(--color-white);
                 }
 
-                &::placeholder {
-                    /*font-size: var(--font-size-body-m);*/
-                }
-            }
-
-            span {
-                position: absolute;
-                right: 0;
-                top: 1.2rem;
-                opacity: 0;
-                visibility: hidden;
-
-                &.invalid {
+                /*Set our warning states*/
+                &.isInvalid ~ .Auth-warning {
                     opacity: 1;
                     visibility: visible;
                 }
@@ -68,11 +73,17 @@
 
         footer {
             display: flex;
-            justify-content: center;
             margin-block-start: 2.4rem;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
 
             a {
                 padding-inline-start: .9rem;
+            }
+
+            span {
+                margin-block-start: 1.6rem;
             }
         }
     }
