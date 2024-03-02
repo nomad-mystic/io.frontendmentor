@@ -4,7 +4,7 @@ import React from 'react';
 import './all-content.css';
 
 // Data
-import data from '../../../data/data.json';
+import data from '@/data/data.json';
 
 // Types
 import { MovieDataType } from '@/types/data-types';
@@ -13,13 +13,13 @@ import { MovieDataType } from '@/types/data-types';
 import ContentItem from '@/components/content-item/content-item';
 
 /**
- * @description
+ * @description Page content for displaying all the TV/Movies
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return
+ * @return {React.JSX.Element}
  */
-const AllContent = () => {
+const AllContent = (): React.JSX.Element => {
     return (
         <section className="AllContent" id="AllContent">
             <h2 className="Content-header header-l">Recommended for you</h2>

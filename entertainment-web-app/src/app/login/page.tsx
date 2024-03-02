@@ -22,18 +22,26 @@ import { redirectByPath } from '@/actions/redirect';
  * @return {React.JSX.Element}
  */
 const Login = (): React.JSX.Element => {
+    const [isVisible, setIsVisible] = useState('isInvisible');
+
     useEffect(() => {
         const authStorage = StorageUtils.getStorageArray('auth');
 
         // Check initial state
         if (authStorage && typeof authStorage !== 'undefined' && authStorage.length > 0) {
+
             // If there is a storage item redirect to homepage
             redirectByPath('/home').catch(() => {});
+
+        } else {
+
+            setIsVisible('isVisible');
+
         }
     }, []);
 
     return (
-        <section className="Auth">
+        <section className={`Auth isInvisible ${isVisible}`}>
             <AuthHeader />
 
             <LoginComponent />

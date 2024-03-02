@@ -8,6 +8,12 @@
         display: none;
     }
 
+    &.isVisible {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
     &-header {
         margin-block-start: 7.2rem;
     }
@@ -58,10 +64,6 @@
                 }
 
                 /*Set our warning states*/
-                &.isValid ~ .Auth-warning {
-
-                }
-
                 &.isInvalid ~ .Auth-warning {
                     opacity: 1;
                     visibility: visible;
@@ -71,11 +73,17 @@
 
         footer {
             display: flex;
-            justify-content: center;
             margin-block-start: 2.4rem;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
 
             a {
                 padding-inline-start: .9rem;
+            }
+
+            span {
+                margin-block-start: 1.6rem;
             }
         }
     }

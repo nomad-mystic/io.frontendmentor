@@ -48,6 +48,8 @@ const AuthPanel = (props: {
 
         if (!target || typeof target === 'undefined' || target.tagName !== 'FORM') {
             setFormValidationMessage('There was an issue with submitting the form. Please try again!');
+
+            return;
         }
 
         // Extract our values after validation
@@ -55,6 +57,8 @@ const AuthPanel = (props: {
 
         if (!password || !email) {
             setFormValidationMessage('Password or Email are invalid. Please try again!');
+
+            return;
         }
 
         // Get and set our storage item
@@ -173,7 +177,7 @@ const AuthPanel = (props: {
                     <Link href={ props.footerValues.url }
                           className="text-red">{ props.footerValues.linkText }</Link>
                 </p>
-                <span className="text-red">{ formValidationMessage }</span>
+                <span className="body-s text-red">{ formValidationMessage }</span>
             </footer>
         </>
     );
