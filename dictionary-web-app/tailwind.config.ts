@@ -19,7 +19,21 @@ const config: Config = {
                 'white-25': '#FFFFFF',
                 'purple': '#A445ED',
                 'red': '#FF5252',
+            },
+            backgroundImage: {
+                'search-icon': "url('/icon-search.svg')",
             }
+        },
+        container: {
+            center: true,
+            // default breakpoints but with 40px removed
+            screens: {
+                sm: '600px',
+                md: '737px',
+                lg: '737px',
+                xl: '737px',
+                '2xl': '1240px',
+            },
         },
     },
     plugins: [],

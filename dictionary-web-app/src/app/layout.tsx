@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inconsolata, Inter } from 'next/font/google';
+import { Inconsolata, Inter, Lora } from 'next/font/google';
 
 // Styles
 import './globals.css';
@@ -10,6 +10,8 @@ const inconsolata = Inconsolata({
 });
 
 const inter = Inter({ subsets: ["latin"] });
+
+const lora = Lora({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: 'Create Next App',
@@ -22,7 +24,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     return (
         <html lang="en">
-        <body className={ `${inconsolata.className} ${inter.className}` }>{ children }</body>
+        <body className={ `${inconsolata.className} ${inter.className} ${lora.className} bg-white` }>{ children }</body>
         </html>
     );
 }
