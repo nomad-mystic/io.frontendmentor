@@ -1,4 +1,7 @@
+// Utils
 import StorageUtils from '@/utils/storage-utils';
+
+// Types
 import { AuthFormValueType } from '@/types/auth-types';
 
 /**

@@ -1,3 +1,4 @@
+// Types
 import { MovieDataType } from '@/types/data-types';
 
 /**

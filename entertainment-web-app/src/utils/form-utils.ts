@@ -44,8 +44,6 @@ export default class FormUtils {
                 // @ts-ignore
                 const inputValue: string = formValues[inputKey];
 
-                console.log(`${ inputKey }: ${ inputValue }`);
-
                 let isValid = FormUtils.validateFormElementIsEmpty(inputValue);
 
                 if (isValid) {
