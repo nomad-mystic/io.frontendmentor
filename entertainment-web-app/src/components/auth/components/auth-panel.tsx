@@ -3,6 +3,7 @@
 // Community
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
 // Utils
 import FormUtils from '@/utils/form-utils';
@@ -11,7 +12,9 @@ import AuthUtils from '@/utils/auth-utils';
 
 // Types
 import { FormElementsTypes, FooterValuesTypes, FormSubmitTypes } from '@/types/input-types';
-import { AuthFormValueType } from '@/types/auth-types';
+
+// Server Actions
+import { redirectByPath } from '@/actions/redirect';
 
 /**
  * @description
@@ -48,23 +51,23 @@ const AuthPanel = (props: {
             setFormValidationMessage('There was an issue with submitting the form. Please try again!');
         }
 
-        const { email = null, password = null }: any  = FormUtils.validateFormElements(formValues);
-
-        console.log(password, email);
+        // Extract our values after validation
+        const { email = null, password = null }: any = FormUtils.validateFormElements(formValues);
 
         if (!password || !email) {
             setFormValidationMessage('Password or Email are invalid. Please try again!');
         }
 
+        // Get and set our storage item
+        const authStorage = StorageUtils.getStorageArray('auth');
 
-        // if (isValid) {
-        //     const authStorage = StorageUtils.getStorageArray('auth');
-        //
-        //     AuthUtils.createAuthStorage(authStorage, {
-        //         email: formValues.email,
-        //         password: formValues.password,
-        //     });
-        // }
+        AuthUtils.createAuthStorage(authStorage, {
+            email: email,
+            password: btoa(password),
+        });
+
+        // After our validation redirect to homepage
+        redirectByPath('/home').catch(() => setFormValidationMessage('There was an issue with redirecting!'));
     };
 
     return (
@@ -106,6 +109,7 @@ const AuthPanel = (props: {
                     <Link href={ props.footerValues.url }
                           className="text-red">{ props.footerValues.linkText }</Link>
                 </p>
+                <span className="text-red">{ formValidationMessage }</span>
             </footer>
         </>
     );

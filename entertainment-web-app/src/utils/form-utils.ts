@@ -45,7 +45,8 @@ export default class FormUtils {
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @param formValues
+     * @param {<T>} formValues
+     * @return {object}
      */
     public static validateFormElements = <T>(formValues: T): object => {
         // Local State

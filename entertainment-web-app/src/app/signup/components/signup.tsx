@@ -12,9 +12,9 @@ import { FormElementsTypes, FormSubmitTypes, FooterValuesTypes } from '@/types/i
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return
+ * @return {React.JSX.Element}
  */
-const Signup = () => {
+const Signup = (): React.JSX.Element => {
     // Build our form
     const formElements: Array<FormElementsTypes> = [
         {

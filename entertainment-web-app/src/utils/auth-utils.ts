@@ -20,8 +20,6 @@ export default class AuthUtils {
             // Extract our values
             const { email, password } = authData;
 
-            console.log(authData);
-
             const data = [
                 {
                     email: email,
