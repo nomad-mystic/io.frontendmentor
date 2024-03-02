@@ -22,7 +22,7 @@ const Bookmark = (): React.JSX.Element => {
     const divElement = useRef<HTMLDivElement>(null);
 
     /**
-     * @description
+     * @description Build our bookmark functionality
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
@@ -74,18 +74,12 @@ const Bookmark = (): React.JSX.Element => {
         // Our session storage
         let bookmarksStorage = window.sessionStorage.getItem('bookmarks');
 
-        // console.log(bookmarksStorage);
-
         // Make sure we have valid JSON
         if (!bookmarksStorage || typeof bookmarksStorage === 'undefined') {
             bookmarksStorage = '[]';
         }
 
         let bookmarks = JSON.parse(bookmarksStorage);
-
-        // if (!bookmarks || typeof bookmarks === 'undefined') {
-        //     return;
-        // }
 
         // Set our state if there is a matching-bookmarked object
         bookmarks.map((bookmark: string) => {

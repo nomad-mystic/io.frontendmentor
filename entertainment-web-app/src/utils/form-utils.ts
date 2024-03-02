@@ -23,24 +23,6 @@ export default class FormUtils {
     };
 
     /**
-     * @description Pass this an input value and do simple validation for length
-     * @public
-     * @author Keith Murphy | nomadmystics@gmail.com
-     *
-     * @param {string} value
-     * @return {boolean}
-     */
-    public static validateFormElementHasLength = (value: string): boolean => {
-        let isValid = true;
-
-        if (!value || typeof value === 'undefined' || value.length <= 0) {
-            return false;
-        }
-
-        return isValid;
-    };
-
-    /**
      * @description Pass this an input value and do simple validation
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com

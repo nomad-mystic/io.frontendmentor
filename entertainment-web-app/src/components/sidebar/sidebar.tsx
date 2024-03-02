@@ -14,11 +14,11 @@ import { SidebarIconsTypes } from '@/types/sidebar-types';
 import SidebarIcons from '@/components/sidebar/sidebar-icons/sidebar-icons';
 
 /**
- * @description
+ * @description Build the sidebar component
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return React.JSX.Element
+ * @return {React.JSX.Element}
  */
 const Sidebar = (): React.JSX.Element => {
     return (

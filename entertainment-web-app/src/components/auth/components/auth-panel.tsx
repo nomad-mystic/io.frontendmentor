@@ -16,7 +16,7 @@ import { FormElementsTypes, FooterValuesTypes, FormSubmitTypes } from '@/types/i
 import { redirectByPath } from '@/actions/redirect';
 
 /**
- * @description
+ * @description Build the form elements for the auth component pages
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *

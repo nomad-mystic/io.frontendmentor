@@ -38,9 +38,10 @@ const Search = (props: { searchType: string, placeholder: string }): React.JSX.E
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @return
+     * @param {ChangeEvent<HTMLInputElement>} event
+     * @return {void}
      */
-    const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const handleSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
         event.preventDefault();
 
         const target = event.target as HTMLInputElement;

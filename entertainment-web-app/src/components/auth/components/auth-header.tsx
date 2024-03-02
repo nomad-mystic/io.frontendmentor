@@ -1,7 +1,15 @@
+// Community
 import React from 'react';
 import Image from 'next/image';
 
-const AuthHeader = () => {
+/**
+ * @description Builds the auth header component
+ * @public
+ * @author Keith Murphy | nomadmystics@gmail.com
+ *
+ * @return {React.JSX.Element}
+ */
+const AuthHeader = (): React.JSX.Element => {
     return (
         <header className="Auth-header">
             <Image

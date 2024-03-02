@@ -2,20 +2,19 @@ import StorageUtils from '@/utils/storage-utils';
 import { AuthFormValueType } from '@/types/auth-types';
 
 /**
- * @classdesc
+ * @classdesc Handle auth functionality
  * @class AuthUtils
  * @author Keith Murphy | nomadmystics@gmail.com
  */
 export default class AuthUtils {
-
     /**
      * @description Add our user to the auth storage
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @return
+     * @return {void}
      */
-    public static createAuthStorage = <T extends Array<AuthFormValueType>>(authStorage: T, authData: AuthFormValueType) => {
+    public static createAuthStorage = <T extends Array<AuthFormValueType>>(authStorage: T, authData: AuthFormValueType): void => {
         if (!authStorage || typeof authStorage === 'undefined' || authStorage.length <= 0) {
             // Extract our values
             const { email, password } = authData;

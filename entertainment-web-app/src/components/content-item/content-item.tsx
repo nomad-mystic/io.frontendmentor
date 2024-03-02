@@ -13,7 +13,7 @@ import ContentMeta from '@/components/content-meta/content-meta';
 import ContentImage from '@/components/content-item/content-image/content-image';
 
 /**
- * @description
+ * @description Common component for display content items
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *

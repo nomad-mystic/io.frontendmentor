@@ -81,13 +81,14 @@ export default class StorageUtils {
     };
 
     /**
-     * @description
+     * @description Get a storage item by name or create one
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @return array
+     * @param {string} storageName
+     * @return {array}
      */
-    public static getStorageArray = (storageName: string) => {
+    public static getStorageArray = (storageName: string): Array<any> => {
         // Set initial state
         if (!window.sessionStorage.getItem(storageName) || typeof window.sessionStorage.getItem(storageName) === 'undefined') {
             window.sessionStorage.setItem(storageName, JSON.stringify([]))
@@ -97,13 +98,15 @@ export default class StorageUtils {
     };
 
     /**
-     * @description
+     * @description Create a storage item by name
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @return
+     * @param {string} storageName
+     * @param {Array<{}>} data
+     * @return {void}
      */
-    public static createStorageArray = (storageType: string, data: Array<{}>) => {
-        window.sessionStorage.setItem(storageType, JSON.stringify(data));
+    public static createStorageArray = (storageName: string, data: Array<{}>): void => {
+        window.sessionStorage.setItem(storageName, JSON.stringify(data));
     };
 }
