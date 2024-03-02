@@ -3,7 +3,7 @@ import { DictionaryType } from '@/types/dictionary-type';
 
 const ContentMeaning = (props: { word: DictionaryType }) => {
     return (
-        <div>
+        <>
             {
                 props.word.meanings.map((meaning) => {
                     return (
@@ -24,7 +24,7 @@ const ContentMeaning = (props: { word: DictionaryType }) => {
 
                             {
                                 meaning.synonyms?.length > 0 && (
-                                    <div>
+                                    <div className="flex gap-x-4">
                                         <h3>Synonyms</h3>
                                         <p>{ meaning.synonyms }</p>
                                     </div>
@@ -34,7 +34,7 @@ const ContentMeaning = (props: { word: DictionaryType }) => {
                     )
                 })
             }
-        </div>
+        </>
     );
 };
 

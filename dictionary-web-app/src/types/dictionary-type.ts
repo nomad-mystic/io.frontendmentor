@@ -25,4 +25,5 @@ export type DictionaryType = {
         url: string;
     },
     sourceUrls: string[]
+    origin: string;
 }
