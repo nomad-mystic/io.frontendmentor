@@ -11,7 +11,7 @@ import data from '@/data/data.json';
 import { MovieDataType } from '@/types/data-types';
 
 /**
- * @description Build the Movies page
+ * @description Build the Movies page content
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *

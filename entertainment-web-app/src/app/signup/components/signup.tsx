@@ -8,14 +8,14 @@ import AuthPanel from '@/components/auth/components/auth-panel';
 import { FormElementsTypes, FormSubmitTypes, FooterValuesTypes } from '@/types/input-types';
 
 /**
- * @description
+ * @description Component for the Sign-up form
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
  * @return {React.JSX.Element}
  */
 const Signup = (): React.JSX.Element => {
-    // Build our form
+    // Build our form inputs
     const formElements: Array<FormElementsTypes> = [
         {
             elementType: 'input',
@@ -49,11 +49,13 @@ const Signup = (): React.JSX.Element => {
         },
     ];
 
+    // Build our form submit button
     const formSubmit: FormSubmitTypes = {
         type: 'submit',
         text: 'Create an account',
     };
 
+    // Build our form footer values
     const footerValues: FooterValuesTypes = {
         text: 'Already have an account?',
         linkText: 'Login',

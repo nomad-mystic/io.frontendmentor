@@ -11,10 +11,18 @@ const inter = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
     title: 'Entertainment Web App',
-    description: '',
+    description: 'Creates a web app for viewing and bookmarking TV/Movie titles.',
     icons: {
         icon: '/assets/logo.svg',
     },
+    authors: {
+        url: 'https://nomadmystic.com',
+        name: 'Keith Murphy',
+    },
+    keywords: 'React.js Next.js Node.js Challenge',
+    creator: 'Keith Murphy',
+    publisher: 'Keith Murphy',
+    abstract: 'Front-end mentor advanced challenge'
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
