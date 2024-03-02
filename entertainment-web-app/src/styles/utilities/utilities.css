@@ -91,18 +91,4 @@
             row-gap: 3.2rem;
         }
     }
-
-    /*.AuthPoint {*/
-    /*    opacity: 0;*/
-    /*    visibility: hidden;*/
-    /*    display: none;*/
-    /*    transition: var(--transiton-r);*/
-    /*    &.isVisible {*/
-    /*        display: grid;*/
-    /*        opacity: 1;*/
-    /*        visibility: visible;*/
-    /*        height: 100%;*/
-    /*        transition: var(--transiton-r);*/
-    /*    }*/
-    /*}*/
 }

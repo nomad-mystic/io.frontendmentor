@@ -1,9 +1,8 @@
 'use client';
 
 // Community
-import React, { useRef, useState } from 'react';
+import React, { BaseSyntheticEvent, useRef, useState } from 'react';
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
 
 // Utils
 import FormUtils from '@/utils/form-utils';
@@ -21,26 +20,26 @@ import { redirectByPath } from '@/actions/redirect';
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return React.JSX.Element
+ * @return {React.JSX.Element}
  */
 const AuthPanel = (props: {
     formElements: Array<FormElementsTypes>,
     formSubmit: FormSubmitTypes,
     footerValues: FooterValuesTypes,
     title: string,
-}) => {
+}): React.JSX.Element => {
+    // States
     const [formValues, setFormValues] = useState({});
     const [formValidationMessage, setFormValidationMessage] = useState('');
-    const formElement = useRef<HTMLFormElement>(null);
 
     /**
-     * @description
+     * @description Handle the Form submission
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @return
+     * @return {void}
      */
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
         // Stop the form submitting
         event.preventDefault();
 
@@ -70,29 +69,91 @@ const AuthPanel = (props: {
         redirectByPath('/home').catch(() => setFormValidationMessage('There was an issue with redirecting!'));
     };
 
+    /**
+     * @description Bases on the input used show or hide warning
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return {void}
+     */
+    const handleWarning = <T extends BaseSyntheticEvent>(event: T): void => {
+        const target = event.target;
+
+        if (target && typeof target !== 'undefined') {
+            if (target.value === '') {
+
+                event.target.classList.add('isInvalid');
+
+            } else {
+                event.target.classList.remove('isInvalid');
+            }
+        }
+    };
+
+    /**
+     * @description Update our input's state and show or hide warning
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return {void}
+     */
+    const onChangeHandler = (event: React.ChangeEvent<HTMLInputElement>, element: FormElementsTypes): void => {
+        handleWarning(event);
+
+        setFormValues((prevState) => {
+            return {
+                ...prevState,
+                [`${ element.id }`]: event.target.value,
+            }
+        })
+    };
+
+    /**
+     * @description Show or hide warning message
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return {void}
+     */
+    const onFocusHandler = (event: React.FocusEvent<HTMLInputElement>): void => {
+        handleWarning(event);
+    };
+
+    /**
+     * @description Show or hide warning message
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return {void}
+     */
+    const onBlurHandler = (event: React.FocusEvent<HTMLInputElement>): void => {
+        handleWarning(event);
+    };
+
     return (
         <>
-            <h2 className="AuthTitle header-l">{ props.title }</h2>
+            <h2 className="Auth-title header-l">{ props.title }</h2>
 
-            <form onSubmit={ handleSubmit } ref={ formElement }>
+            <form onSubmit={ handleSubmit } >
                 {
                     props.formElements.map((element) => {
                         return (
-                            <label key={ element?.id }>
+                            <label key={ element?.id } htmlFor={ element?.id }>
                                 <input type={ element?.type }
                                        id={ element?.id }
                                        placeholder={ element?.placeholder }
                                        onChange={ (e) => {
-                                           setFormValues((prevState) => {
-                                               return {
-                                                   ...prevState,
-                                                   [`${ element.id }`]: e.target.value,
-                                               }
-                                           })
+                                           onChangeHandler(e, element);
                                        } }
                                        required={ element.required ?? false }
+                                       onFocus={ (e) => onFocusHandler(e) }
+                                       onBlur={ (e) => onBlurHandler(e) }
+                                       className={``}
                                 />
-                                <span className={ `body-s text-red isValid` }>{ element.warning?.text }</span>
+
+                                <span className="Auth-warning body-s text-red">
+                                    { element.warning?.text }
+                                </span>
                             </label>
                         );
                     })
@@ -100,7 +161,10 @@ const AuthPanel = (props: {
 
                 {
                     <button className={ `body-m button` }
-                            type={ props.formSubmit.type }>{ props.formSubmit.text }</button>
+                            type={ props.formSubmit.type }
+                    >
+                        { props.formSubmit.text }
+                    </button>
                 }
             </form>
 
