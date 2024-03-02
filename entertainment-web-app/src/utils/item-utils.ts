@@ -11,7 +11,7 @@ import data from '@/data/data.json';
  */
 export default class ItemUtils {
     /**
-     * @description
+     * @description Get the closet item title by parent element
      * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *

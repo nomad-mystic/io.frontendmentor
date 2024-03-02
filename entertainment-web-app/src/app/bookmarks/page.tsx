@@ -7,13 +7,13 @@ import Sidebar from '@/components/sidebar/sidebar';
 import BookmarkContent from '@/app/bookmarks/components/bookmark-content/bookmark-content';
 
 /**
- * @description
+ * @description Page for Bookmarks
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return
+ * @return {React.JSX.Element}
  */
-const BookmarksPage = () => {
+const BookmarksPage = (): React.JSX.Element => {
     return (
         <div className="Container">
             <Search searchType="Bookmarks" placeholder="Search for bookmarked shows" />

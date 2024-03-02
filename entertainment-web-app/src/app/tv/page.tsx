@@ -11,9 +11,9 @@ import TvContent from '@/app/tv/components/tv-content/tv-content';
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
- * @return
+ * @return {React.JSX.Element}
  */
-const TvPage = () => {
+const TvPage = (): React.JSX.Element => {
     return (
         <div className="Container">
             <Search searchType="TV Series" placeholder="Search for TV series" />

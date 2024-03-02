@@ -8,7 +8,7 @@ import './content-meta.css';
 import { MovieDataType } from '@/types/data-types';
 
 /**
- * @description
+ * @description Common component for displaying content item's metadata
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *

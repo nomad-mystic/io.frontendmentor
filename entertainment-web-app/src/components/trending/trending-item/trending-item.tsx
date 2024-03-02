@@ -13,7 +13,7 @@ import ContentMeta from '@/components/content-meta/content-meta';
 import TrendingImage from '@/components/trending/trending-image/trending-image';
 
 /**
- * @description
+ * @description Build the Tending item's content
  * @public
  * @author Keith Murphy | nomadmystics@gmail.com
  *
