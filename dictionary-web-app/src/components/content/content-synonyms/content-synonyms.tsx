@@ -7,8 +7,8 @@ const ContentSynonyms = (props: {meaning: MeaningType}) => {
 
     return (
         <div className="flex gap-x-4">
-            <h3>Synonyms</h3>
-            <p>{ props.meaning.synonyms }</p>
+            <h3 className="heading-s text-white-100">Synonyms</h3>
+            <p className="heading-s text-purple font-bold">{ props.meaning.synonyms }</p>
         </div>
     );
 };

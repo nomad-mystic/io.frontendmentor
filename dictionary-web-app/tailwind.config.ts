@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
     content: [
@@ -7,6 +8,16 @@ const config: Config = {
         './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
+        container: {
+            center: true,
+            screens: {
+                sm: '600px',
+                md: '737px',
+                lg: '737px',
+                xl: '737px',
+                '2xl': '1240px',
+            },
+        },
         extend: {
             colors: {
                 'black-100': '#050505',
@@ -24,18 +35,32 @@ const config: Config = {
                 'search-icon': "url('/icon-search.svg')",
             }
         },
-        container: {
-            center: true,
-            // default breakpoints but with 40px removed
-            screens: {
-                sm: '600px',
-                md: '737px',
-                lg: '737px',
-                xl: '737px',
-                '2xl': '1240px',
-            },
-        },
     },
-    plugins: [],
+    plugins: [
+        plugin(function({ addComponents }) {
+            addComponents({
+                '.heading-l': {
+                    fontSize: '64px',
+                    lineHeight: '77px',
+                },
+                '.heading-m': {
+                    fontSize: '24px',
+                    lineHeight: '29px',
+                },
+                '.heading-s': {
+                    fontSize: '20px',
+                    lineHeight: '24px',
+                },
+                '.body-m': {
+                    fontSize: '18px',
+                    lineHeight: '24px',
+                },
+                '.body-s': {
+                    fontSize: '14px',
+                    lineHeight: '17px',
+                },
+            })
+        })
+    ]
 };
 export default config;

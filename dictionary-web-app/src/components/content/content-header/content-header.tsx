@@ -47,8 +47,8 @@ const ContentHeader = (props: { word: DictionaryType }) => {
     return (
         <header className="flex justify-between">
             <div>
-                <h1>{ props.word.word }</h1>
-                <p className="text-purple">{ props.word.phonetic }</p>
+                <h1 className="heading-l">{ props.word.word }</h1>
+                <p className="heading-m text-purple">{ props.word.phonetic }</p>
             </div>
 
             <div>

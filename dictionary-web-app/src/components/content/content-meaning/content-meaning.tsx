@@ -9,9 +9,9 @@ const ContentMeaning = (props: { word: DictionaryType }) => {
                 props.word.meanings.map((meaning) => {
                     return (
                         <section key={ meaning.partOfSpeech } className="border-b">
-                            <h2>{ meaning.partOfSpeech }</h2>
+                            <h2 className="heading-m font-bold italic">{ meaning.partOfSpeech }</h2>
 
-                            <h3>Meaning</h3>
+                            <h3 className="heading-s text-white-100">Meaning</h3>
 
                             <ul>
                                 {
@@ -19,12 +19,16 @@ const ContentMeaning = (props: { word: DictionaryType }) => {
                                         return (
                                             <li key={ index }>
                                                 <div>
-                                                    { def.definition }
+                                                    <p className="body-m">{ def.definition }</p>
                                                 </div>
 
-                                                <div>
-                                                    { def.example }
-                                                </div>
+                                                {
+                                                    def.example && (
+                                                        <div>
+                                                            <p className="body-m text-white-100">"{ def.example }"</p>
+                                                        </div>
+                                                    )
+                                                }
                                             </li>
                                         )
                                     })
