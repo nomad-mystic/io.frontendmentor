@@ -39,6 +39,15 @@ const Content = () => {
                             {
                                 word.meanings.length > 0 && <ContentMeaning word={ word } />
                             }
+
+                            {
+                                word.sourceUrls[0] && word.sourceUrls[0].length > 0 && (
+                                    <footer className="flex gap-x-4">
+                                        <h3>Source</h3>
+                                        <p>{ word.sourceUrls[0] }</p>
+                                    </footer>
+                                )
+                            }
                         </section>
                     )
                 })

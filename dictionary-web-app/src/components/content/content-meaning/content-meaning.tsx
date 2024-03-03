@@ -1,5 +1,6 @@
 import React from 'react';
 import { DictionaryType } from '@/types/dictionary-type';
+import ContentSynonyms from '@/components/content/content-synonyms/content-synonyms';
 
 const ContentMeaning = (props: { word: DictionaryType }) => {
     return (
@@ -16,19 +17,22 @@ const ContentMeaning = (props: { word: DictionaryType }) => {
                                 {
                                     meaning.definitions.length > 0 && meaning.definitions.map((def, index) => {
                                         return (
-                                            <li key={ index }>{ def.definition }</li>
+                                            <li key={ index }>
+                                                <div>
+                                                    { def.definition }
+                                                </div>
+
+                                                <div>
+                                                    { def.example }
+                                                </div>
+                                            </li>
                                         )
                                     })
                                 }
                             </ul>
 
                             {
-                                meaning.synonyms?.length > 0 && (
-                                    <div className="flex gap-x-4">
-                                        <h3>Synonyms</h3>
-                                        <p>{ meaning.synonyms }</p>
-                                    </div>
-                                )
+                                meaning.synonyms?.length > 0 && <ContentSynonyms meaning={ meaning } />
                             }
                         </section>
                     )
