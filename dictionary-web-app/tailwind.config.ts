@@ -15,7 +15,7 @@ const config: Config = {
                 md: '737px',
                 lg: '737px',
                 xl: '737px',
-                '2xl': '1240px',
+                '2xl': '737px',
             },
         },
         extend: {

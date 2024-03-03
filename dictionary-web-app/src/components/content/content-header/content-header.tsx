@@ -1,8 +1,19 @@
+// Community
 import React from 'react';
 import Image from 'next/image';
+
+// Types
 import { DictionaryType } from '@/types/dictionary-type';
 
 const ContentHeader = (props: { word: DictionaryType }) => {
+    const playShape = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
+            <g fill="#A445ED" fill-rule="evenodd">
+                <circle cx="37.5" cy="37.5" r="37.5" opacity=".25"/>
+                <path d="M29 27v21l21-10.5z"/>
+            </g>
+        </svg>`;
+
     /**
      * @description Extract the first audio URL and play the word
      * @public 
@@ -34,11 +45,13 @@ const ContentHeader = (props: { word: DictionaryType }) => {
                 break;
             }
 
-            // Create our Audio constructor
-            sound = new Audio(audioUrl);
+            if (audioUrl !== '') {
+                // Create our Audio constructor
+                sound = new Audio(audioUrl);
 
-            // Play the sound
-            await sound.play();
+                // Play the sound
+                await sound.play();
+            }
         } catch (e) {
             console.error(e);
         }
@@ -47,11 +60,14 @@ const ContentHeader = (props: { word: DictionaryType }) => {
     return (
         <header className="flex justify-between">
             <div>
-                <h1 className="heading-l">{ props.word.word }</h1>
-                <p className="heading-m text-purple">{ props.word.phonetic }</p>
+                <h1 className="heading-l text-black-50">{ props.word.word }</h1>
+                <p className="heading-m text-purple mt-1">{ props.word.phonetic }</p>
             </div>
 
             <div>
+
+                {/*<div dangerouslySetInnerHTML={{ __html: playShape}}></div>*/}
+
                 <Image src="/icon-play.svg"
                        alt="Cricle with triangle in the center"
                        width={ 75 }

@@ -6,9 +6,16 @@ const ContentSynonyms = (props: {meaning: MeaningType}) => {
     console.log(props.meaning.synonyms);
 
     return (
-        <div className="flex gap-x-4">
+        <div className="flex gap-x-4 mt-10">
             <h3 className="heading-s text-white-100">Synonyms</h3>
-            <p className="heading-s text-purple font-bold">{ props.meaning.synonyms }</p>
+
+            {
+                props.meaning.synonyms.map((synonym) => {
+                    return (
+                        <p key={synonym} className="heading-s text-purple font-bold">{ synonym }</p>
+                    )
+                })
+            }
         </div>
     );
 };

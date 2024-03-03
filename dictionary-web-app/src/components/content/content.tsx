@@ -19,7 +19,7 @@ const Content = () => {
         <main>
             <button
                 onClick={ async () => {
-                    const word = await getWord('keyboard')
+                    const word = await getWord('testing')
 
                     setCurrentWord(word)
 
@@ -41,10 +41,15 @@ const Content = () => {
                             }
 
                             {
-                                word.sourceUrls[0] && word.sourceUrls[0].length > 0 && (
-                                    <footer className="flex gap-x-4">
-                                        <h3>Source</h3>
-                                        <p>{ word.sourceUrls[0] }</p>
+                                // @todo create a map for multiple sourceURLs i.e. component
+                                word.sourceUrls && word.sourceUrls.length > 0 && (
+                                    <footer className="flex gap-x-4 border-t border-white-75 mt-10">
+                                        <h3 className="body-s text-white-100 underline mt-5">Source</h3>
+                                        <p className="body-s text-black-50 underline mt-5 relative flex gap-x-2">
+                                            { word.sourceUrls[0] }
+                                            <span className="after:bg-[url('/icon-new-window.svg')]
+                                                after:block after:h-[14px] after:w-[14px]"></span>
+                                        </p>
                                     </footer>
                                 )
                             }
