@@ -4,23 +4,44 @@ import { DictionaryType } from '@/types/dictionary-type';
 
 const ContentHeader = (props: { word: DictionaryType }) => {
     /**
-     * @description
+     * @description Extract the first audio URL and play the word
      * @public 
      * @author Keith Murphy | nomadmystics@gmail.com
      *
      * @return 
      */
     const handleAudioPlay = async (word: DictionaryType) => {
-        // Bail early
-        if (!word.phonetics || typeof word.phonetics === 'undefined' || word.phonetics.length <= 0) {
-            return;
+        try {
+            // Bail early
+            if (!word.phonetics || typeof word.phonetics === 'undefined' || word.phonetics.length <= 0) {
+                return;
+            }
+
+            let sound: HTMLAudioElement;
+            let audioUrl = '';
+
+            for (let s = 0; s < word.phonetics.length; s++) {
+                if (!word.phonetics[s] ||
+                    typeof word.phonetics[s] === 'undefined' ||
+                    !word.phonetics[s].audio ||
+                    word.phonetics[s].audio === ''
+                ) {
+                    continue;
+                }
+
+                audioUrl = word.phonetics[s].audio;
+
+                break;
+            }
+
+            // Create our Audio constructor
+            sound = new Audio(audioUrl);
+
+            // Play the sound
+            await sound.play();
+        } catch (e) {
+            console.error(e);
         }
-
-        // "https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3"
-
-        let sound = new Audio("https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3");
-
-        await sound.play();
     };
 
     return (
