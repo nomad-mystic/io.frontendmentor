@@ -1,11 +1,19 @@
+// Community
 import React from 'react';
+
+// Types
 import { DictionaryType } from '@/types/dictionary-type';
+
+// Components
 import ContentSynonyms from '@/components/content/content-synonyms/content-synonyms';
 
-// width: 100%;
-// border-bottom: 1px solid black;
-// position: absolute;
-// top: 50%;
+/**
+ * @description
+ * @public 
+ * @author Keith Murphy | nomadmystics@gmail.com
+ *
+ * @return 
+ */
 const ContentMeaning = (props: { word: DictionaryType }) => {
     return (
         <>
