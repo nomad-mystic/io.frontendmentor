@@ -13,26 +13,18 @@ import { DictionaryType } from '@/types/dictionary-type';
 import ContentHeader from '@/components/content/content-header/content-header';
 import ContentMeaning from '@/components/content/content-meaning/content-meaning';
 
+// Stores
+import useWordStore from '@/store/word-store';
+
 const Content = () => {
-    const [currentWord, setCurrentWord] = useState([]);
+    const currentWord = useWordStore((state) => state.currentWord);
 
     return (
         <main>
-            <button
-                onClick={ async () => {
-                    const word = await getWord('testing')
-
-                    setCurrentWord(word)
-
-                    console.log(word);
-                } }>
-                Like
-            </button>
-
             {
-                currentWord.map((word: DictionaryType) => {
+                currentWord && currentWord.length > 0 && currentWord.map((word: DictionaryType, index: number) => {
                     return (
-                        <section key={ word.word }>
+                        <section key={ index }>
                             {
                                 <ContentHeader word={ word } />
                             }
