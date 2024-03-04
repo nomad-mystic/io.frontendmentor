@@ -9,7 +9,7 @@ import useWordStore from '@/store/word-store';
 import { getWord } from '@/actions/dictionary-rest';
 
 const Search = () => {
-    const searchInput = useRef<HTMLInputElement>();
+    const searchInput = useRef<HTMLInputElement>(null);
     const updatedWord = useWordStore((state) => state.updatedWord);
     
     /**

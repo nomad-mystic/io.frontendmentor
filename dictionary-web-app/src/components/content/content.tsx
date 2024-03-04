@@ -24,7 +24,7 @@ const Content = () => {
             {
                 currentWord && currentWord.length > 0 && currentWord.map((word: DictionaryType, index: number) => {
                     return (
-                        <section key={ index }>
+                        <section className="mt-11 [&:not(:first-child)]:mt-14" key={ index }>
                             {
                                 <ContentHeader word={ word } />
                             }
