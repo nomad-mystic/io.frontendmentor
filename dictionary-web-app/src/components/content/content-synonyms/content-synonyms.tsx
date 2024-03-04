@@ -5,6 +5,7 @@ import { MeaningType } from '@/types/meaning-type';
 
 // Stores
 import useWordStore from '@/store/word-store';
+import useSynonymsStore from '@/store/synonyms-store';
 
 // Server Actions
 import { getWord } from '@/actions/dictionary-rest';
@@ -18,8 +19,8 @@ import { getWord } from '@/actions/dictionary-rest';
  */
 const ContentSynonyms = (props: { meaning: MeaningType }) => {
     const updatedWord = useWordStore((state) => state.updatedWord);
+    const updatedBySynonyms = useSynonymsStore((state) => state.updatedBySynonyms);
 
-    
     /**
      * @description
      * @public 
@@ -39,6 +40,10 @@ const ContentSynonyms = (props: { meaning: MeaningType }) => {
 
         // Update our state
         updatedWord(word);
+
+        if (Array.isArray(word) && word.length > 0) {
+            updatedBySynonyms(word[0].word);
+        }
     };
 
     return (

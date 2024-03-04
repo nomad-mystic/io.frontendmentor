@@ -46,7 +46,7 @@ const Content = () => {
             }
 
             {
-                <NotFound notFound={ currentWord } />
+                currentWord && !Array.isArray(currentWord) && <NotFound notFound={ currentWord } />
             }
         </main>
     );

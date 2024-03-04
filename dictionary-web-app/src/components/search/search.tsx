@@ -1,17 +1,24 @@
 'use client';
 
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 // Stores
 import useWordStore from '@/store/word-store';
+import useSynonymsStore from '@/store/synonyms-store';
 
 // Server Actions
 import { getWord } from '@/actions/dictionary-rest';
 
 const Search = () => {
+    // Refs
     const searchInput = useRef<HTMLInputElement>(null);
+
+    // States
     const updatedWord = useWordStore((state) => state.updatedWord);
-    
+    const synonym = useSynonymsStore((state) => state.synonym);
+
+    console.log(synonym);
+
     /**
      * @description
      * @public 
@@ -33,6 +40,11 @@ const Search = () => {
                 // Our current input
                 const current = searchInput.current as HTMLInputElement;
 
+                // @todo update input state here?
+                if (current.value === '') {
+                    return;
+                }
+
                 // Fetch API from the server action
                 const word = await getWord(current.value);
 
@@ -43,6 +55,12 @@ const Search = () => {
             console.error(e);
         }
     }
+
+    useEffect(() => {
+        if (searchInput.current && typeof searchInput.current !== 'undefined' && synonym.length > 0) {
+            searchInput.current.value = synonym;
+        }
+    }, [synonym]);
 
     return (
         <section className="pt-12">
