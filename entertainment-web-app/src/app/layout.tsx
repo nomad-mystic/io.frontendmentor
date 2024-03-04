@@ -22,7 +22,17 @@ export const metadata: Metadata = {
     keywords: 'React.js Next.js Node.js Challenge',
     creator: 'Keith Murphy',
     publisher: 'Keith Murphy',
-    abstract: 'Front-end mentor advanced challenge'
+    abstract: 'Front-end mentor advanced challenge',
+    openGraph: {
+        type: 'website',
+        url: 'https://entertainment-frontendmentor.vercel.app',
+        title: 'Entertainment Web App',
+        description: 'Front-end Mentor Entertainment Web App Advanced Challenge',
+        siteName: 'Entertainment Web App',
+        images: [{
+            url: 'https://entertainment-frontendmentor.vercel.app/assets/open-graph-entertainment-web-app.png',
+        }],
+    }
 };
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
