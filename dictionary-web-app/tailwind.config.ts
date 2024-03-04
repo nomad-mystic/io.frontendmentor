@@ -37,8 +37,8 @@ const config: Config = {
         },
     },
     plugins: [
-        plugin(function({ addComponents }) {
-            addComponents({
+        plugin(function({ addUtilities }) {
+            addUtilities({
                 '.heading-l': {
                     fontSize: '64px',
                     lineHeight: '77px',

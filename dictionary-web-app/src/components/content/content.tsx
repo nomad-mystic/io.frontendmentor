@@ -8,7 +8,8 @@ import { getWord } from '@/actions/dictionary-rest';
 
 // Types
 import { DictionaryType } from '@/types/dictionary-type';
-import Image from 'next/image';
+
+// Components
 import ContentHeader from '@/components/content/content-header/content-header';
 import ContentMeaning from '@/components/content/content-meaning/content-meaning';
 
@@ -41,7 +42,7 @@ const Content = () => {
                             }
 
                             {
-                                // @todo create a map for multiple sourceURLs i.e. component
+                                // @todo create a map for multiple sourceURLs i.e. component and add link
                                 word.sourceUrls && word.sourceUrls.length > 0 && (
                                     <footer className="flex gap-x-4 border-t border-white-75 mt-10">
                                         <h3 className="body-s text-white-100 underline mt-5">Source</h3>
