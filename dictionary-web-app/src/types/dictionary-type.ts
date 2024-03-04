@@ -1,5 +1,5 @@
 export type DictionaryType = {
-    "word": string;
+    word: string;
     phonetic: string;
     phonetics?: [
         {
@@ -15,6 +15,7 @@ export type DictionaryType = {
                     definition?: string;
                     synonyms?: string[];
                     antonyms?: string[];
+                    example?: string;
                 }
             ],
             synonyms: string[];
@@ -26,4 +27,4 @@ export type DictionaryType = {
     },
     sourceUrls: string[]
     origin: string;
-}
+};

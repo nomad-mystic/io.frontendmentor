@@ -1,34 +1,51 @@
 import React from 'react';
 import { DictionaryType } from '@/types/dictionary-type';
+import ContentSynonyms from '@/components/content/content-synonyms/content-synonyms';
 
+// width: 100%;
+// border-bottom: 1px solid black;
+// position: absolute;
+// top: 50%;
 const ContentMeaning = (props: { word: DictionaryType }) => {
     return (
         <>
             {
-                props.word.meanings.map((meaning) => {
+                props.word.meanings.map((meaning, index) => {
                     return (
-                        <section key={ meaning.partOfSpeech } className="border-b">
-                            <h2>{ meaning.partOfSpeech }</h2>
+                        <section key={ index } className="mt-10">
+                            <h2 className="heading-m font-bold italic text-black-50 flex gap-x-5">
+                                { meaning.partOfSpeech }
+                                <span className="relative block w-full">
+                                    <span className="w-full absolute top-1/2 border border-white-75"></span>
+                                </span>
+                            </h2>
 
-                            <h3>Meaning</h3>
+                            <h3 className="heading-s text-white-100 mt-9">Meaning</h3>
 
-                            <ul>
+                            <ul className="ml-10 mt-6">
                                 {
                                     meaning.definitions.length > 0 && meaning.definitions.map((def, index) => {
                                         return (
-                                            <li key={ index }>{ def.definition }</li>
+                                            <li key={ index } className="list-disc marker:text-purple [&:not(:first-child)]:mt-3">
+                                                <div>
+                                                    <p className="body-m text-black-50">{ def.definition }</p>
+                                                </div>
+
+                                                {
+                                                    def.example && (
+                                                        <div>
+                                                            <p className="body-m text-white-100 mt-3">"{ def.example }"</p>
+                                                        </div>
+                                                    )
+                                                }
+                                            </li>
                                         )
                                     })
                                 }
                             </ul>
 
                             {
-                                meaning.synonyms?.length > 0 && (
-                                    <div className="flex gap-x-4">
-                                        <h3>Synonyms</h3>
-                                        <p>{ meaning.synonyms }</p>
-                                    </div>
-                                )
+                                meaning.synonyms?.length > 0 && <ContentSynonyms meaning={ meaning } />
                             }
                         </section>
                     )
