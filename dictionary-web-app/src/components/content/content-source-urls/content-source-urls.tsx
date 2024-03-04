@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { DictionaryType } from '@/types/dictionary-type';
 
 /**
- * @description 
+ * @description
  * @public 
  * @author Keith Murphy | nomadmystics@gmail.com
  *

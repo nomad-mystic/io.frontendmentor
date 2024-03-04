@@ -48,7 +48,7 @@ const ContentSynonyms = (props: { meaning: MeaningType }) => {
             {
                 props.meaning.synonyms.map((synonym: string, index: number) => {
                     return (
-                        <p key={ index } className="heading-s text-purple font-bold"
+                        <p key={ index } className="heading-s text-purple font-bold hover:underline active:underline cursor-pointer"
                            onClick={ async (e) => await handleNewSearch(e) }>{ synonym }</p>
                     )
                 })

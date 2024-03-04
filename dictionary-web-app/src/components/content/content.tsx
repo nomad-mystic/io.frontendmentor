@@ -16,14 +16,17 @@ import ContentMeaning from '@/components/content/content-meaning/content-meaning
 // Stores
 import useWordStore from '@/store/word-store';
 import ContentSourceUrls from '@/components/content/content-source-urls/content-source-urls';
+import NotFound from '@/components/not-found/not-found';
 
 const Content = () => {
     const currentWord = useWordStore((state) => state.currentWord);
 
+    console.log(currentWord);
+
     return (
         <main>
             {
-                currentWord && currentWord.length > 0 && currentWord.map((word: DictionaryType, index: number) => {
+                currentWord && Array.isArray(currentWord) && currentWord.map((word: DictionaryType, index: number) => {
                     return (
                         <section className="mt-11 [&:not(:first-child)]:mt-14" key={ index }>
                             {
@@ -42,6 +45,9 @@ const Content = () => {
                 })
             }
 
+            {
+                <NotFound notFound={ currentWord } />
+            }
         </main>
     );
 };

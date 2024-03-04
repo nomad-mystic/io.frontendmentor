@@ -2,9 +2,10 @@ import { create } from 'zustand';
 
 // Types
 import { DictionaryType } from '@/types/dictionary-type';
+import { NotFoundType } from '@/types/not-found-type';
 
-interface WordState {
-    currentWord: Array<DictionaryType>;
+type WordState = {
+    currentWord: Array<DictionaryType> | NotFoundType;
     updatedWord: (by: any) => void;
     word?: Array<DictionaryType>;
 }
