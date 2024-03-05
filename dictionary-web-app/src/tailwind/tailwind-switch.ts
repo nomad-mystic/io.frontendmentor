@@ -6,14 +6,14 @@ export const toggleSwitch = {
         height: '20px',
     },
     '.switch input': {
-        opacity: 0,
-        width: 0,
-        height: 0,
+        opacity: '0',
+        width: '0',
+        height: '0',
     },
     '.slider': {
         position: 'absolute',
         cursor: 'pointer',
-        inset: 0,
+        inset: '0',
         'background-color': '#757575',
         '-webkit-transition': '.4s',
         transition: '.4s',

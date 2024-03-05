@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 // Stores
 import useWordStore from '@/store/word-store';
@@ -16,15 +16,16 @@ const Search = () => {
     // States
     const updatedWord = useWordStore((state) => state.updatedWord);
     const synonym = useSynonymsStore((state) => state.synonym);
+    const [isValid, setIsValid] = useState(true);
 
     console.log(synonym);
 
     /**
      * @description
-     * @public 
+     * @public
      * @author Keith Murphy | nomadmystics@gmail.com
      *
-     * @return 
+     * @return
      */
     const handleKeyDown = async (event: React.KeyboardEvent<HTMLInputElement>) => {
         try {
@@ -40,8 +41,9 @@ const Search = () => {
                 // Our current input
                 const current = searchInput.current as HTMLInputElement;
 
-                // @todo update input state here?
                 if (current.value === '') {
+                    setIsValid(false);
+
                     return;
                 }
 
@@ -62,16 +64,36 @@ const Search = () => {
         }
     }, [synonym]);
 
+    /**
+     * @description
+     * @public
+     * @author Keith Murphy | nomadmystics@gmail.com
+     *
+     * @return
+     */
+    const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(event);
+
+        if (!isValid) {
+            setIsValid(true);
+        }
+    };
+
     return (
         <section className="pt-12">
             <div className="relative bg-white-50 rounded-[16px] flex items-center">
                 <input type="text"
                        placeholder="Search for any word…"
-                       className="rounded-[16px] bg-white-50 w-full h-16 p-5 focus:outline-none focus:ring-1 focus:ring-purple"
+                       className={ `rounded-[16px] bg-white-50 w-full h-16 p-5 focus:outline-none focus:ring-1 focus:ring-purple ${ !isValid ? 'ring-red focus:ring-red' : ''}` }
                        onKeyDown={ handleKeyDown }
                        ref={ searchInput }
+                       onChange={ (e) => handleOnChange(e) }
                 />
                 <span className="absolute right-6 w-[18px] h-[18px] bg-search-icon"></span>
+            </div>
+
+            <div>
+                <h4 className="heading-s text-red mt-2">{ !isValid && 'Whoops, can’t be empty…' }</h4>
             </div>
         </section>
     );
