@@ -20,7 +20,10 @@ const Header = () => {
                     </select>
                 </div>
                 <div>
-                controls
+                    <label className="switch">
+                        <input type="checkbox" />
+                        <span className="slider round"></span>
+                    </label>
                 </div>
             </section>
         </header>
