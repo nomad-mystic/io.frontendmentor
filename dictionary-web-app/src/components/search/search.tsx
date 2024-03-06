@@ -84,7 +84,10 @@ const Search = () => {
             <div className="relative bg-white-50 rounded-[16px] flex items-center">
                 <input type="text"
                        placeholder="Search for any word…"
-                       className={ `rounded-[16px] bg-white-50 w-full h-16 p-5 focus:outline-none focus:ring-1 focus:ring-purple ${ !isValid ? 'ring-red focus:ring-red' : ''}` }
+                       className={ `
+                            rounded-[16px] bg-white-50 w-full h-16 p-5 focus:outline-none caret-purple
+                            focus:ring-1 focus:ring-purple ${ !isValid ? 'ring-red focus:ring-red' : '' }`
+                       }
                        onKeyDown={ handleKeyDown }
                        ref={ searchInput }
                        onChange={ (e) => handleOnChange(e) }

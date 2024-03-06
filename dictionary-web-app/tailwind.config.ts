@@ -4,6 +4,7 @@ import plugin from 'tailwindcss/plugin';
 // Custom styles
 import { fontStyles } from './src/tailwind/tailwind-fonts';
 import { toggleSwitch } from './src/tailwind/tailwind-switch';
+import { visualStates } from './src/tailwind/tailwind-utils';
 
 const config: Config = {
     content: [
@@ -37,12 +38,14 @@ const config: Config = {
             },
             backgroundImage: {
                 'search-icon': "url('/icon-search.svg')",
+                'arrow-icon': "url('/icon-arrow-down.svg')",
             }
         },
     },
     plugins: [
         plugin(function({ addUtilities, addComponents }) {
             addUtilities(fontStyles);
+            addUtilities(visualStates);
 
             addComponents(toggleSwitch);
         }),
