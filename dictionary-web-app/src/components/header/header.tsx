@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 // Store
 import useFontStore from '@/store/font-store';
+import HeaderColorSwitcher from '@/components/header/header-color-switcher/header-color-switcher';
 
 /**
  * @description
@@ -65,21 +66,21 @@ const Header = () => {
                      onClick={ (e) => handleFontChange(e) }
                 >
                     <ul className="">
-                        <li className="capitalize">{ currentFont }</li>
+                        <li className="capitalize text-black-50 dark:text-white-25">{ currentFont }</li>
 
-                        <ul className="bg-white-25 ring-1 p-5 rounded-2xl absolute right-0 z-10 mt-4 w-36 isInvisible"
+                        <ul className="bg-white-25 dark:bg-black-75 ring-1 p-5 rounded-2xl absolute right-0 z-10 mt-4 w-36 isInvisible"
                             ref={ fontSwitcher }
                             onClick={ (e) => handleActiveFont(e) }
                         >
-                            <li className="body-m font-bold hover:text-purple cursor-pointer"
+                            <li className="body-m font-bold text-black-50 dark:text-white-25 hover:text-purple cursor-pointer transition"
                                 data-font-style="sans serif">Sans Serif
                             </li>
 
-                            <li className="body-m font-bold hover:text-purple cursor-pointer mt-4"
+                            <li className="body-m font-bold text-black-50 dark:text-white-25 hover:text-purple cursor-pointer transition mt-4"
                                 data-font-style="serif">Serif
                             </li>
 
-                            <li className="body-m font-bold hover:text-purple cursor-pointer mt-4"
+                            <li className="body-m font-bold text-black-50 dark:text-white-25 hover:text-purple cursor-pointer transition mt-4"
                                 data-font-style="mono">Mono
                             </li>
                         </ul>
@@ -89,20 +90,8 @@ const Header = () => {
 
                 <div className="block bg-white-75 w-[1px] self-stretch"></div>
 
-                <div className="flex gap-x-[20px]">
-                    <label className="switch">
-                        <input type="checkbox" />
-                        <span className="slider round"></span>
-                    </label>
+                <HeaderColorSwitcher />
 
-                    <span>
-                        <Image src="/icon-moon.svg"
-                               alt=""
-                               height={ 20 }
-                               width={ 20 }
-                        />
-                    </span>
-                </div>
             </section>
         </header>
     );

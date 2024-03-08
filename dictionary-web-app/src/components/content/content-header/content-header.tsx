@@ -60,7 +60,7 @@ const ContentHeader = (props: { word: DictionaryType }) => {
     return (
         <header className="flex justify-between">
             <div>
-                <h1 className="heading-l text-black-50">{ props.word.word }</h1>
+                <h1 className="heading-l text-black-50 dark:text-white-25">{ props.word.word }</h1>
                 <p className="heading-m text-purple mt-1">{ props.word.phonetic }</p>
             </div>
 

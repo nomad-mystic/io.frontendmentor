@@ -21,7 +21,7 @@ const ContentMeaning = (props: { word: DictionaryType }) => {
                 props.word.meanings.map((meaning, index) => {
                     return (
                         <section key={ index } className="mt-10">
-                            <h2 className="heading-m font-bold italic text-black-50 flex gap-x-5">
+                            <h2 className="heading-m font-bold italic text-black-50 dark:text-white-25 flex gap-x-5">
                                 { meaning.partOfSpeech }
                                 <span className="relative block w-full">
                                     <span className="w-full absolute top-1/2 border border-white-75"></span>
@@ -36,7 +36,7 @@ const ContentMeaning = (props: { word: DictionaryType }) => {
                                         return (
                                             <li key={ index } className="list-disc marker:text-purple [&:not(:first-child)]:mt-3">
                                                 <div>
-                                                    <p className="body-m text-black-50">{ def.definition }</p>
+                                                    <p className="body-m text-black-50 dark:text-white-25">{ def.definition }</p>
                                                 </div>
 
                                                 {
