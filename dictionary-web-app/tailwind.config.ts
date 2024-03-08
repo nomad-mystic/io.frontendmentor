@@ -1,6 +1,11 @@
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 
+// Custom styles
+import { fontStyles } from './src/tailwind/tailwind-fonts';
+import { toggleSwitch } from './src/tailwind/tailwind-switch';
+import { visualStates } from './src/tailwind/tailwind-utils';
+
 const config: Config = {
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -33,34 +38,18 @@ const config: Config = {
             },
             backgroundImage: {
                 'search-icon': "url('/icon-search.svg')",
+                'arrow-icon': "url('/icon-arrow-down.svg')",
             }
         },
     },
     plugins: [
-        plugin(function({ addUtilities }) {
-            addUtilities({
-                '.heading-l': {
-                    fontSize: '64px',
-                    lineHeight: '77px',
-                },
-                '.heading-m': {
-                    fontSize: '24px',
-                    lineHeight: '29px',
-                },
-                '.heading-s': {
-                    fontSize: '20px',
-                    lineHeight: '24px',
-                },
-                '.body-m': {
-                    fontSize: '18px',
-                    lineHeight: '24px',
-                },
-                '.body-s': {
-                    fontSize: '14px',
-                    lineHeight: '17px',
-                },
-            })
-        })
-    ]
+        plugin(function({ addUtilities, addComponents }) {
+            addUtilities(fontStyles);
+            addUtilities(visualStates);
+
+            addComponents(toggleSwitch);
+        }),
+    ],
 };
+
 export default config;
